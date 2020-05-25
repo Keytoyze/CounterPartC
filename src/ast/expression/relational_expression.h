@@ -8,7 +8,7 @@
 class RelationalExpression: public BasicAST {
 public:
     virtual ~RelationalExpression() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): shiftExpressionAst1(shiftExpressionAst1) {}
 
     virtual ~RelationalExpression1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): relationalExpressionAst1(relationalExpressionAst1), lAngleAst2(lAngleAst2), shiftExpressionAst3(shiftExpressionAst3) {}
 
     virtual ~RelationalExpression2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -57,7 +57,7 @@ public:
     ): relationalExpressionAst1(relationalExpressionAst1), rAngleAst2(rAngleAst2), shiftExpressionAst3(shiftExpressionAst3) {}
 
     virtual ~RelationalExpression3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -75,7 +75,7 @@ public:
     ): relationalExpressionAst1(relationalExpressionAst1), leOpAst2(leOpAst2), shiftExpressionAst3(shiftExpressionAst3) {}
 
     virtual ~RelationalExpression4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -93,7 +93,7 @@ public:
     ): relationalExpressionAst1(relationalExpressionAst1), geOpAst2(geOpAst2), shiftExpressionAst3(shiftExpressionAst3) {}
 
     virtual ~RelationalExpression5();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -101,25 +101,25 @@ public:
 
 #else
 
-#ifndef _CLASS_RANGLE_
-#define _CLASS_RANGLE_
-class RAngle;
-#endif //_CLASS_RANGLE_
-#ifndef _CLASS_LANGLE_
-#define _CLASS_LANGLE_
-class LAngle;
-#endif //_CLASS_LANGLE_
-#ifndef _CLASS_SHIFTEXPRESSION_
-#define _CLASS_SHIFTEXPRESSION_
-class ShiftExpression;
-#endif //_CLASS_SHIFTEXPRESSION_
-#ifndef _CLASS_GEOP_
-#define _CLASS_GEOP_
-class GeOp;
-#endif //_CLASS_GEOP_
 #ifndef _CLASS_LEOP_
 #define _CLASS_LEOP_
 class LeOp;
 #endif //_CLASS_LEOP_
+#ifndef _CLASS_SHIFTEXPRESSION_
+#define _CLASS_SHIFTEXPRESSION_
+class ShiftExpression;
+#endif //_CLASS_SHIFTEXPRESSION_
+#ifndef _CLASS_RANGLE_
+#define _CLASS_RANGLE_
+class RAngle;
+#endif //_CLASS_RANGLE_
+#ifndef _CLASS_GEOP_
+#define _CLASS_GEOP_
+class GeOp;
+#endif //_CLASS_GEOP_
+#ifndef _CLASS_LANGLE_
+#define _CLASS_LANGLE_
+class LAngle;
+#endif //_CLASS_LANGLE_
 
 #endif // _RELATIONAL_EXPRESSION_H_

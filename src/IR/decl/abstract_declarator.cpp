@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void AbstractDeclarator1::GenerateIR(Context& context) {
+IRValuePtr AbstractDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AbstractDeclarator2::GenerateIR(Context& context) {
+IRValuePtr AbstractDeclarator2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AbstractDeclarator3::GenerateIR(Context& context) {
+IRValuePtr AbstractDeclarator3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

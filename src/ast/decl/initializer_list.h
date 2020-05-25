@@ -8,7 +8,7 @@
 class InitializerList: public BasicAST {
 public:
     virtual ~InitializerList() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): initializerAst1(initializerAst1) {}
 
     virtual ~InitializerList1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): initializerListAst1(initializerListAst1), commaAst2(commaAst2), initializerAst3(initializerAst3) {}
 
     virtual ~InitializerList2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_INITIALIZER_
-#define _CLASS_INITIALIZER_
-class Initializer;
-#endif //_CLASS_INITIALIZER_
 #ifndef _CLASS_COMMA_
 #define _CLASS_COMMA_
 class Comma;
 #endif //_CLASS_COMMA_
+#ifndef _CLASS_INITIALIZER_
+#define _CLASS_INITIALIZER_
+class Initializer;
+#endif //_CLASS_INITIALIZER_
 
 #endif // _INITIALIZER_LIST_H_

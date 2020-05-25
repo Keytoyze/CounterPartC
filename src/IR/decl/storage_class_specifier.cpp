@@ -1,28 +1,33 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void StorageClassSpecifier1::GenerateIR(Context& context) {
+IRValuePtr StorageClassSpecifier1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void StorageClassSpecifier2::GenerateIR(Context& context) {
+IRValuePtr StorageClassSpecifier2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void StorageClassSpecifier3::GenerateIR(Context& context) {
+IRValuePtr StorageClassSpecifier3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void StorageClassSpecifier4::GenerateIR(Context& context) {
+IRValuePtr StorageClassSpecifier4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void StorageClassSpecifier5::GenerateIR(Context& context) {
+IRValuePtr StorageClassSpecifier5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

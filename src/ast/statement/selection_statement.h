@@ -8,7 +8,7 @@
 class SelectionStatement: public BasicAST {
 public:
     virtual ~SelectionStatement() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -29,7 +29,7 @@ public:
     ): ifAst1(ifAst1), lRoundAst2(lRoundAst2), expressionAst3(expressionAst3), rRoundAst4(rRoundAst4), statementAst5(statementAst5) {}
 
     virtual ~SelectionStatement1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -55,7 +55,7 @@ public:
     ): ifAst1(ifAst1), lRoundAst2(lRoundAst2), expressionAst3(expressionAst3), rRoundAst4(rRoundAst4), statementAst5(statementAst5), elseAst6(elseAst6), statementAst7(statementAst7) {}
 
     virtual ~SelectionStatement2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -77,7 +77,7 @@ public:
     ): switchAst1(switchAst1), lRoundAst2(lRoundAst2), expressionAst3(expressionAst3), rRoundAst4(rRoundAst4), statementAst5(statementAst5) {}
 
     virtual ~SelectionStatement3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -85,26 +85,6 @@ public:
 
 #else
 
-#ifndef _CLASS_ELSE_
-#define _CLASS_ELSE_
-class Else;
-#endif //_CLASS_ELSE_
-#ifndef _CLASS_IF_
-#define _CLASS_IF_
-class If;
-#endif //_CLASS_IF_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_STATEMENT_
-#define _CLASS_STATEMENT_
-class Statement;
-#endif //_CLASS_STATEMENT_
-#ifndef _CLASS_SWITCH_
-#define _CLASS_SWITCH_
-class Switch;
-#endif //_CLASS_SWITCH_
 #ifndef _CLASS_LROUND_
 #define _CLASS_LROUND_
 class LRound;
@@ -113,5 +93,25 @@ class LRound;
 #define _CLASS_EXPRESSION_
 class Expression;
 #endif //_CLASS_EXPRESSION_
+#ifndef _CLASS_RROUND_
+#define _CLASS_RROUND_
+class RRound;
+#endif //_CLASS_RROUND_
+#ifndef _CLASS_IF_
+#define _CLASS_IF_
+class If;
+#endif //_CLASS_IF_
+#ifndef _CLASS_SWITCH_
+#define _CLASS_SWITCH_
+class Switch;
+#endif //_CLASS_SWITCH_
+#ifndef _CLASS_ELSE_
+#define _CLASS_ELSE_
+class Else;
+#endif //_CLASS_ELSE_
+#ifndef _CLASS_STATEMENT_
+#define _CLASS_STATEMENT_
+class Statement;
+#endif //_CLASS_STATEMENT_
 
 #endif // _SELECTION_STATEMENT_H_

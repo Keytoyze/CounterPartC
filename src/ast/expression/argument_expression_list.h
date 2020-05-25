@@ -8,7 +8,7 @@
 class ArgumentExpressionList: public BasicAST {
 public:
     virtual ~ArgumentExpressionList() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): assignmentExpressionAst1(assignmentExpressionAst1) {}
 
     virtual ~ArgumentExpressionList1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): argumentExpressionListAst1(argumentExpressionListAst1), commaAst2(commaAst2), assignmentExpressionAst3(assignmentExpressionAst3) {}
 
     virtual ~ArgumentExpressionList2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

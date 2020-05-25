@@ -1,48 +1,57 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void DirectAbstractDeclarator1::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectAbstractDeclarator2::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectAbstractDeclarator3::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectAbstractDeclarator4::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectAbstractDeclarator5::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectAbstractDeclarator6::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator6::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectAbstractDeclarator7::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator7::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectAbstractDeclarator8::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator8::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectAbstractDeclarator9::GenerateIR(Context& context) {
+IRValuePtr DirectAbstractDeclarator9::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

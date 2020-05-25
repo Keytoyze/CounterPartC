@@ -8,7 +8,7 @@
 class DeclarationSpecifiers: public BasicAST {
 public:
     virtual ~DeclarationSpecifiers() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): storageClassSpecifierAst1(storageClassSpecifierAst1) {}
 
     virtual ~DeclarationSpecifiers1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): storageClassSpecifierAst1(storageClassSpecifierAst1), declarationSpecifiersAst2(declarationSpecifiersAst2) {}
 
     virtual ~DeclarationSpecifiers2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -51,7 +51,7 @@ public:
     ): typeSpecifierAst1(typeSpecifierAst1) {}
 
     virtual ~DeclarationSpecifiers3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -67,7 +67,7 @@ public:
     ): typeSpecifierAst1(typeSpecifierAst1), declarationSpecifiersAst2(declarationSpecifiersAst2) {}
 
     virtual ~DeclarationSpecifiers4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -81,7 +81,7 @@ public:
     ): typeQualifierAst1(typeQualifierAst1) {}
 
     virtual ~DeclarationSpecifiers5();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -97,7 +97,7 @@ public:
     ): typeQualifierAst1(typeQualifierAst1), declarationSpecifiersAst2(declarationSpecifiersAst2) {}
 
     virtual ~DeclarationSpecifiers6();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -109,13 +109,13 @@ public:
 #define _CLASS_TYPEQUALIFIER_
 class TypeQualifier;
 #endif //_CLASS_TYPEQUALIFIER_
-#ifndef _CLASS_TYPESPECIFIER_
-#define _CLASS_TYPESPECIFIER_
-class TypeSpecifier;
-#endif //_CLASS_TYPESPECIFIER_
 #ifndef _CLASS_STORAGECLASSSPECIFIER_
 #define _CLASS_STORAGECLASSSPECIFIER_
 class StorageClassSpecifier;
 #endif //_CLASS_STORAGECLASSSPECIFIER_
+#ifndef _CLASS_TYPESPECIFIER_
+#define _CLASS_TYPESPECIFIER_
+class TypeSpecifier;
+#endif //_CLASS_TYPESPECIFIER_
 
 #endif // _DECLARATION_SPECIFIERS_H_

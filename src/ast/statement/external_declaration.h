@@ -8,7 +8,7 @@
 class ExternalDeclaration: public BasicAST {
 public:
     virtual ~ExternalDeclaration() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): functionDefinitionAst1(functionDefinitionAst1) {}
 
     virtual ~ExternalDeclaration1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): declarationAst1(declarationAst1) {}
 
     virtual ~ExternalDeclaration2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

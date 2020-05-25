@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void EnumSpecifier1::GenerateIR(Context& context) {
+IRValuePtr EnumSpecifier1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void EnumSpecifier2::GenerateIR(Context& context) {
+IRValuePtr EnumSpecifier2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void EnumSpecifier3::GenerateIR(Context& context) {
+IRValuePtr EnumSpecifier3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

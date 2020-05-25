@@ -8,7 +8,7 @@
 class Enumerator: public BasicAST {
 public:
     virtual ~Enumerator() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): identifierAst1(identifierAst1) {}
 
     virtual ~Enumerator1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): identifierAst1(identifierAst1), eqAst2(eqAst2), constantExpressionAst3(constantExpressionAst3) {}
 
     virtual ~Enumerator2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,17 +47,17 @@ public:
 
 #else
 
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
-#ifndef _CLASS_EQ_
-#define _CLASS_EQ_
-class Eq;
-#endif //_CLASS_EQ_
 #ifndef _CLASS_CONSTANTEXPRESSION_
 #define _CLASS_CONSTANTEXPRESSION_
 class ConstantExpression;
 #endif //_CLASS_CONSTANTEXPRESSION_
+#ifndef _CLASS_EQ_
+#define _CLASS_EQ_
+class Eq;
+#endif //_CLASS_EQ_
+#ifndef _CLASS_IDENTIFIER_
+#define _CLASS_IDENTIFIER_
+class Identifier;
+#endif //_CLASS_IDENTIFIER_
 
 #endif // _ENUMERATOR_H_

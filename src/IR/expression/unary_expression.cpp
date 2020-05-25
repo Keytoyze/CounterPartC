@@ -1,33 +1,39 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void UnaryExpression1::GenerateIR(Context& context) {
+IRValuePtr UnaryExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void UnaryExpression2::GenerateIR(Context& context) {
+IRValuePtr UnaryExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void UnaryExpression3::GenerateIR(Context& context) {
+IRValuePtr UnaryExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void UnaryExpression4::GenerateIR(Context& context) {
+IRValuePtr UnaryExpression4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void UnaryExpression5::GenerateIR(Context& context) {
+IRValuePtr UnaryExpression5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void UnaryExpression6::GenerateIR(Context& context) {
+IRValuePtr UnaryExpression6::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

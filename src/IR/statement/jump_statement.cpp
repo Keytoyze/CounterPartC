@@ -1,28 +1,33 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void JumpStatement1::GenerateIR(Context& context) {
+IRValuePtr JumpStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void JumpStatement2::GenerateIR(Context& context) {
+IRValuePtr JumpStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void JumpStatement3::GenerateIR(Context& context) {
+IRValuePtr JumpStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void JumpStatement4::GenerateIR(Context& context) {
+IRValuePtr JumpStatement4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void JumpStatement5::GenerateIR(Context& context) {
+IRValuePtr JumpStatement5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

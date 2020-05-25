@@ -8,7 +8,7 @@
 class ConditionalExpression: public BasicAST {
 public:
     virtual ~ConditionalExpression() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): logicalOrExpressionAst1(logicalOrExpressionAst1) {}
 
     virtual ~ConditionalExpression1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -43,7 +43,7 @@ public:
     ): logicalOrExpressionAst1(logicalOrExpressionAst1), questionAst2(questionAst2), expressionAst3(expressionAst3), colonAst4(colonAst4), conditionalExpressionAst5(conditionalExpressionAst5) {}
 
     virtual ~ConditionalExpression2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

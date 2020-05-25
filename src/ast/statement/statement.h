@@ -8,7 +8,7 @@
 class Statement: public BasicAST {
 public:
     virtual ~Statement() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): labeledStatementAst1(labeledStatementAst1) {}
 
     virtual ~Statement1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): compoundStatementAst1(compoundStatementAst1) {}
 
     virtual ~Statement2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,7 +49,7 @@ public:
     ): expressionStatementAst1(expressionStatementAst1) {}
 
     virtual ~Statement3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -63,7 +63,7 @@ public:
     ): selectionStatementAst1(selectionStatementAst1) {}
 
     virtual ~Statement4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -77,7 +77,7 @@ public:
     ): iterationStatementAst1(iterationStatementAst1) {}
 
     virtual ~Statement5();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -91,7 +91,7 @@ public:
     ): jumpStatementAst1(jumpStatementAst1) {}
 
     virtual ~Statement6();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -99,18 +99,22 @@ public:
 
 #else
 
-#ifndef _CLASS_ITERATIONSTATEMENT_
-#define _CLASS_ITERATIONSTATEMENT_
-class IterationStatement;
-#endif //_CLASS_ITERATIONSTATEMENT_
-#ifndef _CLASS_SELECTIONSTATEMENT_
-#define _CLASS_SELECTIONSTATEMENT_
-class SelectionStatement;
-#endif //_CLASS_SELECTIONSTATEMENT_
 #ifndef _CLASS_JUMPSTATEMENT_
 #define _CLASS_JUMPSTATEMENT_
 class JumpStatement;
 #endif //_CLASS_JUMPSTATEMENT_
+#ifndef _CLASS_ITERATIONSTATEMENT_
+#define _CLASS_ITERATIONSTATEMENT_
+class IterationStatement;
+#endif //_CLASS_ITERATIONSTATEMENT_
+#ifndef _CLASS_LABELEDSTATEMENT_
+#define _CLASS_LABELEDSTATEMENT_
+class LabeledStatement;
+#endif //_CLASS_LABELEDSTATEMENT_
+#ifndef _CLASS_SELECTIONSTATEMENT_
+#define _CLASS_SELECTIONSTATEMENT_
+class SelectionStatement;
+#endif //_CLASS_SELECTIONSTATEMENT_
 #ifndef _CLASS_EXPRESSIONSTATEMENT_
 #define _CLASS_EXPRESSIONSTATEMENT_
 class ExpressionStatement;
@@ -119,9 +123,5 @@ class ExpressionStatement;
 #define _CLASS_COMPOUNDSTATEMENT_
 class CompoundStatement;
 #endif //_CLASS_COMPOUNDSTATEMENT_
-#ifndef _CLASS_LABELEDSTATEMENT_
-#define _CLASS_LABELEDSTATEMENT_
-class LabeledStatement;
-#endif //_CLASS_LABELEDSTATEMENT_
 
 #endif // _STATEMENT_H_

@@ -8,7 +8,7 @@
 class AbstractDeclarator: public BasicAST {
 public:
     virtual ~AbstractDeclarator() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): pointerAst1(pointerAst1) {}
 
     virtual ~AbstractDeclarator1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): directAbstractDeclaratorAst1(directAbstractDeclaratorAst1) {}
 
     virtual ~AbstractDeclarator2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -51,7 +51,7 @@ public:
     ): pointerAst1(pointerAst1), directAbstractDeclaratorAst2(directAbstractDeclaratorAst2) {}
 
     virtual ~AbstractDeclarator3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

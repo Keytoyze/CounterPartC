@@ -8,7 +8,7 @@
 class Initializer: public BasicAST {
 public:
     virtual ~Initializer() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): assignmentExpressionAst1(assignmentExpressionAst1) {}
 
     virtual ~Initializer1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): lCurlyAst1(lCurlyAst1), initializerListAst2(initializerListAst2), rCurlyAst3(rCurlyAst3) {}
 
     virtual ~Initializer2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -59,7 +59,7 @@ public:
     ): lCurlyAst1(lCurlyAst1), initializerListAst2(initializerListAst2), commaAst3(commaAst3), rCurlyAst4(rCurlyAst4) {}
 
     virtual ~Initializer3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -67,25 +67,25 @@ public:
 
 #else
 
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
 #ifndef _CLASS_ASSIGNMENTEXPRESSION_
 #define _CLASS_ASSIGNMENTEXPRESSION_
 class AssignmentExpression;
 #endif //_CLASS_ASSIGNMENTEXPRESSION_
-#ifndef _CLASS_LCURLY_
-#define _CLASS_LCURLY_
-class LCurly;
-#endif //_CLASS_LCURLY_
-#ifndef _CLASS_INITIALIZERLIST_
-#define _CLASS_INITIALIZERLIST_
-class InitializerList;
-#endif //_CLASS_INITIALIZERLIST_
 #ifndef _CLASS_RCURLY_
 #define _CLASS_RCURLY_
 class RCurly;
 #endif //_CLASS_RCURLY_
+#ifndef _CLASS_LCURLY_
+#define _CLASS_LCURLY_
+class LCurly;
+#endif //_CLASS_LCURLY_
+#ifndef _CLASS_COMMA_
+#define _CLASS_COMMA_
+class Comma;
+#endif //_CLASS_COMMA_
+#ifndef _CLASS_INITIALIZERLIST_
+#define _CLASS_INITIALIZERLIST_
+class InitializerList;
+#endif //_CLASS_INITIALIZERLIST_
 
 #endif // _INITIALIZER_H_

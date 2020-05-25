@@ -8,7 +8,7 @@
 class LogicalOrExpression: public BasicAST {
 public:
     virtual ~LogicalOrExpression() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): logicalAndExpressionAst1(logicalAndExpressionAst1) {}
 
     virtual ~LogicalOrExpression1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): logicalOrExpressionAst1(logicalOrExpressionAst1), orOpAst2(orOpAst2), logicalAndExpressionAst3(logicalAndExpressionAst3) {}
 
     virtual ~LogicalOrExpression2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

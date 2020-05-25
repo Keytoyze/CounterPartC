@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void EnumeratorList1::GenerateIR(Context& context) {
+IRValuePtr EnumeratorList1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void EnumeratorList2::GenerateIR(Context& context) {
+IRValuePtr EnumeratorList2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

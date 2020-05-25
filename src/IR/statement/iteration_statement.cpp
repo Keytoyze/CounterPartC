@@ -1,23 +1,27 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void IterationStatement1::GenerateIR(Context& context) {
+IRValuePtr IterationStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void IterationStatement2::GenerateIR(Context& context) {
+IRValuePtr IterationStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void IterationStatement3::GenerateIR(Context& context) {
+IRValuePtr IterationStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void IterationStatement4::GenerateIR(Context& context) {
+IRValuePtr IterationStatement4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

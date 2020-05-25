@@ -8,7 +8,7 @@
 class StructDeclaratorList: public BasicAST {
 public:
     virtual ~StructDeclaratorList() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): structDeclaratorAst1(structDeclaratorAst1) {}
 
     virtual ~StructDeclaratorList1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): structDeclaratorListAst1(structDeclaratorListAst1), commaAst2(commaAst2), structDeclaratorAst3(structDeclaratorAst3) {}
 
     virtual ~StructDeclaratorList2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_STRUCTDECLARATOR_
-#define _CLASS_STRUCTDECLARATOR_
-class StructDeclarator;
-#endif //_CLASS_STRUCTDECLARATOR_
 #ifndef _CLASS_COMMA_
 #define _CLASS_COMMA_
 class Comma;
 #endif //_CLASS_COMMA_
+#ifndef _CLASS_STRUCTDECLARATOR_
+#define _CLASS_STRUCTDECLARATOR_
+class StructDeclarator;
+#endif //_CLASS_STRUCTDECLARATOR_
 
 #endif // _STRUCT_DECLARATOR_LIST_H_

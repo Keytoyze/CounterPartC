@@ -8,7 +8,7 @@
 class ExclusiveOrExpression: public BasicAST {
 public:
     virtual ~ExclusiveOrExpression() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): andExpressionAst1(andExpressionAst1) {}
 
     virtual ~ExclusiveOrExpression1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): exclusiveOrExpressionAst1(exclusiveOrExpressionAst1), caretAst2(caretAst2), andExpressionAst3(andExpressionAst3) {}
 
     virtual ~ExclusiveOrExpression2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_CARET_
-#define _CLASS_CARET_
-class Caret;
-#endif //_CLASS_CARET_
 #ifndef _CLASS_ANDEXPRESSION_
 #define _CLASS_ANDEXPRESSION_
 class AndExpression;
 #endif //_CLASS_ANDEXPRESSION_
+#ifndef _CLASS_CARET_
+#define _CLASS_CARET_
+class Caret;
+#endif //_CLASS_CARET_
 
 #endif // _EXCLUSIVE_OR_EXPRESSION_H_

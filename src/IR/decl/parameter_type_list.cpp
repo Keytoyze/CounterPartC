@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void ParameterTypeList1::GenerateIR(Context& context) {
+IRValuePtr ParameterTypeList1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void ParameterTypeList2::GenerateIR(Context& context) {
+IRValuePtr ParameterTypeList2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

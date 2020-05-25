@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void DeclarationList1::GenerateIR(Context& context) {
+IRValuePtr DeclarationList1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DeclarationList2::GenerateIR(Context& context) {
+IRValuePtr DeclarationList2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void ExternalDeclaration1::GenerateIR(Context& context) {
+IRValuePtr ExternalDeclaration1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void ExternalDeclaration2::GenerateIR(Context& context) {
+IRValuePtr ExternalDeclaration2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

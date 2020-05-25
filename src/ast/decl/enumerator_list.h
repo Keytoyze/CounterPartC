@@ -8,7 +8,7 @@
 class EnumeratorList: public BasicAST {
 public:
     virtual ~EnumeratorList() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): enumeratorAst1(enumeratorAst1) {}
 
     virtual ~EnumeratorList1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): enumeratorListAst1(enumeratorListAst1), commaAst2(commaAst2), enumeratorAst3(enumeratorAst3) {}
 
     virtual ~EnumeratorList2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
 #ifndef _CLASS_ENUMERATOR_
 #define _CLASS_ENUMERATOR_
 class Enumerator;
 #endif //_CLASS_ENUMERATOR_
+#ifndef _CLASS_COMMA_
+#define _CLASS_COMMA_
+class Comma;
+#endif //_CLASS_COMMA_
 
 #endif // _ENUMERATOR_LIST_H_

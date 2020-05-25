@@ -8,7 +8,7 @@
 class AssignmentExpression: public BasicAST {
 public:
     virtual ~AssignmentExpression() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): conditionalExpressionAst1(conditionalExpressionAst1) {}
 
     virtual ~AssignmentExpression1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): unaryExpressionAst1(unaryExpressionAst1), assignmentOperatorAst2(assignmentOperatorAst2), assignmentExpressionAst3(assignmentExpressionAst3) {}
 
     virtual ~AssignmentExpression2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

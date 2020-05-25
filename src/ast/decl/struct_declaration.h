@@ -8,7 +8,7 @@
 class StructDeclaration: public BasicAST {
 public:
     virtual ~StructDeclaration() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -25,7 +25,7 @@ public:
     ): specifierQualifierListAst1(specifierQualifierListAst1), structDeclaratorListAst2(structDeclaratorListAst2), simicolonSingleAst3(simicolonSingleAst3) {}
 
     virtual ~StructDeclaration1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

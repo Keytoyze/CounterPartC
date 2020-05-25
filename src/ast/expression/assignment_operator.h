@@ -8,7 +8,7 @@
 class AssignmentOperator: public BasicAST {
 public:
     virtual ~AssignmentOperator() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): eqAst1(eqAst1) {}
 
     virtual ~AssignmentOperator1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): mulAssignAst1(mulAssignAst1) {}
 
     virtual ~AssignmentOperator2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,7 +49,7 @@ public:
     ): divAssignAst1(divAssignAst1) {}
 
     virtual ~AssignmentOperator3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -63,7 +63,7 @@ public:
     ): modAssignAst1(modAssignAst1) {}
 
     virtual ~AssignmentOperator4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -77,7 +77,7 @@ public:
     ): addAssignAst1(addAssignAst1) {}
 
     virtual ~AssignmentOperator5();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -91,7 +91,7 @@ public:
     ): subAssignAst1(subAssignAst1) {}
 
     virtual ~AssignmentOperator6();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -105,7 +105,7 @@ public:
     ): leftAssignAst1(leftAssignAst1) {}
 
     virtual ~AssignmentOperator7();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -119,7 +119,7 @@ public:
     ): rightAssignAst1(rightAssignAst1) {}
 
     virtual ~AssignmentOperator8();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -133,7 +133,7 @@ public:
     ): andAssignAst1(andAssignAst1) {}
 
     virtual ~AssignmentOperator9();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -147,7 +147,7 @@ public:
     ): xorAssignAst1(xorAssignAst1) {}
 
     virtual ~AssignmentOperator10();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -161,7 +161,7 @@ public:
     ): orAssignAst1(orAssignAst1) {}
 
     virtual ~AssignmentOperator11();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -169,49 +169,49 @@ public:
 
 #else
 
-#ifndef _CLASS_RIGHTASSIGN_
-#define _CLASS_RIGHTASSIGN_
-class RightAssign;
-#endif //_CLASS_RIGHTASSIGN_
-#ifndef _CLASS_ORASSIGN_
-#define _CLASS_ORASSIGN_
-class OrAssign;
-#endif //_CLASS_ORASSIGN_
-#ifndef _CLASS_ANDASSIGN_
-#define _CLASS_ANDASSIGN_
-class AndAssign;
-#endif //_CLASS_ANDASSIGN_
-#ifndef _CLASS_MULASSIGN_
-#define _CLASS_MULASSIGN_
-class MulAssign;
-#endif //_CLASS_MULASSIGN_
-#ifndef _CLASS_DIVASSIGN_
-#define _CLASS_DIVASSIGN_
-class DivAssign;
-#endif //_CLASS_DIVASSIGN_
-#ifndef _CLASS_LEFTASSIGN_
-#define _CLASS_LEFTASSIGN_
-class LeftAssign;
-#endif //_CLASS_LEFTASSIGN_
-#ifndef _CLASS_EQ_
-#define _CLASS_EQ_
-class Eq;
-#endif //_CLASS_EQ_
-#ifndef _CLASS_SUBASSIGN_
-#define _CLASS_SUBASSIGN_
-class SubAssign;
-#endif //_CLASS_SUBASSIGN_
-#ifndef _CLASS_XORASSIGN_
-#define _CLASS_XORASSIGN_
-class XorAssign;
-#endif //_CLASS_XORASSIGN_
-#ifndef _CLASS_MODASSIGN_
-#define _CLASS_MODASSIGN_
-class ModAssign;
-#endif //_CLASS_MODASSIGN_
 #ifndef _CLASS_ADDASSIGN_
 #define _CLASS_ADDASSIGN_
 class AddAssign;
 #endif //_CLASS_ADDASSIGN_
+#ifndef _CLASS_LEFTASSIGN_
+#define _CLASS_LEFTASSIGN_
+class LeftAssign;
+#endif //_CLASS_LEFTASSIGN_
+#ifndef _CLASS_MULASSIGN_
+#define _CLASS_MULASSIGN_
+class MulAssign;
+#endif //_CLASS_MULASSIGN_
+#ifndef _CLASS_MODASSIGN_
+#define _CLASS_MODASSIGN_
+class ModAssign;
+#endif //_CLASS_MODASSIGN_
+#ifndef _CLASS_ANDASSIGN_
+#define _CLASS_ANDASSIGN_
+class AndAssign;
+#endif //_CLASS_ANDASSIGN_
+#ifndef _CLASS_SUBASSIGN_
+#define _CLASS_SUBASSIGN_
+class SubAssign;
+#endif //_CLASS_SUBASSIGN_
+#ifndef _CLASS_RIGHTASSIGN_
+#define _CLASS_RIGHTASSIGN_
+class RightAssign;
+#endif //_CLASS_RIGHTASSIGN_
+#ifndef _CLASS_EQ_
+#define _CLASS_EQ_
+class Eq;
+#endif //_CLASS_EQ_
+#ifndef _CLASS_DIVASSIGN_
+#define _CLASS_DIVASSIGN_
+class DivAssign;
+#endif //_CLASS_DIVASSIGN_
+#ifndef _CLASS_XORASSIGN_
+#define _CLASS_XORASSIGN_
+class XorAssign;
+#endif //_CLASS_XORASSIGN_
+#ifndef _CLASS_ORASSIGN_
+#define _CLASS_ORASSIGN_
+class OrAssign;
+#endif //_CLASS_ORASSIGN_
 
 #endif // _ASSIGNMENT_OPERATOR_H_

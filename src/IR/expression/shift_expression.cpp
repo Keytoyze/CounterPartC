@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void ShiftExpression1::GenerateIR(Context& context) {
+IRValuePtr ShiftExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void ShiftExpression2::GenerateIR(Context& context) {
+IRValuePtr ShiftExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void ShiftExpression3::GenerateIR(Context& context) {
+IRValuePtr ShiftExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

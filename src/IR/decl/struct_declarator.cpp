@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void StructDeclarator1::GenerateIR(Context& context) {
+IRValuePtr StructDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void StructDeclarator2::GenerateIR(Context& context) {
+IRValuePtr StructDeclarator2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void StructDeclarator3::GenerateIR(Context& context) {
+IRValuePtr StructDeclarator3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

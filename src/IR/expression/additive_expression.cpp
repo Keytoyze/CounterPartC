@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void AdditiveExpression1::GenerateIR(Context& context) {
+IRValuePtr AdditiveExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AdditiveExpression2::GenerateIR(Context& context) {
+IRValuePtr AdditiveExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AdditiveExpression3::GenerateIR(Context& context) {
+IRValuePtr AdditiveExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

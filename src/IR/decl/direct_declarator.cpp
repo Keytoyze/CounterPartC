@@ -1,38 +1,45 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void DirectDeclarator1::GenerateIR(Context& context) {
+IRValuePtr DirectDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectDeclarator2::GenerateIR(Context& context) {
+IRValuePtr DirectDeclarator2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectDeclarator3::GenerateIR(Context& context) {
+IRValuePtr DirectDeclarator3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectDeclarator4::GenerateIR(Context& context) {
+IRValuePtr DirectDeclarator4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectDeclarator5::GenerateIR(Context& context) {
+IRValuePtr DirectDeclarator5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectDeclarator6::GenerateIR(Context& context) {
+IRValuePtr DirectDeclarator6::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DirectDeclarator7::GenerateIR(Context& context) {
+IRValuePtr DirectDeclarator7::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

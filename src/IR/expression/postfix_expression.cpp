@@ -1,43 +1,51 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void PostfixExpression1::GenerateIR(Context& context) {
+IRValuePtr PostfixExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PostfixExpression2::GenerateIR(Context& context) {
+IRValuePtr PostfixExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PostfixExpression3::GenerateIR(Context& context) {
+IRValuePtr PostfixExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PostfixExpression4::GenerateIR(Context& context) {
+IRValuePtr PostfixExpression4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PostfixExpression5::GenerateIR(Context& context) {
+IRValuePtr PostfixExpression5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PostfixExpression6::GenerateIR(Context& context) {
+IRValuePtr PostfixExpression6::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PostfixExpression7::GenerateIR(Context& context) {
+IRValuePtr PostfixExpression7::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PostfixExpression8::GenerateIR(Context& context) {
+IRValuePtr PostfixExpression8::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

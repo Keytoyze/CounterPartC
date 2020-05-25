@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void SelectionStatement1::GenerateIR(Context& context) {
+IRValuePtr SelectionStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void SelectionStatement2::GenerateIR(Context& context) {
+IRValuePtr SelectionStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void SelectionStatement3::GenerateIR(Context& context) {
+IRValuePtr SelectionStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

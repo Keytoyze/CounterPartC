@@ -1,58 +1,69 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void AssignmentOperator1::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator2::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator3::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator4::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator5::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator6::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator6::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator7::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator7::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator8::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator8::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator9::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator9::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator10::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator10::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentOperator11::GenerateIR(Context& context) {
+IRValuePtr AssignmentOperator11::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

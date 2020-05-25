@@ -14,7 +14,7 @@ public:
     BasicToken(std::string tokenName): tokenName(tokenName) {}
     virtual ~BasicToken() {}
 
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {
         if (tokenName.length() != 0) {
             std::cout << "[" << depth << "] " << tokenName << std::endl;

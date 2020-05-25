@@ -8,7 +8,7 @@
 class StructDeclarationList: public BasicAST {
 public:
     virtual ~StructDeclarationList() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): structDeclarationAst1(structDeclarationAst1) {}
 
     virtual ~StructDeclarationList1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): structDeclarationListAst1(structDeclarationListAst1), structDeclarationAst2(structDeclarationAst2) {}
 
     virtual ~StructDeclarationList2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

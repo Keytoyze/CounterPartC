@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void LogicalAndExpression1::GenerateIR(Context& context) {
+IRValuePtr LogicalAndExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void LogicalAndExpression2::GenerateIR(Context& context) {
+IRValuePtr LogicalAndExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

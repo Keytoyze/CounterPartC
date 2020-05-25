@@ -8,7 +8,7 @@
 class InitDeclarator: public BasicAST {
 public:
     virtual ~InitDeclarator() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): declaratorAst1(declaratorAst1) {}
 
     virtual ~InitDeclarator1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): declaratorAst1(declaratorAst1), eqAst2(eqAst2), initializerAst3(initializerAst3) {}
 
     virtual ~InitDeclarator2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,10 +47,6 @@ public:
 
 #else
 
-#ifndef _CLASS_EQ_
-#define _CLASS_EQ_
-class Eq;
-#endif //_CLASS_EQ_
 #ifndef _CLASS_DECLARATOR_
 #define _CLASS_DECLARATOR_
 class Declarator;
@@ -59,5 +55,9 @@ class Declarator;
 #define _CLASS_INITIALIZER_
 class Initializer;
 #endif //_CLASS_INITIALIZER_
+#ifndef _CLASS_EQ_
+#define _CLASS_EQ_
+class Eq;
+#endif //_CLASS_EQ_
 
 #endif // _INIT_DECLARATOR_H_

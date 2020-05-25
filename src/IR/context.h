@@ -5,4 +5,10 @@ class Context {
     // TODO
 };
 
+class IRValue {
+    // TODO
+};
+
+using IRValuePtr = IRValue*;
+
 #endif // _CONTEXT_H_

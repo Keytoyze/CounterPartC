@@ -1,23 +1,27 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void CompoundStatement1::GenerateIR(Context& context) {
+IRValuePtr CompoundStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void CompoundStatement2::GenerateIR(Context& context) {
+IRValuePtr CompoundStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void CompoundStatement3::GenerateIR(Context& context) {
+IRValuePtr CompoundStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void CompoundStatement4::GenerateIR(Context& context) {
+IRValuePtr CompoundStatement4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

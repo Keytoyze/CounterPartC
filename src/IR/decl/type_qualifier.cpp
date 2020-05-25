@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void TypeQualifier1::GenerateIR(Context& context) {
+IRValuePtr TypeQualifier1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeQualifier2::GenerateIR(Context& context) {
+IRValuePtr TypeQualifier2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

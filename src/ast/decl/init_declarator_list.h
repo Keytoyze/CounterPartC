@@ -8,7 +8,7 @@
 class InitDeclaratorList: public BasicAST {
 public:
     virtual ~InitDeclaratorList() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): initDeclaratorAst1(initDeclaratorAst1) {}
 
     virtual ~InitDeclaratorList1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): initDeclaratorListAst1(initDeclaratorListAst1), commaAst2(commaAst2), initDeclaratorAst3(initDeclaratorAst3) {}
 
     virtual ~InitDeclaratorList2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_INITDECLARATOR_
-#define _CLASS_INITDECLARATOR_
-class InitDeclarator;
-#endif //_CLASS_INITDECLARATOR_
 #ifndef _CLASS_COMMA_
 #define _CLASS_COMMA_
 class Comma;
 #endif //_CLASS_COMMA_
+#ifndef _CLASS_INITDECLARATOR_
+#define _CLASS_INITDECLARATOR_
+class InitDeclarator;
+#endif //_CLASS_INITDECLARATOR_
 
 #endif // _INIT_DECLARATOR_LIST_H_

@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void TypeName1::GenerateIR(Context& context) {
+IRValuePtr TypeName1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeName2::GenerateIR(Context& context) {
+IRValuePtr TypeName2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

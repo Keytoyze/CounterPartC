@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void LabeledStatement1::GenerateIR(Context& context) {
+IRValuePtr LabeledStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void LabeledStatement2::GenerateIR(Context& context) {
+IRValuePtr LabeledStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void LabeledStatement3::GenerateIR(Context& context) {
+IRValuePtr LabeledStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void AssignmentExpression1::GenerateIR(Context& context) {
+IRValuePtr AssignmentExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void AssignmentExpression2::GenerateIR(Context& context) {
+IRValuePtr AssignmentExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

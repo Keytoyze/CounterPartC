@@ -1,63 +1,75 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void TypeSpecifier1::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier2::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier3::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier4::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier5::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier6::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier6::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier7::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier7::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier8::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier8::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier9::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier9::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier10::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier10::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier11::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier11::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TypeSpecifier12::GenerateIR(Context& context) {
+IRValuePtr TypeSpecifier12::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

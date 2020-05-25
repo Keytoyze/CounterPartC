@@ -8,7 +8,7 @@
 class TypeName: public BasicAST {
 public:
     virtual ~TypeName() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): specifierQualifierListAst1(specifierQualifierListAst1) {}
 
     virtual ~TypeName1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): specifierQualifierListAst1(specifierQualifierListAst1), abstractDeclaratorAst2(abstractDeclaratorAst2) {}
 
     virtual ~TypeName2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

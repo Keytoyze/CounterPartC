@@ -8,7 +8,7 @@
 class CastExpression: public BasicAST {
 public:
     virtual ~CastExpression() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): unaryExpressionAst1(unaryExpressionAst1) {}
 
     virtual ~CastExpression1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -41,7 +41,7 @@ public:
     ): lRoundAst1(lRoundAst1), typeNameAst2(typeNameAst2), rRoundAst3(rRoundAst3), castExpressionAst4(castExpressionAst4) {}
 
     virtual ~CastExpression2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,14 +49,14 @@ public:
 
 #else
 
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
 #ifndef _CLASS_UNARYEXPRESSION_
 #define _CLASS_UNARYEXPRESSION_
 class UnaryExpression;
 #endif //_CLASS_UNARYEXPRESSION_
+#ifndef _CLASS_LROUND_
+#define _CLASS_LROUND_
+class LRound;
+#endif //_CLASS_LROUND_
 #ifndef _CLASS_RROUND_
 #define _CLASS_RROUND_
 class RRound;

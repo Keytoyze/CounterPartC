@@ -1,23 +1,27 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void Pointer1::GenerateIR(Context& context) {
+IRValuePtr Pointer1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void Pointer2::GenerateIR(Context& context) {
+IRValuePtr Pointer2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void Pointer3::GenerateIR(Context& context) {
+IRValuePtr Pointer3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void Pointer4::GenerateIR(Context& context) {
+IRValuePtr Pointer4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

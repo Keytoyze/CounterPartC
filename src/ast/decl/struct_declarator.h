@@ -8,7 +8,7 @@
 class StructDeclarator: public BasicAST {
 public:
     virtual ~StructDeclarator() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): declaratorAst1(declaratorAst1) {}
 
     virtual ~StructDeclarator1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): colonAst1(colonAst1), constantExpressionAst2(constantExpressionAst2) {}
 
     virtual ~StructDeclarator2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -55,7 +55,7 @@ public:
     ): declaratorAst1(declaratorAst1), colonAst2(colonAst2), constantExpressionAst3(constantExpressionAst3) {}
 
     virtual ~StructDeclarator3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -67,13 +67,13 @@ public:
 #define _CLASS_COLON_
 class Colon;
 #endif //_CLASS_COLON_
-#ifndef _CLASS_DECLARATOR_
-#define _CLASS_DECLARATOR_
-class Declarator;
-#endif //_CLASS_DECLARATOR_
 #ifndef _CLASS_CONSTANTEXPRESSION_
 #define _CLASS_CONSTANTEXPRESSION_
 class ConstantExpression;
 #endif //_CLASS_CONSTANTEXPRESSION_
+#ifndef _CLASS_DECLARATOR_
+#define _CLASS_DECLARATOR_
+class Declarator;
+#endif //_CLASS_DECLARATOR_
 
 #endif // _STRUCT_DECLARATOR_H_

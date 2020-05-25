@@ -1,23 +1,27 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void SpecifierQualifierList1::GenerateIR(Context& context) {
+IRValuePtr SpecifierQualifierList1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void SpecifierQualifierList2::GenerateIR(Context& context) {
+IRValuePtr SpecifierQualifierList2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void SpecifierQualifierList3::GenerateIR(Context& context) {
+IRValuePtr SpecifierQualifierList3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void SpecifierQualifierList4::GenerateIR(Context& context) {
+IRValuePtr SpecifierQualifierList4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

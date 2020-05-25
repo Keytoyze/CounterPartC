@@ -8,7 +8,7 @@
 class StatementList: public BasicAST {
 public:
     virtual ~StatementList() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): statementAst1(statementAst1) {}
 
     virtual ~StatementList1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): statementListAst1(statementListAst1), statementAst2(statementAst2) {}
 
     virtual ~StatementList2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

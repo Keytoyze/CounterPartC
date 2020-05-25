@@ -8,7 +8,7 @@
 class TypeSpecifier: public BasicAST {
 public:
     virtual ~TypeSpecifier() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): voidAst1(voidAst1) {}
 
     virtual ~TypeSpecifier1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): charAst1(charAst1) {}
 
     virtual ~TypeSpecifier2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,7 +49,7 @@ public:
     ): shortAst1(shortAst1) {}
 
     virtual ~TypeSpecifier3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -63,7 +63,7 @@ public:
     ): intAst1(intAst1) {}
 
     virtual ~TypeSpecifier4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -77,7 +77,7 @@ public:
     ): longAst1(longAst1) {}
 
     virtual ~TypeSpecifier5();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -91,7 +91,7 @@ public:
     ): floatAst1(floatAst1) {}
 
     virtual ~TypeSpecifier6();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -105,7 +105,7 @@ public:
     ): doubleAst1(doubleAst1) {}
 
     virtual ~TypeSpecifier7();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -119,7 +119,7 @@ public:
     ): signedAst1(signedAst1) {}
 
     virtual ~TypeSpecifier8();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -133,7 +133,7 @@ public:
     ): unsignedAst1(unsignedAst1) {}
 
     virtual ~TypeSpecifier9();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -147,7 +147,7 @@ public:
     ): structOrUnionSpecifierAst1(structOrUnionSpecifierAst1) {}
 
     virtual ~TypeSpecifier10();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -161,7 +161,7 @@ public:
     ): enumSpecifierAst1(enumSpecifierAst1) {}
 
     virtual ~TypeSpecifier11();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -175,7 +175,7 @@ public:
     ): typeNameTokenAst1(typeNameTokenAst1) {}
 
     virtual ~TypeSpecifier12();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -183,53 +183,53 @@ public:
 
 #else
 
-#ifndef _CLASS_DOUBLE_
-#define _CLASS_DOUBLE_
-class Double;
-#endif //_CLASS_DOUBLE_
-#ifndef _CLASS_SIGNED_
-#define _CLASS_SIGNED_
-class Signed;
-#endif //_CLASS_SIGNED_
-#ifndef _CLASS_STRUCTORUNIONSPECIFIER_
-#define _CLASS_STRUCTORUNIONSPECIFIER_
-class StructOrUnionSpecifier;
-#endif //_CLASS_STRUCTORUNIONSPECIFIER_
 #ifndef _CLASS_INT_
 #define _CLASS_INT_
 class Int;
 #endif //_CLASS_INT_
-#ifndef _CLASS_SHORT_
-#define _CLASS_SHORT_
-class Short;
-#endif //_CLASS_SHORT_
-#ifndef _CLASS_UNSIGNED_
-#define _CLASS_UNSIGNED_
-class Unsigned;
-#endif //_CLASS_UNSIGNED_
-#ifndef _CLASS_VOID_
-#define _CLASS_VOID_
-class Void;
-#endif //_CLASS_VOID_
-#ifndef _CLASS_TYPENAMETOKEN_
-#define _CLASS_TYPENAMETOKEN_
-class TypeNameToken;
-#endif //_CLASS_TYPENAMETOKEN_
 #ifndef _CLASS_CHAR_
 #define _CLASS_CHAR_
 class Char;
 #endif //_CLASS_CHAR_
-#ifndef _CLASS_ENUMSPECIFIER_
-#define _CLASS_ENUMSPECIFIER_
-class EnumSpecifier;
-#endif //_CLASS_ENUMSPECIFIER_
-#ifndef _CLASS_FLOAT_
-#define _CLASS_FLOAT_
-class Float;
-#endif //_CLASS_FLOAT_
+#ifndef _CLASS_VOID_
+#define _CLASS_VOID_
+class Void;
+#endif //_CLASS_VOID_
+#ifndef _CLASS_SIGNED_
+#define _CLASS_SIGNED_
+class Signed;
+#endif //_CLASS_SIGNED_
+#ifndef _CLASS_SHORT_
+#define _CLASS_SHORT_
+class Short;
+#endif //_CLASS_SHORT_
 #ifndef _CLASS_LONG_
 #define _CLASS_LONG_
 class Long;
 #endif //_CLASS_LONG_
+#ifndef _CLASS_STRUCTORUNIONSPECIFIER_
+#define _CLASS_STRUCTORUNIONSPECIFIER_
+class StructOrUnionSpecifier;
+#endif //_CLASS_STRUCTORUNIONSPECIFIER_
+#ifndef _CLASS_TYPENAMETOKEN_
+#define _CLASS_TYPENAMETOKEN_
+class TypeNameToken;
+#endif //_CLASS_TYPENAMETOKEN_
+#ifndef _CLASS_DOUBLE_
+#define _CLASS_DOUBLE_
+class Double;
+#endif //_CLASS_DOUBLE_
+#ifndef _CLASS_ENUMSPECIFIER_
+#define _CLASS_ENUMSPECIFIER_
+class EnumSpecifier;
+#endif //_CLASS_ENUMSPECIFIER_
+#ifndef _CLASS_UNSIGNED_
+#define _CLASS_UNSIGNED_
+class Unsigned;
+#endif //_CLASS_UNSIGNED_
+#ifndef _CLASS_FLOAT_
+#define _CLASS_FLOAT_
+class Float;
+#endif //_CLASS_FLOAT_
 
 #endif // _TYPE_SPECIFIER_H_

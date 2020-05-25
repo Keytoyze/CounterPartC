@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void Initializer1::GenerateIR(Context& context) {
+IRValuePtr Initializer1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void Initializer2::GenerateIR(Context& context) {
+IRValuePtr Initializer2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void Initializer3::GenerateIR(Context& context) {
+IRValuePtr Initializer3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

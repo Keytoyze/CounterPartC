@@ -8,7 +8,7 @@
 class Pointer: public BasicAST {
 public:
     virtual ~Pointer() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): mulAst1(mulAst1) {}
 
     virtual ~Pointer1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): mulAst1(mulAst1), typeQualifierListAst2(typeQualifierListAst2) {}
 
     virtual ~Pointer2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -53,7 +53,7 @@ public:
     ): mulAst1(mulAst1), pointerAst2(pointerAst2) {}
 
     virtual ~Pointer3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -71,7 +71,7 @@ public:
     ): mulAst1(mulAst1), typeQualifierListAst2(typeQualifierListAst2), pointerAst3(pointerAst3) {}
 
     virtual ~Pointer4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -79,13 +79,13 @@ public:
 
 #else
 
-#ifndef _CLASS_MUL_
-#define _CLASS_MUL_
-class Mul;
-#endif //_CLASS_MUL_
 #ifndef _CLASS_TYPEQUALIFIERLIST_
 #define _CLASS_TYPEQUALIFIERLIST_
 class TypeQualifierList;
 #endif //_CLASS_TYPEQUALIFIERLIST_
+#ifndef _CLASS_MUL_
+#define _CLASS_MUL_
+class Mul;
+#endif //_CLASS_MUL_
 
 #endif // _POINTER_H_

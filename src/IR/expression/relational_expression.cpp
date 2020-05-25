@@ -1,28 +1,33 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void RelationalExpression1::GenerateIR(Context& context) {
+IRValuePtr RelationalExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void RelationalExpression2::GenerateIR(Context& context) {
+IRValuePtr RelationalExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void RelationalExpression3::GenerateIR(Context& context) {
+IRValuePtr RelationalExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void RelationalExpression4::GenerateIR(Context& context) {
+IRValuePtr RelationalExpression4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void RelationalExpression5::GenerateIR(Context& context) {
+IRValuePtr RelationalExpression5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

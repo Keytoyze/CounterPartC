@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void TranslationUnit1::GenerateIR(Context& context) {
+IRValuePtr TranslationUnit1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void TranslationUnit2::GenerateIR(Context& context) {
+IRValuePtr TranslationUnit2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

@@ -1,23 +1,27 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void PrimaryExpression1::GenerateIR(Context& context) {
+IRValuePtr PrimaryExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PrimaryExpression2::GenerateIR(Context& context) {
+IRValuePtr PrimaryExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PrimaryExpression3::GenerateIR(Context& context) {
+IRValuePtr PrimaryExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void PrimaryExpression4::GenerateIR(Context& context) {
+IRValuePtr PrimaryExpression4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

@@ -8,7 +8,7 @@
 class UnaryOperator: public BasicAST {
 public:
     virtual ~UnaryOperator() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): andAst1(andAst1) {}
 
     virtual ~UnaryOperator1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): mulAst1(mulAst1) {}
 
     virtual ~UnaryOperator2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,7 +49,7 @@ public:
     ): addAst1(addAst1) {}
 
     virtual ~UnaryOperator3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -63,7 +63,7 @@ public:
     ): subAst1(subAst1) {}
 
     virtual ~UnaryOperator4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -77,7 +77,7 @@ public:
     ): tildeAst1(tildeAst1) {}
 
     virtual ~UnaryOperator5();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -91,7 +91,7 @@ public:
     ): exclamationAst1(exclamationAst1) {}
 
     virtual ~UnaryOperator6();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -99,14 +99,22 @@ public:
 
 #else
 
-#ifndef _CLASS_MUL_
-#define _CLASS_MUL_
-class Mul;
-#endif //_CLASS_MUL_
+#ifndef _CLASS_ADD_
+#define _CLASS_ADD_
+class Add;
+#endif //_CLASS_ADD_
 #ifndef _CLASS_SUB_
 #define _CLASS_SUB_
 class Sub;
 #endif //_CLASS_SUB_
+#ifndef _CLASS_MUL_
+#define _CLASS_MUL_
+class Mul;
+#endif //_CLASS_MUL_
+#ifndef _CLASS_EXCLAMATION_
+#define _CLASS_EXCLAMATION_
+class Exclamation;
+#endif //_CLASS_EXCLAMATION_
 #ifndef _CLASS_TILDE_
 #define _CLASS_TILDE_
 class Tilde;
@@ -115,13 +123,5 @@ class Tilde;
 #define _CLASS_AND_
 class And;
 #endif //_CLASS_AND_
-#ifndef _CLASS_EXCLAMATION_
-#define _CLASS_EXCLAMATION_
-class Exclamation;
-#endif //_CLASS_EXCLAMATION_
-#ifndef _CLASS_ADD_
-#define _CLASS_ADD_
-class Add;
-#endif //_CLASS_ADD_
 
 #endif // _UNARY_OPERATOR_H_

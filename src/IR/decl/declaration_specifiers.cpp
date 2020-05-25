@@ -1,33 +1,39 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void DeclarationSpecifiers1::GenerateIR(Context& context) {
+IRValuePtr DeclarationSpecifiers1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DeclarationSpecifiers2::GenerateIR(Context& context) {
+IRValuePtr DeclarationSpecifiers2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DeclarationSpecifiers3::GenerateIR(Context& context) {
+IRValuePtr DeclarationSpecifiers3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DeclarationSpecifiers4::GenerateIR(Context& context) {
+IRValuePtr DeclarationSpecifiers4::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DeclarationSpecifiers5::GenerateIR(Context& context) {
+IRValuePtr DeclarationSpecifiers5::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void DeclarationSpecifiers6::GenerateIR(Context& context) {
+IRValuePtr DeclarationSpecifiers6::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void StructOrUnion1::GenerateIR(Context& context) {
+IRValuePtr StructOrUnion1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void StructOrUnion2::GenerateIR(Context& context) {
+IRValuePtr StructOrUnion2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

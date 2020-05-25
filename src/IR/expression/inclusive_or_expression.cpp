@@ -1,13 +1,15 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void InclusiveOrExpression1::GenerateIR(Context& context) {
+IRValuePtr InclusiveOrExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void InclusiveOrExpression2::GenerateIR(Context& context) {
+IRValuePtr InclusiveOrExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

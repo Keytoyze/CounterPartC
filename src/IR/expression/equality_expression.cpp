@@ -1,18 +1,21 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void EqualityExpression1::GenerateIR(Context& context) {
+IRValuePtr EqualityExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void EqualityExpression2::GenerateIR(Context& context) {
+IRValuePtr EqualityExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 
-void EqualityExpression3::GenerateIR(Context& context) {
+IRValuePtr EqualityExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
+    return nullptr;
 }
 

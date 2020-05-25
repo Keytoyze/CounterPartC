@@ -8,7 +8,7 @@
 class AdditiveExpression: public BasicAST {
 public:
     virtual ~AdditiveExpression() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): multiplicativeExpressionAst1(multiplicativeExpressionAst1) {}
 
     virtual ~AdditiveExpression1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): additiveExpressionAst1(additiveExpressionAst1), addAst2(addAst2), multiplicativeExpressionAst3(multiplicativeExpressionAst3) {}
 
     virtual ~AdditiveExpression2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -57,7 +57,7 @@ public:
     ): additiveExpressionAst1(additiveExpressionAst1), subAst2(subAst2), multiplicativeExpressionAst3(multiplicativeExpressionAst3) {}
 
     virtual ~AdditiveExpression3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -65,10 +65,6 @@ public:
 
 #else
 
-#ifndef _CLASS_SUB_
-#define _CLASS_SUB_
-class Sub;
-#endif //_CLASS_SUB_
 #ifndef _CLASS_ADD_
 #define _CLASS_ADD_
 class Add;
@@ -77,5 +73,9 @@ class Add;
 #define _CLASS_MULTIPLICATIVEEXPRESSION_
 class MultiplicativeExpression;
 #endif //_CLASS_MULTIPLICATIVEEXPRESSION_
+#ifndef _CLASS_SUB_
+#define _CLASS_SUB_
+class Sub;
+#endif //_CLASS_SUB_
 
 #endif // _ADDITIVE_EXPRESSION_H_

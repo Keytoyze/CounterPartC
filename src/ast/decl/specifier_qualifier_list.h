@@ -8,7 +8,7 @@
 class SpecifierQualifierList: public BasicAST {
 public:
     virtual ~SpecifierQualifierList() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -23,7 +23,7 @@ public:
     ): typeSpecifierAst1(typeSpecifierAst1), specifierQualifierListAst2(specifierQualifierListAst2) {}
 
     virtual ~SpecifierQualifierList1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): typeSpecifierAst1(typeSpecifierAst1) {}
 
     virtual ~SpecifierQualifierList2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -53,7 +53,7 @@ public:
     ): typeQualifierAst1(typeQualifierAst1), specifierQualifierListAst2(specifierQualifierListAst2) {}
 
     virtual ~SpecifierQualifierList3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -67,7 +67,7 @@ public:
     ): typeQualifierAst1(typeQualifierAst1) {}
 
     virtual ~SpecifierQualifierList4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

@@ -8,7 +8,7 @@
 class MultiplicativeExpression: public BasicAST {
 public:
     virtual ~MultiplicativeExpression() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): castExpressionAst1(castExpressionAst1) {}
 
     virtual ~MultiplicativeExpression1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): multiplicativeExpressionAst1(multiplicativeExpressionAst1), mulAst2(mulAst2), castExpressionAst3(castExpressionAst3) {}
 
     virtual ~MultiplicativeExpression2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -57,7 +57,7 @@ public:
     ): multiplicativeExpressionAst1(multiplicativeExpressionAst1), divAst2(divAst2), castExpressionAst3(castExpressionAst3) {}
 
     virtual ~MultiplicativeExpression3();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -75,7 +75,7 @@ public:
     ): multiplicativeExpressionAst1(multiplicativeExpressionAst1), modAst2(modAst2), castExpressionAst3(castExpressionAst3) {}
 
     virtual ~MultiplicativeExpression4();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

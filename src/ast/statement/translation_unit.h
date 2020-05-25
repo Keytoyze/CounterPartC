@@ -8,7 +8,7 @@
 class TranslationUnit: public BasicAST {
 public:
     virtual ~TranslationUnit() {}
-    virtual void GenerateIR(Context& context) {}
+    virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): externalDeclarationAst1(externalDeclarationAst1) {}
 
     virtual ~TranslationUnit1();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): translationUnitAst1(translationUnitAst1), externalDeclarationAst2(externalDeclarationAst2) {}
 
     virtual ~TranslationUnit2();
-    virtual void GenerateIR(Context& context);
+    virtual IRValuePtr GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
