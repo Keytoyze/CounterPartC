@@ -8,7 +8,7 @@
 class ConstantExpression: public BasicAST {
 public:
     virtual ~ConstantExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): conditionalExpressionAst1(conditionalExpressionAst1) {}
 
     virtual ~ConstantExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

@@ -8,7 +8,7 @@
 class FunctionDefinition: public BasicAST {
 public:
     virtual ~FunctionDefinition() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -27,7 +27,7 @@ public:
     ): declarationSpecifiersAst1(declarationSpecifiersAst1), declaratorAst2(declaratorAst2), declarationListAst3(declarationListAst3), compoundStatementAst4(compoundStatementAst4) {}
 
     virtual ~FunctionDefinition1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -45,7 +45,7 @@ public:
     ): declarationSpecifiersAst1(declarationSpecifiersAst1), declaratorAst2(declaratorAst2), compoundStatementAst3(compoundStatementAst3) {}
 
     virtual ~FunctionDefinition2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -63,7 +63,7 @@ public:
     ): declaratorAst1(declaratorAst1), declarationListAst2(declarationListAst2), compoundStatementAst3(compoundStatementAst3) {}
 
     virtual ~FunctionDefinition3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -79,7 +79,7 @@ public:
     ): declaratorAst1(declaratorAst1), compoundStatementAst2(compoundStatementAst2) {}
 
     virtual ~FunctionDefinition4();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -87,21 +87,21 @@ public:
 
 #else
 
-#ifndef _CLASS_DECLARATIONSPECIFIERS_
-#define _CLASS_DECLARATIONSPECIFIERS_
-class DeclarationSpecifiers;
-#endif //_CLASS_DECLARATIONSPECIFIERS_
 #ifndef _CLASS_DECLARATOR_
 #define _CLASS_DECLARATOR_
 class Declarator;
 #endif //_CLASS_DECLARATOR_
-#ifndef _CLASS_DECLARATIONLIST_
-#define _CLASS_DECLARATIONLIST_
-class DeclarationList;
-#endif //_CLASS_DECLARATIONLIST_
+#ifndef _CLASS_DECLARATIONSPECIFIERS_
+#define _CLASS_DECLARATIONSPECIFIERS_
+class DeclarationSpecifiers;
+#endif //_CLASS_DECLARATIONSPECIFIERS_
 #ifndef _CLASS_COMPOUNDSTATEMENT_
 #define _CLASS_COMPOUNDSTATEMENT_
 class CompoundStatement;
 #endif //_CLASS_COMPOUNDSTATEMENT_
+#ifndef _CLASS_DECLARATIONLIST_
+#define _CLASS_DECLARATIONLIST_
+class DeclarationList;
+#endif //_CLASS_DECLARATIONLIST_
 
 #endif // _FUNCTION_DEFINITION_H_

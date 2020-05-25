@@ -8,7 +8,7 @@
 class CompoundStatement: public BasicAST {
 public:
     virtual ~CompoundStatement() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -23,7 +23,7 @@ public:
     ): lCurlyAst1(lCurlyAst1), rCurlyAst2(rCurlyAst2) {}
 
     virtual ~CompoundStatement1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -41,7 +41,7 @@ public:
     ): lCurlyAst1(lCurlyAst1), statementListAst2(statementListAst2), rCurlyAst3(rCurlyAst3) {}
 
     virtual ~CompoundStatement2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -59,7 +59,7 @@ public:
     ): lCurlyAst1(lCurlyAst1), declarationListAst2(declarationListAst2), rCurlyAst3(rCurlyAst3) {}
 
     virtual ~CompoundStatement3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -79,7 +79,7 @@ public:
     ): lCurlyAst1(lCurlyAst1), declarationListAst2(declarationListAst2), statementListAst3(statementListAst3), rCurlyAst4(rCurlyAst4) {}
 
     virtual ~CompoundStatement4();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -91,10 +91,6 @@ public:
 #define _CLASS_LCURLY_
 class LCurly;
 #endif //_CLASS_LCURLY_
-#ifndef _CLASS_STATEMENTLIST_
-#define _CLASS_STATEMENTLIST_
-class StatementList;
-#endif //_CLASS_STATEMENTLIST_
 #ifndef _CLASS_DECLARATIONLIST_
 #define _CLASS_DECLARATIONLIST_
 class DeclarationList;
@@ -103,5 +99,9 @@ class DeclarationList;
 #define _CLASS_RCURLY_
 class RCurly;
 #endif //_CLASS_RCURLY_
+#ifndef _CLASS_STATEMENTLIST_
+#define _CLASS_STATEMENTLIST_
+class StatementList;
+#endif //_CLASS_STATEMENTLIST_
 
 #endif // _COMPOUND_STATEMENT_H_

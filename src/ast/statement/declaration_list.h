@@ -8,7 +8,7 @@
 class DeclarationList: public BasicAST {
 public:
     virtual ~DeclarationList() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): declarationAst1(declarationAst1) {}
 
     virtual ~DeclarationList1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): declarationListAst1(declarationListAst1), declarationAst2(declarationAst2) {}
 
     virtual ~DeclarationList2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

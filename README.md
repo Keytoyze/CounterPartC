@@ -1,10 +1,13 @@
 # CounterPart of C
 
-## Build
+## Build AST
 ```bash
 cd buildSrc
 python GenerateAST.py
-cd ..
+```
+
+## Compile
+```bash
 mkdir cmake-build-debug
 cd cmake-build-debug
 cmake ../

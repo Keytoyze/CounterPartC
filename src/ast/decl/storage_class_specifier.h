@@ -8,7 +8,7 @@
 class StorageClassSpecifier: public BasicAST {
 public:
     virtual ~StorageClassSpecifier() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): typedefAst1(typedefAst1) {}
 
     virtual ~StorageClassSpecifier1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): externAst1(externAst1) {}
 
     virtual ~StorageClassSpecifier2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,7 +49,7 @@ public:
     ): staticAst1(staticAst1) {}
 
     virtual ~StorageClassSpecifier3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -63,7 +63,7 @@ public:
     ): autoAst1(autoAst1) {}
 
     virtual ~StorageClassSpecifier4();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -77,7 +77,7 @@ public:
     ): registerAst1(registerAst1) {}
 
     virtual ~StorageClassSpecifier5();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -85,25 +85,25 @@ public:
 
 #else
 
-#ifndef _CLASS_EXTERN_
-#define _CLASS_EXTERN_
-class Extern;
-#endif //_CLASS_EXTERN_
-#ifndef _CLASS_STATIC_
-#define _CLASS_STATIC_
-class Static;
-#endif //_CLASS_STATIC_
 #ifndef _CLASS_TYPEDEF_
 #define _CLASS_TYPEDEF_
 class Typedef;
 #endif //_CLASS_TYPEDEF_
-#ifndef _CLASS_AUTO_
-#define _CLASS_AUTO_
-class Auto;
-#endif //_CLASS_AUTO_
+#ifndef _CLASS_STATIC_
+#define _CLASS_STATIC_
+class Static;
+#endif //_CLASS_STATIC_
 #ifndef _CLASS_REGISTER_
 #define _CLASS_REGISTER_
 class Register;
 #endif //_CLASS_REGISTER_
+#ifndef _CLASS_AUTO_
+#define _CLASS_AUTO_
+class Auto;
+#endif //_CLASS_AUTO_
+#ifndef _CLASS_EXTERN_
+#define _CLASS_EXTERN_
+class Extern;
+#endif //_CLASS_EXTERN_
 
 #endif // _STORAGE_CLASS_SPECIFIER_H_

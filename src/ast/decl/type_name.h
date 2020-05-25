@@ -8,7 +8,7 @@
 class TypeName: public BasicAST {
 public:
     virtual ~TypeName() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): specifierQualifierListAst1(specifierQualifierListAst1) {}
 
     virtual ~TypeName1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): specifierQualifierListAst1(specifierQualifierListAst1), abstractDeclaratorAst2(abstractDeclaratorAst2) {}
 
     virtual ~TypeName2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -45,13 +45,13 @@ public:
 
 #else
 
-#ifndef _CLASS_ABSTRACTDECLARATOR_
-#define _CLASS_ABSTRACTDECLARATOR_
-class AbstractDeclarator;
-#endif //_CLASS_ABSTRACTDECLARATOR_
 #ifndef _CLASS_SPECIFIERQUALIFIERLIST_
 #define _CLASS_SPECIFIERQUALIFIERLIST_
 class SpecifierQualifierList;
 #endif //_CLASS_SPECIFIERQUALIFIERLIST_
+#ifndef _CLASS_ABSTRACTDECLARATOR_
+#define _CLASS_ABSTRACTDECLARATOR_
+class AbstractDeclarator;
+#endif //_CLASS_ABSTRACTDECLARATOR_
 
 #endif // _TYPE_NAME_H_

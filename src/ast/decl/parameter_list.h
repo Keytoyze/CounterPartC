@@ -8,7 +8,7 @@
 class ParameterList: public BasicAST {
 public:
     virtual ~ParameterList() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): parameterDeclarationAst1(parameterDeclarationAst1) {}
 
     virtual ~ParameterList1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): parameterListAst1(parameterListAst1), commaAst2(commaAst2), parameterDeclarationAst3(parameterDeclarationAst3) {}
 
     virtual ~ParameterList2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
 #ifndef _CLASS_PARAMETERDECLARATION_
 #define _CLASS_PARAMETERDECLARATION_
 class ParameterDeclaration;
 #endif //_CLASS_PARAMETERDECLARATION_
+#ifndef _CLASS_COMMA_
+#define _CLASS_COMMA_
+class Comma;
+#endif //_CLASS_COMMA_
 
 #endif // _PARAMETER_LIST_H_

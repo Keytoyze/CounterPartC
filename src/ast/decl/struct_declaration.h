@@ -8,7 +8,7 @@
 class StructDeclaration: public BasicAST {
 public:
     virtual ~StructDeclaration() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -25,7 +25,7 @@ public:
     ): specifierQualifierListAst1(specifierQualifierListAst1), structDeclaratorListAst2(structDeclaratorListAst2), simicolonSingleAst3(simicolonSingleAst3) {}
 
     virtual ~StructDeclaration1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -33,14 +33,14 @@ public:
 
 #else
 
-#ifndef _CLASS_STRUCTDECLARATORLIST_
-#define _CLASS_STRUCTDECLARATORLIST_
-class StructDeclaratorList;
-#endif //_CLASS_STRUCTDECLARATORLIST_
 #ifndef _CLASS_SPECIFIERQUALIFIERLIST_
 #define _CLASS_SPECIFIERQUALIFIERLIST_
 class SpecifierQualifierList;
 #endif //_CLASS_SPECIFIERQUALIFIERLIST_
+#ifndef _CLASS_STRUCTDECLARATORLIST_
+#define _CLASS_STRUCTDECLARATORLIST_
+class StructDeclaratorList;
+#endif //_CLASS_STRUCTDECLARATORLIST_
 #ifndef _CLASS_SIMICOLONSINGLE_
 #define _CLASS_SIMICOLONSINGLE_
 class SimicolonSingle;

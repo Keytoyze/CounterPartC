@@ -8,7 +8,7 @@
 class InclusiveOrExpression: public BasicAST {
 public:
     virtual ~InclusiveOrExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): exclusiveOrExpressionAst1(exclusiveOrExpressionAst1) {}
 
     virtual ~InclusiveOrExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): inclusiveOrExpressionAst1(inclusiveOrExpressionAst1), verticalAst2(verticalAst2), exclusiveOrExpressionAst3(exclusiveOrExpressionAst3) {}
 
     virtual ~InclusiveOrExpression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

@@ -8,7 +8,7 @@
 class EnumSpecifier: public BasicAST {
 public:
     virtual ~EnumSpecifier() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -27,7 +27,7 @@ public:
     ): enumAst1(enumAst1), lCurlyAst2(lCurlyAst2), enumeratorListAst3(enumeratorListAst3), rCurlyAst4(rCurlyAst4) {}
 
     virtual ~EnumSpecifier1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,7 +49,7 @@ public:
     ): enumAst1(enumAst1), identifierAst2(identifierAst2), lCurlyAst3(lCurlyAst3), enumeratorListAst4(enumeratorListAst4), rCurlyAst5(rCurlyAst5) {}
 
     virtual ~EnumSpecifier2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -65,7 +65,7 @@ public:
     ): enumAst1(enumAst1), identifierAst2(identifierAst2) {}
 
     virtual ~EnumSpecifier3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -73,6 +73,18 @@ public:
 
 #else
 
+#ifndef _CLASS_IDENTIFIER_
+#define _CLASS_IDENTIFIER_
+class Identifier;
+#endif //_CLASS_IDENTIFIER_
+#ifndef _CLASS_LCURLY_
+#define _CLASS_LCURLY_
+class LCurly;
+#endif //_CLASS_LCURLY_
+#ifndef _CLASS_ENUM_
+#define _CLASS_ENUM_
+class Enum;
+#endif //_CLASS_ENUM_
 #ifndef _CLASS_ENUMERATORLIST_
 #define _CLASS_ENUMERATORLIST_
 class EnumeratorList;
@@ -81,17 +93,5 @@ class EnumeratorList;
 #define _CLASS_RCURLY_
 class RCurly;
 #endif //_CLASS_RCURLY_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
-#ifndef _CLASS_ENUM_
-#define _CLASS_ENUM_
-class Enum;
-#endif //_CLASS_ENUM_
-#ifndef _CLASS_LCURLY_
-#define _CLASS_LCURLY_
-class LCurly;
-#endif //_CLASS_LCURLY_
 
 #endif // _ENUM_SPECIFIER_H_

@@ -8,7 +8,7 @@
 class AndExpression: public BasicAST {
 public:
     virtual ~AndExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): equalityExpressionAst1(equalityExpressionAst1) {}
 
     virtual ~AndExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): andExpressionAst1(andExpressionAst1), andAst2(andAst2), equalityExpressionAst3(equalityExpressionAst3) {}
 
     virtual ~AndExpression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_EQUALITYEXPRESSION_
-#define _CLASS_EQUALITYEXPRESSION_
-class EqualityExpression;
-#endif //_CLASS_EQUALITYEXPRESSION_
 #ifndef _CLASS_AND_
 #define _CLASS_AND_
 class And;
 #endif //_CLASS_AND_
+#ifndef _CLASS_EQUALITYEXPRESSION_
+#define _CLASS_EQUALITYEXPRESSION_
+class EqualityExpression;
+#endif //_CLASS_EQUALITYEXPRESSION_
 
 #endif // _AND_EXPRESSION_H_

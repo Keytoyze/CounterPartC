@@ -8,7 +8,7 @@
 class MultiplicativeExpression: public BasicAST {
 public:
     virtual ~MultiplicativeExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): castExpressionAst1(castExpressionAst1) {}
 
     virtual ~MultiplicativeExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): multiplicativeExpressionAst1(multiplicativeExpressionAst1), mulAst2(mulAst2), castExpressionAst3(castExpressionAst3) {}
 
     virtual ~MultiplicativeExpression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -57,7 +57,7 @@ public:
     ): multiplicativeExpressionAst1(multiplicativeExpressionAst1), divAst2(divAst2), castExpressionAst3(castExpressionAst3) {}
 
     virtual ~MultiplicativeExpression3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -75,7 +75,7 @@ public:
     ): multiplicativeExpressionAst1(multiplicativeExpressionAst1), modAst2(modAst2), castExpressionAst3(castExpressionAst3) {}
 
     virtual ~MultiplicativeExpression4();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -83,21 +83,21 @@ public:
 
 #else
 
-#ifndef _CLASS_DIV_
-#define _CLASS_DIV_
-class Div;
-#endif //_CLASS_DIV_
-#ifndef _CLASS_MOD_
-#define _CLASS_MOD_
-class Mod;
-#endif //_CLASS_MOD_
 #ifndef _CLASS_CASTEXPRESSION_
 #define _CLASS_CASTEXPRESSION_
 class CastExpression;
 #endif //_CLASS_CASTEXPRESSION_
+#ifndef _CLASS_DIV_
+#define _CLASS_DIV_
+class Div;
+#endif //_CLASS_DIV_
 #ifndef _CLASS_MUL_
 #define _CLASS_MUL_
 class Mul;
 #endif //_CLASS_MUL_
+#ifndef _CLASS_MOD_
+#define _CLASS_MOD_
+class Mod;
+#endif //_CLASS_MOD_
 
 #endif // _MULTIPLICATIVE_EXPRESSION_H_

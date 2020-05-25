@@ -8,7 +8,7 @@
 class DirectDeclarator: public BasicAST {
 public:
     virtual ~DirectDeclarator() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): identifierAst1(identifierAst1) {}
 
     virtual ~DirectDeclarator1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): lRoundAst1(lRoundAst1), declaratorAst2(declaratorAst2), rRoundAst3(rRoundAst3) {}
 
     virtual ~DirectDeclarator2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -59,7 +59,7 @@ public:
     ): directDeclaratorAst1(directDeclaratorAst1), lSquareAst2(lSquareAst2), constantExpressionAst3(constantExpressionAst3), rSquareAst4(rSquareAst4) {}
 
     virtual ~DirectDeclarator3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -77,7 +77,7 @@ public:
     ): directDeclaratorAst1(directDeclaratorAst1), lSquareAst2(lSquareAst2), rSquareAst3(rSquareAst3) {}
 
     virtual ~DirectDeclarator4();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -97,7 +97,7 @@ public:
     ): directDeclaratorAst1(directDeclaratorAst1), lRoundAst2(lRoundAst2), parameterTypeListAst3(parameterTypeListAst3), rRoundAst4(rRoundAst4) {}
 
     virtual ~DirectDeclarator5();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -117,7 +117,7 @@ public:
     ): directDeclaratorAst1(directDeclaratorAst1), lRoundAst2(lRoundAst2), identifierListAst3(identifierListAst3), rRoundAst4(rRoundAst4) {}
 
     virtual ~DirectDeclarator6();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -135,7 +135,7 @@ public:
     ): directDeclaratorAst1(directDeclaratorAst1), lRoundAst2(lRoundAst2), rRoundAst3(rRoundAst3) {}
 
     virtual ~DirectDeclarator7();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -143,38 +143,38 @@ public:
 
 #else
 
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
 #ifndef _CLASS_IDENTIFIER_
 #define _CLASS_IDENTIFIER_
 class Identifier;
 #endif //_CLASS_IDENTIFIER_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_CONSTANTEXPRESSION_
-#define _CLASS_CONSTANTEXPRESSION_
-class ConstantExpression;
-#endif //_CLASS_CONSTANTEXPRESSION_
-#ifndef _CLASS_DECLARATOR_
-#define _CLASS_DECLARATOR_
-class Declarator;
-#endif //_CLASS_DECLARATOR_
 #ifndef _CLASS_PARAMETERTYPELIST_
 #define _CLASS_PARAMETERTYPELIST_
 class ParameterTypeList;
 #endif //_CLASS_PARAMETERTYPELIST_
-#ifndef _CLASS_LSQUARE_
-#define _CLASS_LSQUARE_
-class LSquare;
-#endif //_CLASS_LSQUARE_
+#ifndef _CLASS_RROUND_
+#define _CLASS_RROUND_
+class RRound;
+#endif //_CLASS_RROUND_
 #ifndef _CLASS_RSQUARE_
 #define _CLASS_RSQUARE_
 class RSquare;
 #endif //_CLASS_RSQUARE_
+#ifndef _CLASS_LROUND_
+#define _CLASS_LROUND_
+class LRound;
+#endif //_CLASS_LROUND_
+#ifndef _CLASS_DECLARATOR_
+#define _CLASS_DECLARATOR_
+class Declarator;
+#endif //_CLASS_DECLARATOR_
+#ifndef _CLASS_CONSTANTEXPRESSION_
+#define _CLASS_CONSTANTEXPRESSION_
+class ConstantExpression;
+#endif //_CLASS_CONSTANTEXPRESSION_
+#ifndef _CLASS_LSQUARE_
+#define _CLASS_LSQUARE_
+class LSquare;
+#endif //_CLASS_LSQUARE_
 #ifndef _CLASS_IDENTIFIERLIST_
 #define _CLASS_IDENTIFIERLIST_
 class IdentifierList;

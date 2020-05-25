@@ -8,7 +8,7 @@
 class Expression: public BasicAST {
 public:
     virtual ~Expression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): assignmentExpressionAst1(assignmentExpressionAst1) {}
 
     virtual ~Expression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): expressionAst1(expressionAst1), commaAst2(commaAst2), assignmentExpressionAst3(assignmentExpressionAst3) {}
 
     virtual ~Expression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_ASSIGNMENTEXPRESSION_
-#define _CLASS_ASSIGNMENTEXPRESSION_
-class AssignmentExpression;
-#endif //_CLASS_ASSIGNMENTEXPRESSION_
 #ifndef _CLASS_COMMA_
 #define _CLASS_COMMA_
 class Comma;
 #endif //_CLASS_COMMA_
+#ifndef _CLASS_ASSIGNMENTEXPRESSION_
+#define _CLASS_ASSIGNMENTEXPRESSION_
+class AssignmentExpression;
+#endif //_CLASS_ASSIGNMENTEXPRESSION_
 
 #endif // _EXPRESSION_H_

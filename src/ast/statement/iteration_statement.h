@@ -8,7 +8,7 @@
 class IterationStatement: public BasicAST {
 public:
     virtual ~IterationStatement() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -29,7 +29,7 @@ public:
     ): whileAst1(whileAst1), lRoundAst2(lRoundAst2), expressionAst3(expressionAst3), rRoundAst4(rRoundAst4), statementAst5(statementAst5) {}
 
     virtual ~IterationStatement1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -55,7 +55,7 @@ public:
     ): doAst1(doAst1), statementAst2(statementAst2), whileAst3(whileAst3), lRoundAst4(lRoundAst4), expressionAst5(expressionAst5), rRoundAst6(rRoundAst6), simicolonSingleAst7(simicolonSingleAst7) {}
 
     virtual ~IterationStatement2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -79,7 +79,7 @@ public:
     ): forAst1(forAst1), lRoundAst2(lRoundAst2), expressionStatementAst3(expressionStatementAst3), expressionStatementAst4(expressionStatementAst4), rRoundAst5(rRoundAst5), statementAst6(statementAst6) {}
 
     virtual ~IterationStatement3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -105,7 +105,7 @@ public:
     ): forAst1(forAst1), lRoundAst2(lRoundAst2), expressionStatementAst3(expressionStatementAst3), expressionStatementAst4(expressionStatementAst4), expressionAst5(expressionAst5), rRoundAst6(rRoundAst6), statementAst7(statementAst7) {}
 
     virtual ~IterationStatement4();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -113,26 +113,34 @@ public:
 
 #else
 
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_STATEMENT_
-#define _CLASS_STATEMENT_
-class Statement;
-#endif //_CLASS_STATEMENT_
 #ifndef _CLASS_RROUND_
 #define _CLASS_RROUND_
 class RRound;
 #endif //_CLASS_RROUND_
+#ifndef _CLASS_STATEMENT_
+#define _CLASS_STATEMENT_
+class Statement;
+#endif //_CLASS_STATEMENT_
 #ifndef _CLASS_EXPRESSIONSTATEMENT_
 #define _CLASS_EXPRESSIONSTATEMENT_
 class ExpressionStatement;
 #endif //_CLASS_EXPRESSIONSTATEMENT_
+#ifndef _CLASS_LROUND_
+#define _CLASS_LROUND_
+class LRound;
+#endif //_CLASS_LROUND_
+#ifndef _CLASS_DO_
+#define _CLASS_DO_
+class Do;
+#endif //_CLASS_DO_
+#ifndef _CLASS_SIMICOLONSINGLE_
+#define _CLASS_SIMICOLONSINGLE_
+class SimicolonSingle;
+#endif //_CLASS_SIMICOLONSINGLE_
+#ifndef _CLASS_EXPRESSION_
+#define _CLASS_EXPRESSION_
+class Expression;
+#endif //_CLASS_EXPRESSION_
 #ifndef _CLASS_FOR_
 #define _CLASS_FOR_
 class For;
@@ -141,13 +149,5 @@ class For;
 #define _CLASS_WHILE_
 class While;
 #endif //_CLASS_WHILE_
-#ifndef _CLASS_SIMICOLONSINGLE_
-#define _CLASS_SIMICOLONSINGLE_
-class SimicolonSingle;
-#endif //_CLASS_SIMICOLONSINGLE_
-#ifndef _CLASS_DO_
-#define _CLASS_DO_
-class Do;
-#endif //_CLASS_DO_
 
 #endif // _ITERATION_STATEMENT_H_

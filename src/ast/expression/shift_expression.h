@@ -8,7 +8,7 @@
 class ShiftExpression: public BasicAST {
 public:
     virtual ~ShiftExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): additiveExpressionAst1(additiveExpressionAst1) {}
 
     virtual ~ShiftExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): shiftExpressionAst1(shiftExpressionAst1), leftOpAst2(leftOpAst2), additiveExpressionAst3(additiveExpressionAst3) {}
 
     virtual ~ShiftExpression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -57,7 +57,7 @@ public:
     ): shiftExpressionAst1(shiftExpressionAst1), rightOpAst2(rightOpAst2), additiveExpressionAst3(additiveExpressionAst3) {}
 
     virtual ~ShiftExpression3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -65,6 +65,10 @@ public:
 
 #else
 
+#ifndef _CLASS_RIGHTOP_
+#define _CLASS_RIGHTOP_
+class RightOp;
+#endif //_CLASS_RIGHTOP_
 #ifndef _CLASS_ADDITIVEEXPRESSION_
 #define _CLASS_ADDITIVEEXPRESSION_
 class AdditiveExpression;
@@ -73,9 +77,5 @@ class AdditiveExpression;
 #define _CLASS_LEFTOP_
 class LeftOp;
 #endif //_CLASS_LEFTOP_
-#ifndef _CLASS_RIGHTOP_
-#define _CLASS_RIGHTOP_
-class RightOp;
-#endif //_CLASS_RIGHTOP_
 
 #endif // _SHIFT_EXPRESSION_H_

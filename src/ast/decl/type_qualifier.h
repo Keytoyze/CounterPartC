@@ -8,7 +8,7 @@
 class TypeQualifier: public BasicAST {
 public:
     virtual ~TypeQualifier() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): constAst1(constAst1) {}
 
     virtual ~TypeQualifier1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): volatileAst1(volatileAst1) {}
 
     virtual ~TypeQualifier2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

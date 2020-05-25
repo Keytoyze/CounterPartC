@@ -8,7 +8,7 @@
 class LabeledStatement: public BasicAST {
 public:
     virtual ~LabeledStatement() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -25,7 +25,7 @@ public:
     ): identifierAst1(identifierAst1), colonAst2(colonAst2), statementAst3(statementAst3) {}
 
     virtual ~LabeledStatement1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -45,7 +45,7 @@ public:
     ): caseAst1(caseAst1), constantExpressionAst2(constantExpressionAst2), colonAst3(colonAst3), statementAst4(statementAst4) {}
 
     virtual ~LabeledStatement2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -63,7 +63,7 @@ public:
     ): defaultAst1(defaultAst1), colonAst2(colonAst2), statementAst3(statementAst3) {}
 
     virtual ~LabeledStatement3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -71,18 +71,22 @@ public:
 
 #else
 
-#ifndef _CLASS_STATEMENT_
-#define _CLASS_STATEMENT_
-class Statement;
-#endif //_CLASS_STATEMENT_
-#ifndef _CLASS_COLON_
-#define _CLASS_COLON_
-class Colon;
-#endif //_CLASS_COLON_
 #ifndef _CLASS_IDENTIFIER_
 #define _CLASS_IDENTIFIER_
 class Identifier;
 #endif //_CLASS_IDENTIFIER_
+#ifndef _CLASS_COLON_
+#define _CLASS_COLON_
+class Colon;
+#endif //_CLASS_COLON_
+#ifndef _CLASS_STATEMENT_
+#define _CLASS_STATEMENT_
+class Statement;
+#endif //_CLASS_STATEMENT_
+#ifndef _CLASS_CASE_
+#define _CLASS_CASE_
+class Case;
+#endif //_CLASS_CASE_
 #ifndef _CLASS_CONSTANTEXPRESSION_
 #define _CLASS_CONSTANTEXPRESSION_
 class ConstantExpression;
@@ -91,9 +95,5 @@ class ConstantExpression;
 #define _CLASS_DEFAULT_
 class Default;
 #endif //_CLASS_DEFAULT_
-#ifndef _CLASS_CASE_
-#define _CLASS_CASE_
-class Case;
-#endif //_CLASS_CASE_
 
 #endif // _LABELED_STATEMENT_H_

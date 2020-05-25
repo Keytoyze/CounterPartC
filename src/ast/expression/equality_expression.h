@@ -8,7 +8,7 @@
 class EqualityExpression: public BasicAST {
 public:
     virtual ~EqualityExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): relationalExpressionAst1(relationalExpressionAst1) {}
 
     virtual ~EqualityExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): equalityExpressionAst1(equalityExpressionAst1), eqOpAst2(eqOpAst2), relationalExpressionAst3(relationalExpressionAst3) {}
 
     virtual ~EqualityExpression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -57,7 +57,7 @@ public:
     ): equalityExpressionAst1(equalityExpressionAst1), neOpAst2(neOpAst2), relationalExpressionAst3(relationalExpressionAst3) {}
 
     virtual ~EqualityExpression3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -65,6 +65,10 @@ public:
 
 #else
 
+#ifndef _CLASS_RELATIONALEXPRESSION_
+#define _CLASS_RELATIONALEXPRESSION_
+class RelationalExpression;
+#endif //_CLASS_RELATIONALEXPRESSION_
 #ifndef _CLASS_NEOP_
 #define _CLASS_NEOP_
 class NeOp;
@@ -73,9 +77,5 @@ class NeOp;
 #define _CLASS_EQOP_
 class EqOp;
 #endif //_CLASS_EQOP_
-#ifndef _CLASS_RELATIONALEXPRESSION_
-#define _CLASS_RELATIONALEXPRESSION_
-class RelationalExpression;
-#endif //_CLASS_RELATIONALEXPRESSION_
 
 #endif // _EQUALITY_EXPRESSION_H_

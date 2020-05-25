@@ -8,7 +8,7 @@
 class Declarator: public BasicAST {
 public:
     virtual ~Declarator() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -23,7 +23,7 @@ public:
     ): pointerAst1(pointerAst1), directDeclaratorAst2(directDeclaratorAst2) {}
 
     virtual ~Declarator1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): directDeclaratorAst1(directDeclaratorAst1) {}
 
     virtual ~Declarator2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -45,13 +45,13 @@ public:
 
 #else
 
-#ifndef _CLASS_DIRECTDECLARATOR_
-#define _CLASS_DIRECTDECLARATOR_
-class DirectDeclarator;
-#endif //_CLASS_DIRECTDECLARATOR_
 #ifndef _CLASS_POINTER_
 #define _CLASS_POINTER_
 class Pointer;
 #endif //_CLASS_POINTER_
+#ifndef _CLASS_DIRECTDECLARATOR_
+#define _CLASS_DIRECTDECLARATOR_
+class DirectDeclarator;
+#endif //_CLASS_DIRECTDECLARATOR_
 
 #endif // _DECLARATOR_H_

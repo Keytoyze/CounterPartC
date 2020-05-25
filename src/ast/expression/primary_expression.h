@@ -8,7 +8,7 @@
 class PrimaryExpression: public BasicAST {
 public:
     virtual ~PrimaryExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): identifierAst1(identifierAst1) {}
 
     virtual ~PrimaryExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): constantAst1(constantAst1) {}
 
     virtual ~PrimaryExpression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,7 +49,7 @@ public:
     ): stringLiteralAst1(stringLiteralAst1) {}
 
     virtual ~PrimaryExpression3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -67,7 +67,7 @@ public:
     ): lRoundAst1(lRoundAst1), expressionAst2(expressionAst2), rRoundAst3(rRoundAst3) {}
 
     virtual ~PrimaryExpression4();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -75,18 +75,6 @@ public:
 
 #else
 
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_CONSTANT_
-#define _CLASS_CONSTANT_
-class Constant;
-#endif //_CLASS_CONSTANT_
 #ifndef _CLASS_IDENTIFIER_
 #define _CLASS_IDENTIFIER_
 class Identifier;
@@ -95,9 +83,21 @@ class Identifier;
 #define _CLASS_RROUND_
 class RRound;
 #endif //_CLASS_RROUND_
+#ifndef _CLASS_LROUND_
+#define _CLASS_LROUND_
+class LRound;
+#endif //_CLASS_LROUND_
 #ifndef _CLASS_STRINGLITERAL_
 #define _CLASS_STRINGLITERAL_
 class StringLiteral;
 #endif //_CLASS_STRINGLITERAL_
+#ifndef _CLASS_EXPRESSION_
+#define _CLASS_EXPRESSION_
+class Expression;
+#endif //_CLASS_EXPRESSION_
+#ifndef _CLASS_CONSTANT_
+#define _CLASS_CONSTANT_
+class Constant;
+#endif //_CLASS_CONSTANT_
 
 #endif // _PRIMARY_EXPRESSION_H_

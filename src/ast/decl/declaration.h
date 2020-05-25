@@ -8,7 +8,7 @@
 class Declaration: public BasicAST {
 public:
     virtual ~Declaration() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -23,7 +23,7 @@ public:
     ): declarationSpecifiersAst1(declarationSpecifiersAst1), simicolonSingleAst2(simicolonSingleAst2) {}
 
     virtual ~Declaration1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -41,7 +41,7 @@ public:
     ): declarationSpecifiersAst1(declarationSpecifiersAst1), initDeclaratorListAst2(initDeclaratorListAst2), simicolonSingleAst3(simicolonSingleAst3) {}
 
     virtual ~Declaration2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -49,6 +49,10 @@ public:
 
 #else
 
+#ifndef _CLASS_SIMICOLONSINGLE_
+#define _CLASS_SIMICOLONSINGLE_
+class SimicolonSingle;
+#endif //_CLASS_SIMICOLONSINGLE_
 #ifndef _CLASS_DECLARATIONSPECIFIERS_
 #define _CLASS_DECLARATIONSPECIFIERS_
 class DeclarationSpecifiers;
@@ -57,9 +61,5 @@ class DeclarationSpecifiers;
 #define _CLASS_INITDECLARATORLIST_
 class InitDeclaratorList;
 #endif //_CLASS_INITDECLARATORLIST_
-#ifndef _CLASS_SIMICOLONSINGLE_
-#define _CLASS_SIMICOLONSINGLE_
-class SimicolonSingle;
-#endif //_CLASS_SIMICOLONSINGLE_
 
 #endif // _DECLARATION_H_

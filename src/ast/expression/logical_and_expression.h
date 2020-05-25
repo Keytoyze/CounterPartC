@@ -8,7 +8,7 @@
 class LogicalAndExpression: public BasicAST {
 public:
     virtual ~LogicalAndExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): inclusiveOrExpressionAst1(inclusiveOrExpressionAst1) {}
 
     virtual ~LogicalAndExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): logicalAndExpressionAst1(logicalAndExpressionAst1), andOpAst2(andOpAst2), inclusiveOrExpressionAst3(inclusiveOrExpressionAst3) {}
 
     virtual ~LogicalAndExpression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };

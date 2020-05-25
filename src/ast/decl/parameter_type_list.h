@@ -8,7 +8,7 @@
 class ParameterTypeList: public BasicAST {
 public:
     virtual ~ParameterTypeList() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): parameterListAst1(parameterListAst1) {}
 
     virtual ~ParameterTypeList1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): parameterListAst1(parameterListAst1), commaAst2(commaAst2), ellipsisAst3(ellipsisAst3) {}
 
     virtual ~ParameterTypeList2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -51,13 +51,13 @@ public:
 #define _CLASS_PARAMETERLIST_
 class ParameterList;
 #endif //_CLASS_PARAMETERLIST_
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
 #ifndef _CLASS_ELLIPSIS_
 #define _CLASS_ELLIPSIS_
 class Ellipsis;
 #endif //_CLASS_ELLIPSIS_
+#ifndef _CLASS_COMMA_
+#define _CLASS_COMMA_
+class Comma;
+#endif //_CLASS_COMMA_
 
 #endif // _PARAMETER_TYPE_LIST_H_

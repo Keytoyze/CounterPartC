@@ -8,7 +8,7 @@
 class UnaryExpression: public BasicAST {
 public:
     virtual ~UnaryExpression() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): postfixExpressionAst1(postfixExpressionAst1) {}
 
     virtual ~UnaryExpression1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): incOpAst1(incOpAst1), unaryExpressionAst2(unaryExpressionAst2) {}
 
     virtual ~UnaryExpression2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -53,7 +53,7 @@ public:
     ): decOpAst1(decOpAst1), unaryExpressionAst2(unaryExpressionAst2) {}
 
     virtual ~UnaryExpression3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -69,7 +69,7 @@ public:
     ): unaryOperatorAst1(unaryOperatorAst1), castExpressionAst2(castExpressionAst2) {}
 
     virtual ~UnaryExpression4();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -85,7 +85,7 @@ public:
     ): sizeofAst1(sizeofAst1), unaryExpressionAst2(unaryExpressionAst2) {}
 
     virtual ~UnaryExpression5();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -105,7 +105,7 @@ public:
     ): sizeofAst1(sizeofAst1), lRoundAst2(lRoundAst2), typeNameAst3(typeNameAst3), rRoundAst4(rRoundAst4) {}
 
     virtual ~UnaryExpression6();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -113,26 +113,30 @@ public:
 
 #else
 
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_CASTEXPRESSION_
-#define _CLASS_CASTEXPRESSION_
-class CastExpression;
-#endif //_CLASS_CASTEXPRESSION_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
 #ifndef _CLASS_SIZEOF_
 #define _CLASS_SIZEOF_
 class Sizeof;
 #endif //_CLASS_SIZEOF_
-#ifndef _CLASS_INCOP_
-#define _CLASS_INCOP_
-class IncOp;
-#endif //_CLASS_INCOP_
+#ifndef _CLASS_RROUND_
+#define _CLASS_RROUND_
+class RRound;
+#endif //_CLASS_RROUND_
+#ifndef _CLASS_UNARYOPERATOR_
+#define _CLASS_UNARYOPERATOR_
+class UnaryOperator;
+#endif //_CLASS_UNARYOPERATOR_
+#ifndef _CLASS_CASTEXPRESSION_
+#define _CLASS_CASTEXPRESSION_
+class CastExpression;
+#endif //_CLASS_CASTEXPRESSION_
+#ifndef _CLASS_LROUND_
+#define _CLASS_LROUND_
+class LRound;
+#endif //_CLASS_LROUND_
+#ifndef _CLASS_POSTFIXEXPRESSION_
+#define _CLASS_POSTFIXEXPRESSION_
+class PostfixExpression;
+#endif //_CLASS_POSTFIXEXPRESSION_
 #ifndef _CLASS_TYPENAME_
 #define _CLASS_TYPENAME_
 class TypeName;
@@ -141,13 +145,9 @@ class TypeName;
 #define _CLASS_DECOP_
 class DecOp;
 #endif //_CLASS_DECOP_
-#ifndef _CLASS_POSTFIXEXPRESSION_
-#define _CLASS_POSTFIXEXPRESSION_
-class PostfixExpression;
-#endif //_CLASS_POSTFIXEXPRESSION_
-#ifndef _CLASS_UNARYOPERATOR_
-#define _CLASS_UNARYOPERATOR_
-class UnaryOperator;
-#endif //_CLASS_UNARYOPERATOR_
+#ifndef _CLASS_INCOP_
+#define _CLASS_INCOP_
+class IncOp;
+#endif //_CLASS_INCOP_
 
 #endif // _UNARY_EXPRESSION_H_

@@ -8,7 +8,7 @@
 class IdentifierList: public BasicAST {
 public:
     virtual ~IdentifierList() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): identifierAst1(identifierAst1) {}
 
     virtual ~IdentifierList1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): identifierListAst1(identifierListAst1), commaAst2(commaAst2), identifierAst3(identifierAst3) {}
 
     virtual ~IdentifierList2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -47,13 +47,13 @@ public:
 
 #else
 
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
 #ifndef _CLASS_IDENTIFIER_
 #define _CLASS_IDENTIFIER_
 class Identifier;
 #endif //_CLASS_IDENTIFIER_
+#ifndef _CLASS_COMMA_
+#define _CLASS_COMMA_
+class Comma;
+#endif //_CLASS_COMMA_
 
 #endif // _IDENTIFIER_LIST_H_

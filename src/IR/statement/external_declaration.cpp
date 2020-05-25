@@ -1,12 +1,12 @@
 #include "ast/ast.h"
 #include <iostream>
 
-void ExternalDeclaration1::GenerateIR(Context context) {
+void ExternalDeclaration1::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
 }
 
-void ExternalDeclaration2::GenerateIR(Context context) {
+void ExternalDeclaration2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "Not implemented!" << std::endl;
 }

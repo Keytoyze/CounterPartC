@@ -8,7 +8,7 @@
 class ExpressionStatement: public BasicAST {
 public:
     virtual ~ExpressionStatement() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): simicolonSingleAst1(simicolonSingleAst1) {}
 
     virtual ~ExpressionStatement1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -37,7 +37,7 @@ public:
     ): expressionAst1(expressionAst1), simicolonSingleAst2(simicolonSingleAst2) {}
 
     virtual ~ExpressionStatement2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -45,13 +45,13 @@ public:
 
 #else
 
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
 #ifndef _CLASS_SIMICOLONSINGLE_
 #define _CLASS_SIMICOLONSINGLE_
 class SimicolonSingle;
 #endif //_CLASS_SIMICOLONSINGLE_
+#ifndef _CLASS_EXPRESSION_
+#define _CLASS_EXPRESSION_
+class Expression;
+#endif //_CLASS_EXPRESSION_
 
 #endif // _EXPRESSION_STATEMENT_H_

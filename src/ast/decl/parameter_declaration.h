@@ -8,7 +8,7 @@
 class ParameterDeclaration: public BasicAST {
 public:
     virtual ~ParameterDeclaration() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -23,7 +23,7 @@ public:
     ): declarationSpecifiersAst1(declarationSpecifiersAst1), declaratorAst2(declaratorAst2) {}
 
     virtual ~ParameterDeclaration1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -39,7 +39,7 @@ public:
     ): declarationSpecifiersAst1(declarationSpecifiersAst1), abstractDeclaratorAst2(abstractDeclaratorAst2) {}
 
     virtual ~ParameterDeclaration2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -53,7 +53,7 @@ public:
     ): declarationSpecifiersAst1(declarationSpecifiersAst1) {}
 
     virtual ~ParameterDeclaration3();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -61,17 +61,17 @@ public:
 
 #else
 
-#ifndef _CLASS_DECLARATIONSPECIFIERS_
-#define _CLASS_DECLARATIONSPECIFIERS_
-class DeclarationSpecifiers;
-#endif //_CLASS_DECLARATIONSPECIFIERS_
-#ifndef _CLASS_ABSTRACTDECLARATOR_
-#define _CLASS_ABSTRACTDECLARATOR_
-class AbstractDeclarator;
-#endif //_CLASS_ABSTRACTDECLARATOR_
 #ifndef _CLASS_DECLARATOR_
 #define _CLASS_DECLARATOR_
 class Declarator;
 #endif //_CLASS_DECLARATOR_
+#ifndef _CLASS_ABSTRACTDECLARATOR_
+#define _CLASS_ABSTRACTDECLARATOR_
+class AbstractDeclarator;
+#endif //_CLASS_ABSTRACTDECLARATOR_
+#ifndef _CLASS_DECLARATIONSPECIFIERS_
+#define _CLASS_DECLARATIONSPECIFIERS_
+class DeclarationSpecifiers;
+#endif //_CLASS_DECLARATIONSPECIFIERS_
 
 #endif // _PARAMETER_DECLARATION_H_

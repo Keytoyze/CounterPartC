@@ -8,7 +8,7 @@
 class StructOrUnion: public BasicAST {
 public:
     virtual ~StructOrUnion() {}
-    virtual void GenerateIR(Context context) {}
+    virtual void GenerateIR(Context& context) {}
     virtual void Dump(int depth) {}
 };
 
@@ -21,7 +21,7 @@ public:
     ): structAst1(structAst1) {}
 
     virtual ~StructOrUnion1();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -35,7 +35,7 @@ public:
     ): unionAst1(unionAst1) {}
 
     virtual ~StructOrUnion2();
-    virtual void GenerateIR(Context context);
+    virtual void GenerateIR(Context& context);
     virtual void Dump(int depth);
 
 };
@@ -43,13 +43,13 @@ public:
 
 #else
 
-#ifndef _CLASS_UNION_
-#define _CLASS_UNION_
-class Union;
-#endif //_CLASS_UNION_
 #ifndef _CLASS_STRUCT_
 #define _CLASS_STRUCT_
 class Struct;
 #endif //_CLASS_STRUCT_
+#ifndef _CLASS_UNION_
+#define _CLASS_UNION_
+class Union;
+#endif //_CLASS_UNION_
 
 #endif // _STRUCT_OR_UNION_H_
