@@ -5,7 +5,7 @@
 // (InitDeclaratorList -> InitDeclarator)
 IRValuePtr InitDeclaratorList1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "InitDeclaratorList Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr InitDeclaratorList1::GenerateIR(Context& context) {
 // (InitDeclaratorList -> InitDeclaratorList Comma InitDeclarator)
 IRValuePtr InitDeclaratorList2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "InitDeclaratorList Not implemented!" << std::endl;
     return nullptr;
 }
 

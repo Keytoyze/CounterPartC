@@ -5,7 +5,7 @@
 // (AssignmentExpression -> ConditionalExpression)
 IRValuePtr AssignmentExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr AssignmentExpression1::GenerateIR(Context& context) {
 // (AssignmentExpression -> UnaryExpression AssignmentOperator AssignmentExpression)
 IRValuePtr AssignmentExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

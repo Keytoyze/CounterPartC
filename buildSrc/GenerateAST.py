@@ -441,7 +441,7 @@ template_cpp_class = """// #bnf
 // (#bbb)
 IRValuePtr #class#order::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "#ccc Not implemented!" << std::endl;
     return nullptr;
 }
 """
@@ -460,6 +460,7 @@ def write_ast_impl(ast, d):
             .replace("#order", str(i + 1))
             .replace("#bnf", ast + " -> " + ' '.join(struct[ast][i]))
             .replace("#bbb", get_class(ast) + " -> " + ' '.join([get_class(x) for x in struct[ast][i]]))
+            .replace("#ccc", get_class(ast))
             ) for i in range(len(struct[ast]))]
 
     with open(base_ir_dir + file_name, "w") as f:

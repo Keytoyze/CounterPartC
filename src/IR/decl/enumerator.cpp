@@ -5,7 +5,7 @@
 // (Enumerator -> Identifier)
 IRValuePtr Enumerator1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Enumerator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr Enumerator1::GenerateIR(Context& context) {
 // (Enumerator -> Identifier Eq ConstantExpression)
 IRValuePtr Enumerator2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Enumerator Not implemented!" << std::endl;
     return nullptr;
 }
 

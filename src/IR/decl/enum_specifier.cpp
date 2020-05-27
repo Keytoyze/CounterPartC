@@ -5,7 +5,7 @@
 // (EnumSpecifier -> Enum LCurly EnumeratorList RCurly)
 IRValuePtr EnumSpecifier1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "EnumSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr EnumSpecifier1::GenerateIR(Context& context) {
 // (EnumSpecifier -> Enum Identifier LCurly EnumeratorList RCurly)
 IRValuePtr EnumSpecifier2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "EnumSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr EnumSpecifier2::GenerateIR(Context& context) {
 // (EnumSpecifier -> Enum Identifier)
 IRValuePtr EnumSpecifier3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "EnumSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 

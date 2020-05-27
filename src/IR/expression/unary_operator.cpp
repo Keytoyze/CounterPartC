@@ -5,7 +5,7 @@
 // (UnaryOperator -> And)
 IRValuePtr UnaryOperator1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr UnaryOperator1::GenerateIR(Context& context) {
 // (UnaryOperator -> Mul)
 IRValuePtr UnaryOperator2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr UnaryOperator2::GenerateIR(Context& context) {
 // (UnaryOperator -> Add)
 IRValuePtr UnaryOperator3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr UnaryOperator3::GenerateIR(Context& context) {
 // (UnaryOperator -> Sub)
 IRValuePtr UnaryOperator4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +37,7 @@ IRValuePtr UnaryOperator4::GenerateIR(Context& context) {
 // (UnaryOperator -> Tilde)
 IRValuePtr UnaryOperator5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -45,7 +45,7 @@ IRValuePtr UnaryOperator5::GenerateIR(Context& context) {
 // (UnaryOperator -> Exclamation)
 IRValuePtr UnaryOperator6::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryOperator Not implemented!" << std::endl;
     return nullptr;
 }
 

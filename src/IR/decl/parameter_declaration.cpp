@@ -5,7 +5,7 @@
 // (ParameterDeclaration -> DeclarationSpecifiers Declarator)
 IRValuePtr ParameterDeclaration1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ParameterDeclaration Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr ParameterDeclaration1::GenerateIR(Context& context) {
 // (ParameterDeclaration -> DeclarationSpecifiers AbstractDeclarator)
 IRValuePtr ParameterDeclaration2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ParameterDeclaration Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr ParameterDeclaration2::GenerateIR(Context& context) {
 // (ParameterDeclaration -> DeclarationSpecifiers)
 IRValuePtr ParameterDeclaration3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ParameterDeclaration Not implemented!" << std::endl;
     return nullptr;
 }
 

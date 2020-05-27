@@ -5,7 +5,7 @@
 // (UnaryExpression -> PostfixExpression)
 IRValuePtr UnaryExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr UnaryExpression1::GenerateIR(Context& context) {
 // (UnaryExpression -> IncOp UnaryExpression)
 IRValuePtr UnaryExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr UnaryExpression2::GenerateIR(Context& context) {
 // (UnaryExpression -> DecOp UnaryExpression)
 IRValuePtr UnaryExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr UnaryExpression3::GenerateIR(Context& context) {
 // (UnaryExpression -> UnaryOperator CastExpression)
 IRValuePtr UnaryExpression4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +37,7 @@ IRValuePtr UnaryExpression4::GenerateIR(Context& context) {
 // (UnaryExpression -> Sizeof UnaryExpression)
 IRValuePtr UnaryExpression5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -45,7 +45,7 @@ IRValuePtr UnaryExpression5::GenerateIR(Context& context) {
 // (UnaryExpression -> Sizeof LRound TypeName RRound)
 IRValuePtr UnaryExpression6::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "UnaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

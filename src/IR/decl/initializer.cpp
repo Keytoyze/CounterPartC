@@ -5,7 +5,7 @@
 // (Initializer -> AssignmentExpression)
 IRValuePtr Initializer1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Initializer Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr Initializer1::GenerateIR(Context& context) {
 // (Initializer -> LCurly InitializerList RCurly)
 IRValuePtr Initializer2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Initializer Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr Initializer2::GenerateIR(Context& context) {
 // (Initializer -> LCurly InitializerList Comma RCurly)
 IRValuePtr Initializer3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Initializer Not implemented!" << std::endl;
     return nullptr;
 }
 

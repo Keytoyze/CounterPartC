@@ -5,7 +5,7 @@
 // (ShiftExpression -> AdditiveExpression)
 IRValuePtr ShiftExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ShiftExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr ShiftExpression1::GenerateIR(Context& context) {
 // (ShiftExpression -> ShiftExpression LeftOp AdditiveExpression)
 IRValuePtr ShiftExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ShiftExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr ShiftExpression2::GenerateIR(Context& context) {
 // (ShiftExpression -> ShiftExpression RightOp AdditiveExpression)
 IRValuePtr ShiftExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ShiftExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

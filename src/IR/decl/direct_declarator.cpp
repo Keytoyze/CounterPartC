@@ -5,7 +5,7 @@
 // (DirectDeclarator -> Identifier)
 IRValuePtr DirectDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr DirectDeclarator1::GenerateIR(Context& context) {
 // (DirectDeclarator -> LRound Declarator RRound)
 IRValuePtr DirectDeclarator2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr DirectDeclarator2::GenerateIR(Context& context) {
 // (DirectDeclarator -> DirectDeclarator LSquare ConstantExpression RSquare)
 IRValuePtr DirectDeclarator3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr DirectDeclarator3::GenerateIR(Context& context) {
 // (DirectDeclarator -> DirectDeclarator LSquare RSquare)
 IRValuePtr DirectDeclarator4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +37,7 @@ IRValuePtr DirectDeclarator4::GenerateIR(Context& context) {
 // (DirectDeclarator -> DirectDeclarator LRound ParameterTypeList RRound)
 IRValuePtr DirectDeclarator5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -45,7 +45,7 @@ IRValuePtr DirectDeclarator5::GenerateIR(Context& context) {
 // (DirectDeclarator -> DirectDeclarator LRound IdentifierList RRound)
 IRValuePtr DirectDeclarator6::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -53,7 +53,7 @@ IRValuePtr DirectDeclarator6::GenerateIR(Context& context) {
 // (DirectDeclarator -> DirectDeclarator LRound RRound)
 IRValuePtr DirectDeclarator7::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 

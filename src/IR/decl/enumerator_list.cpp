@@ -5,7 +5,7 @@
 // (EnumeratorList -> Enumerator)
 IRValuePtr EnumeratorList1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "EnumeratorList Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr EnumeratorList1::GenerateIR(Context& context) {
 // (EnumeratorList -> EnumeratorList Comma Enumerator)
 IRValuePtr EnumeratorList2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "EnumeratorList Not implemented!" << std::endl;
     return nullptr;
 }
 

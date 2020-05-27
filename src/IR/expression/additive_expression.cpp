@@ -5,7 +5,7 @@
 // (AdditiveExpression -> MultiplicativeExpression)
 IRValuePtr AdditiveExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AdditiveExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr AdditiveExpression1::GenerateIR(Context& context) {
 // (AdditiveExpression -> AdditiveExpression Add MultiplicativeExpression)
 IRValuePtr AdditiveExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AdditiveExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr AdditiveExpression2::GenerateIR(Context& context) {
 // (AdditiveExpression -> AdditiveExpression Sub MultiplicativeExpression)
 IRValuePtr AdditiveExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AdditiveExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

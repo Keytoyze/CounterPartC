@@ -5,7 +5,7 @@
 // (FunctionDefinition -> DeclarationSpecifiers Declarator DeclarationList CompoundStatement)
 IRValuePtr FunctionDefinition1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "FunctionDefinition Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr FunctionDefinition1::GenerateIR(Context& context) {
 // (FunctionDefinition -> DeclarationSpecifiers Declarator CompoundStatement)
 IRValuePtr FunctionDefinition2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "FunctionDefinition Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr FunctionDefinition2::GenerateIR(Context& context) {
 // (FunctionDefinition -> Declarator DeclarationList CompoundStatement)
 IRValuePtr FunctionDefinition3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "FunctionDefinition Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr FunctionDefinition3::GenerateIR(Context& context) {
 // (FunctionDefinition -> Declarator CompoundStatement)
 IRValuePtr FunctionDefinition4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "FunctionDefinition Not implemented!" << std::endl;
     return nullptr;
 }
 

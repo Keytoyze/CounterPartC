@@ -5,7 +5,7 @@
 // (Expression -> AssignmentExpression)
 IRValuePtr Expression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Expression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr Expression1::GenerateIR(Context& context) {
 // (Expression -> Expression Comma AssignmentExpression)
 IRValuePtr Expression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Expression Not implemented!" << std::endl;
     return nullptr;
 }
 

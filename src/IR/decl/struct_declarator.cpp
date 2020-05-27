@@ -5,7 +5,7 @@
 // (StructDeclarator -> Declarator)
 IRValuePtr StructDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr StructDeclarator1::GenerateIR(Context& context) {
 // (StructDeclarator -> Colon ConstantExpression)
 IRValuePtr StructDeclarator2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr StructDeclarator2::GenerateIR(Context& context) {
 // (StructDeclarator -> Declarator Colon ConstantExpression)
 IRValuePtr StructDeclarator3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructDeclarator Not implemented!" << std::endl;
     return nullptr;
 }
 

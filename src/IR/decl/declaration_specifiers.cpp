@@ -5,7 +5,7 @@
 // (DeclarationSpecifiers -> StorageClassSpecifier)
 IRValuePtr DeclarationSpecifiers1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr DeclarationSpecifiers1::GenerateIR(Context& context) {
 // (DeclarationSpecifiers -> StorageClassSpecifier DeclarationSpecifiers)
 IRValuePtr DeclarationSpecifiers2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr DeclarationSpecifiers2::GenerateIR(Context& context) {
 // (DeclarationSpecifiers -> TypeSpecifier)
 IRValuePtr DeclarationSpecifiers3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr DeclarationSpecifiers3::GenerateIR(Context& context) {
 // (DeclarationSpecifiers -> TypeSpecifier DeclarationSpecifiers)
 IRValuePtr DeclarationSpecifiers4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +37,7 @@ IRValuePtr DeclarationSpecifiers4::GenerateIR(Context& context) {
 // (DeclarationSpecifiers -> TypeQualifier)
 IRValuePtr DeclarationSpecifiers5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -45,7 +45,7 @@ IRValuePtr DeclarationSpecifiers5::GenerateIR(Context& context) {
 // (DeclarationSpecifiers -> TypeQualifier DeclarationSpecifiers)
 IRValuePtr DeclarationSpecifiers6::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
     return nullptr;
 }
 

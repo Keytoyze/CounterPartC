@@ -5,7 +5,7 @@
 // (ConditionalExpression -> LogicalOrExpression)
 IRValuePtr ConditionalExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ConditionalExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr ConditionalExpression1::GenerateIR(Context& context) {
 // (ConditionalExpression -> LogicalOrExpression Question Expression Colon ConditionalExpression)
 IRValuePtr ConditionalExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ConditionalExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

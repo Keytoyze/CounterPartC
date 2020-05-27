@@ -5,7 +5,7 @@
 // (ExternalDeclaration -> FunctionDefinition)
 IRValuePtr ExternalDeclaration1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ExternalDeclaration Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr ExternalDeclaration1::GenerateIR(Context& context) {
 // (ExternalDeclaration -> Declaration)
 IRValuePtr ExternalDeclaration2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ExternalDeclaration Not implemented!" << std::endl;
     return nullptr;
 }
 

@@ -5,7 +5,7 @@
 // (TypeQualifier -> Const)
 IRValuePtr TypeQualifier1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeQualifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr TypeQualifier1::GenerateIR(Context& context) {
 // (TypeQualifier -> Volatile)
 IRValuePtr TypeQualifier2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeQualifier Not implemented!" << std::endl;
     return nullptr;
 }
 

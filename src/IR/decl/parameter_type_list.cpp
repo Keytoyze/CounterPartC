@@ -5,7 +5,7 @@
 // (ParameterTypeList -> ParameterList)
 IRValuePtr ParameterTypeList1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ParameterTypeList Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr ParameterTypeList1::GenerateIR(Context& context) {
 // (ParameterTypeList -> ParameterList Comma Ellipsis)
 IRValuePtr ParameterTypeList2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ParameterTypeList Not implemented!" << std::endl;
     return nullptr;
 }
 

@@ -5,7 +5,7 @@
 // (SelectionStatement -> If LRound Expression RRound Statement)
 IRValuePtr SelectionStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "SelectionStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr SelectionStatement1::GenerateIR(Context& context) {
 // (SelectionStatement -> If LRound Expression RRound Statement Else Statement)
 IRValuePtr SelectionStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "SelectionStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr SelectionStatement2::GenerateIR(Context& context) {
 // (SelectionStatement -> Switch LRound Expression RRound Statement)
 IRValuePtr SelectionStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "SelectionStatement Not implemented!" << std::endl;
     return nullptr;
 }
 

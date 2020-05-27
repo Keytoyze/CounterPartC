@@ -5,7 +5,7 @@
 // (TypeQualifierList -> TypeQualifier)
 IRValuePtr TypeQualifierList1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeQualifierList Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr TypeQualifierList1::GenerateIR(Context& context) {
 // (TypeQualifierList -> TypeQualifierList TypeQualifier)
 IRValuePtr TypeQualifierList2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeQualifierList Not implemented!" << std::endl;
     return nullptr;
 }
 

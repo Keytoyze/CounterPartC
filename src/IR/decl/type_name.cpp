@@ -5,7 +5,7 @@
 // (TypeName -> SpecifierQualifierList)
 IRValuePtr TypeName1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeName Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr TypeName1::GenerateIR(Context& context) {
 // (TypeName -> SpecifierQualifierList AbstractDeclarator)
 IRValuePtr TypeName2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeName Not implemented!" << std::endl;
     return nullptr;
 }
 

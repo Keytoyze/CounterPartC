@@ -5,7 +5,7 @@
 // (CompoundStatement -> LCurly RCurly)
 IRValuePtr CompoundStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "CompoundStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr CompoundStatement1::GenerateIR(Context& context) {
 // (CompoundStatement -> LCurly StatementList RCurly)
 IRValuePtr CompoundStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "CompoundStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr CompoundStatement2::GenerateIR(Context& context) {
 // (CompoundStatement -> LCurly DeclarationList RCurly)
 IRValuePtr CompoundStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "CompoundStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr CompoundStatement3::GenerateIR(Context& context) {
 // (CompoundStatement -> LCurly DeclarationList StatementList RCurly)
 IRValuePtr CompoundStatement4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "CompoundStatement Not implemented!" << std::endl;
     return nullptr;
 }
 

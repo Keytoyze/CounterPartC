@@ -5,7 +5,7 @@
 // (DeclarationList -> Declaration)
 IRValuePtr DeclarationList1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DeclarationList Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr DeclarationList1::GenerateIR(Context& context) {
 // (DeclarationList -> DeclarationList Declaration)
 IRValuePtr DeclarationList2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "DeclarationList Not implemented!" << std::endl;
     return nullptr;
 }
 

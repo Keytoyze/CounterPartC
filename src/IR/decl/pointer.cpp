@@ -5,7 +5,7 @@
 // (Pointer -> Mul)
 IRValuePtr Pointer1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Pointer Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr Pointer1::GenerateIR(Context& context) {
 // (Pointer -> Mul TypeQualifierList)
 IRValuePtr Pointer2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Pointer Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr Pointer2::GenerateIR(Context& context) {
 // (Pointer -> Mul Pointer)
 IRValuePtr Pointer3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Pointer Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr Pointer3::GenerateIR(Context& context) {
 // (Pointer -> Mul TypeQualifierList Pointer)
 IRValuePtr Pointer4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Pointer Not implemented!" << std::endl;
     return nullptr;
 }
 

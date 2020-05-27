@@ -5,7 +5,7 @@
 // (PrimaryExpression -> Identifier)
 IRValuePtr PrimaryExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "PrimaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr PrimaryExpression1::GenerateIR(Context& context) {
 // (PrimaryExpression -> Constant)
 IRValuePtr PrimaryExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "PrimaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr PrimaryExpression2::GenerateIR(Context& context) {
 // (PrimaryExpression -> StringLiteral)
 IRValuePtr PrimaryExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "PrimaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr PrimaryExpression3::GenerateIR(Context& context) {
 // (PrimaryExpression -> LRound Expression RRound)
 IRValuePtr PrimaryExpression4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "PrimaryExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

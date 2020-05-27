@@ -5,7 +5,7 @@
 // (StructOrUnionSpecifier -> StructOrUnion Identifier LCurly StructDeclarationList RCurly)
 IRValuePtr StructOrUnionSpecifier1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructOrUnionSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr StructOrUnionSpecifier1::GenerateIR(Context& context) {
 // (StructOrUnionSpecifier -> StructOrUnion LCurly StructDeclarationList RCurly)
 IRValuePtr StructOrUnionSpecifier2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructOrUnionSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr StructOrUnionSpecifier2::GenerateIR(Context& context) {
 // (StructOrUnionSpecifier -> StructOrUnion Identifier)
 IRValuePtr StructOrUnionSpecifier3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructOrUnionSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 

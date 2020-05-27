@@ -5,7 +5,7 @@
 // (MultiplicativeExpression -> CastExpression)
 IRValuePtr MultiplicativeExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "MultiplicativeExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr MultiplicativeExpression1::GenerateIR(Context& context) {
 // (MultiplicativeExpression -> MultiplicativeExpression Mul CastExpression)
 IRValuePtr MultiplicativeExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "MultiplicativeExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr MultiplicativeExpression2::GenerateIR(Context& context) {
 // (MultiplicativeExpression -> MultiplicativeExpression Div CastExpression)
 IRValuePtr MultiplicativeExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "MultiplicativeExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr MultiplicativeExpression3::GenerateIR(Context& context) {
 // (MultiplicativeExpression -> MultiplicativeExpression Mod CastExpression)
 IRValuePtr MultiplicativeExpression4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "MultiplicativeExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

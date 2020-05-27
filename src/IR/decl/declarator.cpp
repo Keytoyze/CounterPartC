@@ -5,7 +5,7 @@
 // (Declarator -> Pointer DirectDeclarator)
 IRValuePtr Declarator1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Declarator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr Declarator1::GenerateIR(Context& context) {
 // (Declarator -> DirectDeclarator)
 IRValuePtr Declarator2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "Declarator Not implemented!" << std::endl;
     return nullptr;
 }
 

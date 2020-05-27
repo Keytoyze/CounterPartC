@@ -5,7 +5,7 @@
 // (StructDeclarationList -> StructDeclaration)
 IRValuePtr StructDeclarationList1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructDeclarationList Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr StructDeclarationList1::GenerateIR(Context& context) {
 // (StructDeclarationList -> StructDeclarationList StructDeclaration)
 IRValuePtr StructDeclarationList2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructDeclarationList Not implemented!" << std::endl;
     return nullptr;
 }
 

@@ -5,7 +5,7 @@
 // (CastExpression -> UnaryExpression)
 IRValuePtr CastExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "CastExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr CastExpression1::GenerateIR(Context& context) {
 // (CastExpression -> LRound TypeName RRound CastExpression)
 IRValuePtr CastExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "CastExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

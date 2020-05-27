@@ -5,7 +5,7 @@
 // (StructOrUnion -> Struct)
 IRValuePtr StructOrUnion1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructOrUnion Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr StructOrUnion1::GenerateIR(Context& context) {
 // (StructOrUnion -> Union)
 IRValuePtr StructOrUnion2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructOrUnion Not implemented!" << std::endl;
     return nullptr;
 }
 

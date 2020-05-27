@@ -5,7 +5,7 @@
 // (IterationStatement -> While LRound Expression RRound Statement)
 IRValuePtr IterationStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "IterationStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr IterationStatement1::GenerateIR(Context& context) {
 // (IterationStatement -> Do Statement While LRound Expression RRound SimicolonSingle)
 IRValuePtr IterationStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "IterationStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr IterationStatement2::GenerateIR(Context& context) {
 // (IterationStatement -> For LRound ExpressionStatement ExpressionStatement RRound Statement)
 IRValuePtr IterationStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "IterationStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr IterationStatement3::GenerateIR(Context& context) {
 // (IterationStatement -> For LRound ExpressionStatement ExpressionStatement Expression RRound Statement)
 IRValuePtr IterationStatement4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "IterationStatement Not implemented!" << std::endl;
     return nullptr;
 }
 

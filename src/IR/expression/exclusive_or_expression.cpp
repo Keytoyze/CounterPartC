@@ -5,7 +5,7 @@
 // (ExclusiveOrExpression -> AndExpression)
 IRValuePtr ExclusiveOrExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ExclusiveOrExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr ExclusiveOrExpression1::GenerateIR(Context& context) {
 // (ExclusiveOrExpression -> ExclusiveOrExpression Caret AndExpression)
 IRValuePtr ExclusiveOrExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "ExclusiveOrExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

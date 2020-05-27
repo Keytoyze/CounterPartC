@@ -5,7 +5,7 @@
 // (StructDeclaration -> SpecifierQualifierList StructDeclaratorList SimicolonSingle)
 IRValuePtr StructDeclaration1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StructDeclaration Not implemented!" << std::endl;
     return nullptr;
 }
 

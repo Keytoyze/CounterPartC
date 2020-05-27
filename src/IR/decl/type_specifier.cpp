@@ -5,7 +5,7 @@
 // (TypeSpecifier -> Void)
 IRValuePtr TypeSpecifier1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr TypeSpecifier1::GenerateIR(Context& context) {
 // (TypeSpecifier -> Char)
 IRValuePtr TypeSpecifier2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr TypeSpecifier2::GenerateIR(Context& context) {
 // (TypeSpecifier -> Short)
 IRValuePtr TypeSpecifier3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr TypeSpecifier3::GenerateIR(Context& context) {
 // (TypeSpecifier -> Int)
 IRValuePtr TypeSpecifier4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +37,7 @@ IRValuePtr TypeSpecifier4::GenerateIR(Context& context) {
 // (TypeSpecifier -> Long)
 IRValuePtr TypeSpecifier5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -45,7 +45,7 @@ IRValuePtr TypeSpecifier5::GenerateIR(Context& context) {
 // (TypeSpecifier -> Float)
 IRValuePtr TypeSpecifier6::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -53,7 +53,7 @@ IRValuePtr TypeSpecifier6::GenerateIR(Context& context) {
 // (TypeSpecifier -> Double)
 IRValuePtr TypeSpecifier7::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -61,7 +61,7 @@ IRValuePtr TypeSpecifier7::GenerateIR(Context& context) {
 // (TypeSpecifier -> Signed)
 IRValuePtr TypeSpecifier8::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -69,7 +69,7 @@ IRValuePtr TypeSpecifier8::GenerateIR(Context& context) {
 // (TypeSpecifier -> Unsigned)
 IRValuePtr TypeSpecifier9::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -77,7 +77,7 @@ IRValuePtr TypeSpecifier9::GenerateIR(Context& context) {
 // (TypeSpecifier -> StructOrUnionSpecifier)
 IRValuePtr TypeSpecifier10::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -85,7 +85,7 @@ IRValuePtr TypeSpecifier10::GenerateIR(Context& context) {
 // (TypeSpecifier -> EnumSpecifier)
 IRValuePtr TypeSpecifier11::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -93,7 +93,7 @@ IRValuePtr TypeSpecifier11::GenerateIR(Context& context) {
 // (TypeSpecifier -> TypeNameToken)
 IRValuePtr TypeSpecifier12::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 

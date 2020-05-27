@@ -5,7 +5,7 @@
 // (AssignmentOperator -> Eq)
 IRValuePtr AssignmentOperator1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr AssignmentOperator1::GenerateIR(Context& context) {
 // (AssignmentOperator -> MulAssign)
 IRValuePtr AssignmentOperator2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr AssignmentOperator2::GenerateIR(Context& context) {
 // (AssignmentOperator -> DivAssign)
 IRValuePtr AssignmentOperator3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr AssignmentOperator3::GenerateIR(Context& context) {
 // (AssignmentOperator -> ModAssign)
 IRValuePtr AssignmentOperator4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +37,7 @@ IRValuePtr AssignmentOperator4::GenerateIR(Context& context) {
 // (AssignmentOperator -> AddAssign)
 IRValuePtr AssignmentOperator5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -45,7 +45,7 @@ IRValuePtr AssignmentOperator5::GenerateIR(Context& context) {
 // (AssignmentOperator -> SubAssign)
 IRValuePtr AssignmentOperator6::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -53,7 +53,7 @@ IRValuePtr AssignmentOperator6::GenerateIR(Context& context) {
 // (AssignmentOperator -> LeftAssign)
 IRValuePtr AssignmentOperator7::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -61,7 +61,7 @@ IRValuePtr AssignmentOperator7::GenerateIR(Context& context) {
 // (AssignmentOperator -> RightAssign)
 IRValuePtr AssignmentOperator8::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -69,7 +69,7 @@ IRValuePtr AssignmentOperator8::GenerateIR(Context& context) {
 // (AssignmentOperator -> AndAssign)
 IRValuePtr AssignmentOperator9::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -77,7 +77,7 @@ IRValuePtr AssignmentOperator9::GenerateIR(Context& context) {
 // (AssignmentOperator -> XorAssign)
 IRValuePtr AssignmentOperator10::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -85,7 +85,7 @@ IRValuePtr AssignmentOperator10::GenerateIR(Context& context) {
 // (AssignmentOperator -> OrAssign)
 IRValuePtr AssignmentOperator11::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AssignmentOperator Not implemented!" << std::endl;
     return nullptr;
 }
 

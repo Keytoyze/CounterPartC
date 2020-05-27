@@ -5,7 +5,7 @@
 // (LabeledStatement -> Identifier Colon Statement)
 IRValuePtr LabeledStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "LabeledStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr LabeledStatement1::GenerateIR(Context& context) {
 // (LabeledStatement -> Case ConstantExpression Colon Statement)
 IRValuePtr LabeledStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "LabeledStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr LabeledStatement2::GenerateIR(Context& context) {
 // (LabeledStatement -> Default Colon Statement)
 IRValuePtr LabeledStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "LabeledStatement Not implemented!" << std::endl;
     return nullptr;
 }
 

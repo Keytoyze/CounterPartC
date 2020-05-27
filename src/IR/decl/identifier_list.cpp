@@ -5,7 +5,7 @@
 // (IdentifierList -> Identifier)
 IRValuePtr IdentifierList1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "IdentifierList Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr IdentifierList1::GenerateIR(Context& context) {
 // (IdentifierList -> IdentifierList Comma Identifier)
 IRValuePtr IdentifierList2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "IdentifierList Not implemented!" << std::endl;
     return nullptr;
 }
 

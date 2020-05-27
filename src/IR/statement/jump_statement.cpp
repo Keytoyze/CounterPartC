@@ -5,7 +5,7 @@
 // (JumpStatement -> Goto Identifier SimicolonSingle)
 IRValuePtr JumpStatement1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "JumpStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr JumpStatement1::GenerateIR(Context& context) {
 // (JumpStatement -> Continue SimicolonSingle)
 IRValuePtr JumpStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "JumpStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr JumpStatement2::GenerateIR(Context& context) {
 // (JumpStatement -> Break SimicolonSingle)
 IRValuePtr JumpStatement3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "JumpStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr JumpStatement3::GenerateIR(Context& context) {
 // (JumpStatement -> Return SimicolonSingle)
 IRValuePtr JumpStatement4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "JumpStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +37,7 @@ IRValuePtr JumpStatement4::GenerateIR(Context& context) {
 // (JumpStatement -> Return Expression SimicolonSingle)
 IRValuePtr JumpStatement5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "JumpStatement Not implemented!" << std::endl;
     return nullptr;
 }
 

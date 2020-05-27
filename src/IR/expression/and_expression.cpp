@@ -5,7 +5,7 @@
 // (AndExpression -> EqualityExpression)
 IRValuePtr AndExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AndExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr AndExpression1::GenerateIR(Context& context) {
 // (AndExpression -> AndExpression And EqualityExpression)
 IRValuePtr AndExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "AndExpression Not implemented!" << std::endl;
     return nullptr;
 }
 

@@ -5,7 +5,7 @@
 // (StorageClassSpecifier -> Typedef)
 IRValuePtr StorageClassSpecifier1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StorageClassSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr StorageClassSpecifier1::GenerateIR(Context& context) {
 // (StorageClassSpecifier -> Extern)
 IRValuePtr StorageClassSpecifier2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StorageClassSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr StorageClassSpecifier2::GenerateIR(Context& context) {
 // (StorageClassSpecifier -> Static)
 IRValuePtr StorageClassSpecifier3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StorageClassSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -29,7 +29,7 @@ IRValuePtr StorageClassSpecifier3::GenerateIR(Context& context) {
 // (StorageClassSpecifier -> Auto)
 IRValuePtr StorageClassSpecifier4::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StorageClassSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +37,7 @@ IRValuePtr StorageClassSpecifier4::GenerateIR(Context& context) {
 // (StorageClassSpecifier -> Register)
 IRValuePtr StorageClassSpecifier5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "StorageClassSpecifier Not implemented!" << std::endl;
     return nullptr;
 }
 

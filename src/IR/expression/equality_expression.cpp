@@ -5,7 +5,7 @@
 // (EqualityExpression -> RelationalExpression)
 IRValuePtr EqualityExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "EqualityExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr EqualityExpression1::GenerateIR(Context& context) {
 // (EqualityExpression -> EqualityExpression EqOp RelationalExpression)
 IRValuePtr EqualityExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "EqualityExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,7 @@ IRValuePtr EqualityExpression2::GenerateIR(Context& context) {
 // (EqualityExpression -> EqualityExpression NeOp RelationalExpression)
 IRValuePtr EqualityExpression3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Not implemented!" << std::endl;
+    std::cerr << "EqualityExpression Not implemented!" << std::endl;
     return nullptr;
 }
 
