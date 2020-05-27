@@ -2,8 +2,8 @@
 #ifndef _TRANSLATION_UNIT_H_
 #define _TRANSLATION_UNIT_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class ExternalDeclaration;
 
 class TranslationUnit: public BasicAST {
 public:
@@ -41,13 +41,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_EXTERNALDECLARATION_
-#define _CLASS_EXTERNALDECLARATION_
-class ExternalDeclaration;
-#endif //_CLASS_EXTERNALDECLARATION_
 
 #endif // _TRANSLATION_UNIT_H_

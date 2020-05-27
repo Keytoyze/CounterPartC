@@ -2,8 +2,9 @@
 #ifndef _LOGICAL_OR_EXPRESSION_H_
 #define _LOGICAL_OR_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class LogicalAndExpression;
+class OrOp;
 
 class LogicalOrExpression: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_OROP_
-#define _CLASS_OROP_
-class OrOp;
-#endif //_CLASS_OROP_
-#ifndef _CLASS_LOGICALANDEXPRESSION_
-#define _CLASS_LOGICALANDEXPRESSION_
-class LogicalAndExpression;
-#endif //_CLASS_LOGICALANDEXPRESSION_
 
 #endif // _LOGICAL_OR_EXPRESSION_H_

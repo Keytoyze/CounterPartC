@@ -2,8 +2,9 @@
 #ifndef _SPECIFIER_QUALIFIER_LIST_H_
 #define _SPECIFIER_QUALIFIER_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class TypeQualifier;
+class TypeSpecifier;
 
 class SpecifierQualifierList: public BasicAST {
 public:
@@ -71,17 +72,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_TYPEQUALIFIER_
-#define _CLASS_TYPEQUALIFIER_
-class TypeQualifier;
-#endif //_CLASS_TYPEQUALIFIER_
-#ifndef _CLASS_TYPESPECIFIER_
-#define _CLASS_TYPESPECIFIER_
-class TypeSpecifier;
-#endif //_CLASS_TYPESPECIFIER_
 
 #endif // _SPECIFIER_QUALIFIER_LIST_H_

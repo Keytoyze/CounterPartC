@@ -2,8 +2,10 @@
 #ifndef _INIT_DECLARATOR_H_
 #define _INIT_DECLARATOR_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Declarator;
+class Eq;
+class Initializer;
 
 class InitDeclarator: public BasicAST {
 public:
@@ -43,21 +45,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_DECLARATOR_
-#define _CLASS_DECLARATOR_
-class Declarator;
-#endif //_CLASS_DECLARATOR_
-#ifndef _CLASS_INITIALIZER_
-#define _CLASS_INITIALIZER_
-class Initializer;
-#endif //_CLASS_INITIALIZER_
-#ifndef _CLASS_EQ_
-#define _CLASS_EQ_
-class Eq;
-#endif //_CLASS_EQ_
 
 #endif // _INIT_DECLARATOR_H_

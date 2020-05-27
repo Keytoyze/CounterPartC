@@ -2,8 +2,11 @@
 #ifndef _COMPOUND_STATEMENT_H_
 #define _COMPOUND_STATEMENT_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class DeclarationList;
+class LCurly;
+class RCurly;
+class StatementList;
 
 class CompoundStatement: public BasicAST {
 public:
@@ -83,25 +86,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_DECLARATIONLIST_
-#define _CLASS_DECLARATIONLIST_
-class DeclarationList;
-#endif //_CLASS_DECLARATIONLIST_
-#ifndef _CLASS_STATEMENTLIST_
-#define _CLASS_STATEMENTLIST_
-class StatementList;
-#endif //_CLASS_STATEMENTLIST_
-#ifndef _CLASS_LCURLY_
-#define _CLASS_LCURLY_
-class LCurly;
-#endif //_CLASS_LCURLY_
-#ifndef _CLASS_RCURLY_
-#define _CLASS_RCURLY_
-class RCurly;
-#endif //_CLASS_RCURLY_
 
 #endif // _COMPOUND_STATEMENT_H_

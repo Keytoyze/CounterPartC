@@ -2,8 +2,8 @@
 #ifndef _STRUCT_DECLARATION_LIST_H_
 #define _STRUCT_DECLARATION_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class StructDeclaration;
 
 class StructDeclarationList: public BasicAST {
 public:
@@ -41,13 +41,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_STRUCTDECLARATION_
-#define _CLASS_STRUCTDECLARATION_
-class StructDeclaration;
-#endif //_CLASS_STRUCTDECLARATION_
 
 #endif // _STRUCT_DECLARATION_LIST_H_

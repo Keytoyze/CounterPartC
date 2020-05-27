@@ -2,8 +2,13 @@
 #ifndef _STATEMENT_H_
 #define _STATEMENT_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class CompoundStatement;
+class ExpressionStatement;
+class IterationStatement;
+class JumpStatement;
+class LabeledStatement;
+class SelectionStatement;
 
 class Statement: public BasicAST {
 public:
@@ -95,33 +100,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_JUMPSTATEMENT_
-#define _CLASS_JUMPSTATEMENT_
-class JumpStatement;
-#endif //_CLASS_JUMPSTATEMENT_
-#ifndef _CLASS_ITERATIONSTATEMENT_
-#define _CLASS_ITERATIONSTATEMENT_
-class IterationStatement;
-#endif //_CLASS_ITERATIONSTATEMENT_
-#ifndef _CLASS_LABELEDSTATEMENT_
-#define _CLASS_LABELEDSTATEMENT_
-class LabeledStatement;
-#endif //_CLASS_LABELEDSTATEMENT_
-#ifndef _CLASS_SELECTIONSTATEMENT_
-#define _CLASS_SELECTIONSTATEMENT_
-class SelectionStatement;
-#endif //_CLASS_SELECTIONSTATEMENT_
-#ifndef _CLASS_EXPRESSIONSTATEMENT_
-#define _CLASS_EXPRESSIONSTATEMENT_
-class ExpressionStatement;
-#endif //_CLASS_EXPRESSIONSTATEMENT_
-#ifndef _CLASS_COMPOUNDSTATEMENT_
-#define _CLASS_COMPOUNDSTATEMENT_
-class CompoundStatement;
-#endif //_CLASS_COMPOUNDSTATEMENT_
 
 #endif // _STATEMENT_H_

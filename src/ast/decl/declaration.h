@@ -2,8 +2,10 @@
 #ifndef _DECLARATION_H_
 #define _DECLARATION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class DeclarationSpecifiers;
+class InitDeclaratorList;
+class SimicolonSingle;
 
 class Declaration: public BasicAST {
 public:
@@ -45,21 +47,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_INITDECLARATORLIST_
-#define _CLASS_INITDECLARATORLIST_
-class InitDeclaratorList;
-#endif //_CLASS_INITDECLARATORLIST_
-#ifndef _CLASS_DECLARATIONSPECIFIERS_
-#define _CLASS_DECLARATIONSPECIFIERS_
-class DeclarationSpecifiers;
-#endif //_CLASS_DECLARATIONSPECIFIERS_
-#ifndef _CLASS_SIMICOLONSINGLE_
-#define _CLASS_SIMICOLONSINGLE_
-class SimicolonSingle;
-#endif //_CLASS_SIMICOLONSINGLE_
 
 #endif // _DECLARATION_H_

@@ -2,8 +2,19 @@
 #ifndef _TYPE_SPECIFIER_H_
 #define _TYPE_SPECIFIER_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Char;
+class Double;
+class EnumSpecifier;
+class Float;
+class Int;
+class Long;
+class Short;
+class Signed;
+class StructOrUnionSpecifier;
+class TypeNameToken;
+class Unsigned;
+class Void;
 
 class TypeSpecifier: public BasicAST {
 public:
@@ -179,57 +190,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_INT_
-#define _CLASS_INT_
-class Int;
-#endif //_CLASS_INT_
-#ifndef _CLASS_CHAR_
-#define _CLASS_CHAR_
-class Char;
-#endif //_CLASS_CHAR_
-#ifndef _CLASS_VOID_
-#define _CLASS_VOID_
-class Void;
-#endif //_CLASS_VOID_
-#ifndef _CLASS_SIGNED_
-#define _CLASS_SIGNED_
-class Signed;
-#endif //_CLASS_SIGNED_
-#ifndef _CLASS_SHORT_
-#define _CLASS_SHORT_
-class Short;
-#endif //_CLASS_SHORT_
-#ifndef _CLASS_LONG_
-#define _CLASS_LONG_
-class Long;
-#endif //_CLASS_LONG_
-#ifndef _CLASS_STRUCTORUNIONSPECIFIER_
-#define _CLASS_STRUCTORUNIONSPECIFIER_
-class StructOrUnionSpecifier;
-#endif //_CLASS_STRUCTORUNIONSPECIFIER_
-#ifndef _CLASS_TYPENAMETOKEN_
-#define _CLASS_TYPENAMETOKEN_
-class TypeNameToken;
-#endif //_CLASS_TYPENAMETOKEN_
-#ifndef _CLASS_DOUBLE_
-#define _CLASS_DOUBLE_
-class Double;
-#endif //_CLASS_DOUBLE_
-#ifndef _CLASS_ENUMSPECIFIER_
-#define _CLASS_ENUMSPECIFIER_
-class EnumSpecifier;
-#endif //_CLASS_ENUMSPECIFIER_
-#ifndef _CLASS_UNSIGNED_
-#define _CLASS_UNSIGNED_
-class Unsigned;
-#endif //_CLASS_UNSIGNED_
-#ifndef _CLASS_FLOAT_
-#define _CLASS_FLOAT_
-class Float;
-#endif //_CLASS_FLOAT_
 
 #endif // _TYPE_SPECIFIER_H_

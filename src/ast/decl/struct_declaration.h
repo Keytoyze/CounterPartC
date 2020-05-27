@@ -2,8 +2,10 @@
 #ifndef _STRUCT_DECLARATION_H_
 #define _STRUCT_DECLARATION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class SimicolonSingle;
+class SpecifierQualifierList;
+class StructDeclaratorList;
 
 class StructDeclaration: public BasicAST {
 public:
@@ -29,21 +31,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_SPECIFIERQUALIFIERLIST_
-#define _CLASS_SPECIFIERQUALIFIERLIST_
-class SpecifierQualifierList;
-#endif //_CLASS_SPECIFIERQUALIFIERLIST_
-#ifndef _CLASS_STRUCTDECLARATORLIST_
-#define _CLASS_STRUCTDECLARATORLIST_
-class StructDeclaratorList;
-#endif //_CLASS_STRUCTDECLARATORLIST_
-#ifndef _CLASS_SIMICOLONSINGLE_
-#define _CLASS_SIMICOLONSINGLE_
-class SimicolonSingle;
-#endif //_CLASS_SIMICOLONSINGLE_
 
 #endif // _STRUCT_DECLARATION_H_

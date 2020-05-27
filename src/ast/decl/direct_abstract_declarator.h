@@ -2,8 +2,14 @@
 #ifndef _DIRECT_ABSTRACT_DECLARATOR_H_
 #define _DIRECT_ABSTRACT_DECLARATOR_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AbstractDeclarator;
+class ConstantExpression;
+class LRound;
+class LSquare;
+class ParameterTypeList;
+class RRound;
+class RSquare;
 
 class DirectAbstractDeclarator: public BasicAST {
 public:
@@ -173,37 +179,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_RSQUARE_
-#define _CLASS_RSQUARE_
-class RSquare;
-#endif //_CLASS_RSQUARE_
-#ifndef _CLASS_CONSTANTEXPRESSION_
-#define _CLASS_CONSTANTEXPRESSION_
-class ConstantExpression;
-#endif //_CLASS_CONSTANTEXPRESSION_
-#ifndef _CLASS_PARAMETERTYPELIST_
-#define _CLASS_PARAMETERTYPELIST_
-class ParameterTypeList;
-#endif //_CLASS_PARAMETERTYPELIST_
-#ifndef _CLASS_LSQUARE_
-#define _CLASS_LSQUARE_
-class LSquare;
-#endif //_CLASS_LSQUARE_
-#ifndef _CLASS_ABSTRACTDECLARATOR_
-#define _CLASS_ABSTRACTDECLARATOR_
-class AbstractDeclarator;
-#endif //_CLASS_ABSTRACTDECLARATOR_
 
 #endif // _DIRECT_ABSTRACT_DECLARATOR_H_

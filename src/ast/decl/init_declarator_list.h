@@ -2,8 +2,9 @@
 #ifndef _INIT_DECLARATOR_LIST_H_
 #define _INIT_DECLARATOR_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Comma;
+class InitDeclarator;
 
 class InitDeclaratorList: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
-#ifndef _CLASS_INITDECLARATOR_
-#define _CLASS_INITDECLARATOR_
-class InitDeclarator;
-#endif //_CLASS_INITDECLARATOR_
 
 #endif // _INIT_DECLARATOR_LIST_H_

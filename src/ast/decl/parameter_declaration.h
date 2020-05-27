@@ -2,8 +2,10 @@
 #ifndef _PARAMETER_DECLARATION_H_
 #define _PARAMETER_DECLARATION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AbstractDeclarator;
+class DeclarationSpecifiers;
+class Declarator;
 
 class ParameterDeclaration: public BasicAST {
 public:
@@ -57,21 +59,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_DECLARATIONSPECIFIERS_
-#define _CLASS_DECLARATIONSPECIFIERS_
-class DeclarationSpecifiers;
-#endif //_CLASS_DECLARATIONSPECIFIERS_
-#ifndef _CLASS_DECLARATOR_
-#define _CLASS_DECLARATOR_
-class Declarator;
-#endif //_CLASS_DECLARATOR_
-#ifndef _CLASS_ABSTRACTDECLARATOR_
-#define _CLASS_ABSTRACTDECLARATOR_
-class AbstractDeclarator;
-#endif //_CLASS_ABSTRACTDECLARATOR_
 
 #endif // _PARAMETER_DECLARATION_H_

@@ -2,8 +2,9 @@
 #ifndef _ENUMERATOR_LIST_H_
 #define _ENUMERATOR_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Comma;
+class Enumerator;
 
 class EnumeratorList: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_ENUMERATOR_
-#define _CLASS_ENUMERATOR_
-class Enumerator;
-#endif //_CLASS_ENUMERATOR_
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
 
 #endif // _ENUMERATOR_LIST_H_

@@ -2,8 +2,16 @@
 #ifndef _DIRECT_DECLARATOR_H_
 #define _DIRECT_DECLARATOR_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class ConstantExpression;
+class Declarator;
+class Identifier;
+class IdentifierList;
+class LRound;
+class LSquare;
+class ParameterTypeList;
+class RRound;
+class RSquare;
 
 class DirectDeclarator: public BasicAST {
 public:
@@ -139,45 +147,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_CONSTANTEXPRESSION_
-#define _CLASS_CONSTANTEXPRESSION_
-class ConstantExpression;
-#endif //_CLASS_CONSTANTEXPRESSION_
-#ifndef _CLASS_RSQUARE_
-#define _CLASS_RSQUARE_
-class RSquare;
-#endif //_CLASS_RSQUARE_
-#ifndef _CLASS_PARAMETERTYPELIST_
-#define _CLASS_PARAMETERTYPELIST_
-class ParameterTypeList;
-#endif //_CLASS_PARAMETERTYPELIST_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
-#ifndef _CLASS_LSQUARE_
-#define _CLASS_LSQUARE_
-class LSquare;
-#endif //_CLASS_LSQUARE_
-#ifndef _CLASS_DECLARATOR_
-#define _CLASS_DECLARATOR_
-class Declarator;
-#endif //_CLASS_DECLARATOR_
-#ifndef _CLASS_IDENTIFIERLIST_
-#define _CLASS_IDENTIFIERLIST_
-class IdentifierList;
-#endif //_CLASS_IDENTIFIERLIST_
 
 #endif // _DIRECT_DECLARATOR_H_

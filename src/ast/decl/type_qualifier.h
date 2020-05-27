@@ -2,8 +2,9 @@
 #ifndef _TYPE_QUALIFIER_H_
 #define _TYPE_QUALIFIER_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Const;
+class Volatile;
 
 class TypeQualifier: public BasicAST {
 public:
@@ -39,17 +40,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_VOLATILE_
-#define _CLASS_VOLATILE_
-class Volatile;
-#endif //_CLASS_VOLATILE_
-#ifndef _CLASS_CONST_
-#define _CLASS_CONST_
-class Const;
-#endif //_CLASS_CONST_
 
 #endif // _TYPE_QUALIFIER_H_

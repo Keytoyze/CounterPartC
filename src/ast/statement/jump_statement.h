@@ -2,8 +2,14 @@
 #ifndef _JUMP_STATEMENT_H_
 #define _JUMP_STATEMENT_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Break;
+class Continue;
+class Expression;
+class Goto;
+class Identifier;
+class Return;
+class SimicolonSingle;
 
 class JumpStatement: public BasicAST {
 public:
@@ -95,37 +101,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
-#ifndef _CLASS_BREAK_
-#define _CLASS_BREAK_
-class Break;
-#endif //_CLASS_BREAK_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
-#ifndef _CLASS_CONTINUE_
-#define _CLASS_CONTINUE_
-class Continue;
-#endif //_CLASS_CONTINUE_
-#ifndef _CLASS_RETURN_
-#define _CLASS_RETURN_
-class Return;
-#endif //_CLASS_RETURN_
-#ifndef _CLASS_GOTO_
-#define _CLASS_GOTO_
-class Goto;
-#endif //_CLASS_GOTO_
-#ifndef _CLASS_SIMICOLONSINGLE_
-#define _CLASS_SIMICOLONSINGLE_
-class SimicolonSingle;
-#endif //_CLASS_SIMICOLONSINGLE_
 
 #endif // _JUMP_STATEMENT_H_

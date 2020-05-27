@@ -2,8 +2,9 @@
 #ifndef _AND_EXPRESSION_H_
 #define _AND_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class And;
+class EqualityExpression;
 
 class AndExpression: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_AND_
-#define _CLASS_AND_
-class And;
-#endif //_CLASS_AND_
-#ifndef _CLASS_EQUALITYEXPRESSION_
-#define _CLASS_EQUALITYEXPRESSION_
-class EqualityExpression;
-#endif //_CLASS_EQUALITYEXPRESSION_
 
 #endif // _AND_EXPRESSION_H_

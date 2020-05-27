@@ -2,8 +2,9 @@
 #ifndef _INITIALIZER_LIST_H_
 #define _INITIALIZER_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Comma;
+class Initializer;
 
 class InitializerList: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
-#ifndef _CLASS_INITIALIZER_
-#define _CLASS_INITIALIZER_
-class Initializer;
-#endif //_CLASS_INITIALIZER_
 
 #endif // _INITIALIZER_LIST_H_

@@ -2,8 +2,9 @@
 #ifndef _IDENTIFIER_LIST_H_
 #define _IDENTIFIER_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Comma;
+class Identifier;
 
 class IdentifierList: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
 
 #endif // _IDENTIFIER_LIST_H_

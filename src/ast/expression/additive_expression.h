@@ -2,8 +2,10 @@
 #ifndef _ADDITIVE_EXPRESSION_H_
 #define _ADDITIVE_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Add;
+class MultiplicativeExpression;
+class Sub;
 
 class AdditiveExpression: public BasicAST {
 public:
@@ -61,21 +63,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_ADD_
-#define _CLASS_ADD_
-class Add;
-#endif //_CLASS_ADD_
-#ifndef _CLASS_MULTIPLICATIVEEXPRESSION_
-#define _CLASS_MULTIPLICATIVEEXPRESSION_
-class MultiplicativeExpression;
-#endif //_CLASS_MULTIPLICATIVEEXPRESSION_
-#ifndef _CLASS_SUB_
-#define _CLASS_SUB_
-class Sub;
-#endif //_CLASS_SUB_
 
 #endif // _ADDITIVE_EXPRESSION_H_

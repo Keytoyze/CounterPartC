@@ -2,8 +2,9 @@
 #ifndef _INCLUSIVE_OR_EXPRESSION_H_
 #define _INCLUSIVE_OR_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class ExclusiveOrExpression;
+class Vertical;
 
 class InclusiveOrExpression: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_VERTICAL_
-#define _CLASS_VERTICAL_
-class Vertical;
-#endif //_CLASS_VERTICAL_
-#ifndef _CLASS_EXCLUSIVEOREXPRESSION_
-#define _CLASS_EXCLUSIVEOREXPRESSION_
-class ExclusiveOrExpression;
-#endif //_CLASS_EXCLUSIVEOREXPRESSION_
 
 #endif // _INCLUSIVE_OR_EXPRESSION_H_

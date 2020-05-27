@@ -2,8 +2,9 @@
 #ifndef _EXCLUSIVE_OR_EXPRESSION_H_
 #define _EXCLUSIVE_OR_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AndExpression;
+class Caret;
 
 class ExclusiveOrExpression: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_ANDEXPRESSION_
-#define _CLASS_ANDEXPRESSION_
-class AndExpression;
-#endif //_CLASS_ANDEXPRESSION_
-#ifndef _CLASS_CARET_
-#define _CLASS_CARET_
-class Caret;
-#endif //_CLASS_CARET_
 
 #endif // _EXCLUSIVE_OR_EXPRESSION_H_

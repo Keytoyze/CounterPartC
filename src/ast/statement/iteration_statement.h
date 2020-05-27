@@ -2,8 +2,16 @@
 #ifndef _ITERATION_STATEMENT_H_
 #define _ITERATION_STATEMENT_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Do;
+class Expression;
+class ExpressionStatement;
+class For;
+class LRound;
+class RRound;
+class SimicolonSingle;
+class Statement;
+class While;
 
 class IterationStatement: public BasicAST {
 public:
@@ -109,45 +117,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
-#ifndef _CLASS_WHILE_
-#define _CLASS_WHILE_
-class While;
-#endif //_CLASS_WHILE_
-#ifndef _CLASS_DO_
-#define _CLASS_DO_
-class Do;
-#endif //_CLASS_DO_
-#ifndef _CLASS_FOR_
-#define _CLASS_FOR_
-class For;
-#endif //_CLASS_FOR_
-#ifndef _CLASS_EXPRESSIONSTATEMENT_
-#define _CLASS_EXPRESSIONSTATEMENT_
-class ExpressionStatement;
-#endif //_CLASS_EXPRESSIONSTATEMENT_
-#ifndef _CLASS_SIMICOLONSINGLE_
-#define _CLASS_SIMICOLONSINGLE_
-class SimicolonSingle;
-#endif //_CLASS_SIMICOLONSINGLE_
-#ifndef _CLASS_STATEMENT_
-#define _CLASS_STATEMENT_
-class Statement;
-#endif //_CLASS_STATEMENT_
 
 #endif // _ITERATION_STATEMENT_H_

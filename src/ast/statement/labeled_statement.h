@@ -2,8 +2,13 @@
 #ifndef _LABELED_STATEMENT_H_
 #define _LABELED_STATEMENT_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Case;
+class Colon;
+class ConstantExpression;
+class Default;
+class Identifier;
+class Statement;
 
 class LabeledStatement: public BasicAST {
 public:
@@ -67,33 +72,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_COLON_
-#define _CLASS_COLON_
-class Colon;
-#endif //_CLASS_COLON_
-#ifndef _CLASS_DEFAULT_
-#define _CLASS_DEFAULT_
-class Default;
-#endif //_CLASS_DEFAULT_
-#ifndef _CLASS_CONSTANTEXPRESSION_
-#define _CLASS_CONSTANTEXPRESSION_
-class ConstantExpression;
-#endif //_CLASS_CONSTANTEXPRESSION_
-#ifndef _CLASS_CASE_
-#define _CLASS_CASE_
-class Case;
-#endif //_CLASS_CASE_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
-#ifndef _CLASS_STATEMENT_
-#define _CLASS_STATEMENT_
-class Statement;
-#endif //_CLASS_STATEMENT_
 
 #endif // _LABELED_STATEMENT_H_

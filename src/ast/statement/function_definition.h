@@ -2,8 +2,11 @@
 #ifndef _FUNCTION_DEFINITION_H_
 #define _FUNCTION_DEFINITION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class CompoundStatement;
+class DeclarationList;
+class DeclarationSpecifiers;
+class Declarator;
 
 class FunctionDefinition: public BasicAST {
 public:
@@ -83,25 +86,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_DECLARATIONSPECIFIERS_
-#define _CLASS_DECLARATIONSPECIFIERS_
-class DeclarationSpecifiers;
-#endif //_CLASS_DECLARATIONSPECIFIERS_
-#ifndef _CLASS_DECLARATOR_
-#define _CLASS_DECLARATOR_
-class Declarator;
-#endif //_CLASS_DECLARATOR_
-#ifndef _CLASS_DECLARATIONLIST_
-#define _CLASS_DECLARATIONLIST_
-class DeclarationList;
-#endif //_CLASS_DECLARATIONLIST_
-#ifndef _CLASS_COMPOUNDSTATEMENT_
-#define _CLASS_COMPOUNDSTATEMENT_
-class CompoundStatement;
-#endif //_CLASS_COMPOUNDSTATEMENT_
 
 #endif // _FUNCTION_DEFINITION_H_

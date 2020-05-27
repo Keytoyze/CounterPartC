@@ -2,8 +2,9 @@
 #ifndef _EXPRESSION_STATEMENT_H_
 #define _EXPRESSION_STATEMENT_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Expression;
+class SimicolonSingle;
 
 class ExpressionStatement: public BasicAST {
 public:
@@ -41,17 +42,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
-#ifndef _CLASS_SIMICOLONSINGLE_
-#define _CLASS_SIMICOLONSINGLE_
-class SimicolonSingle;
-#endif //_CLASS_SIMICOLONSINGLE_
 
 #endif // _EXPRESSION_STATEMENT_H_

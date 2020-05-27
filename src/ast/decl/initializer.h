@@ -2,8 +2,12 @@
 #ifndef _INITIALIZER_H_
 #define _INITIALIZER_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AssignmentExpression;
+class Comma;
+class InitializerList;
+class LCurly;
+class RCurly;
 
 class Initializer: public BasicAST {
 public:
@@ -63,29 +67,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_ASSIGNMENTEXPRESSION_
-#define _CLASS_ASSIGNMENTEXPRESSION_
-class AssignmentExpression;
-#endif //_CLASS_ASSIGNMENTEXPRESSION_
-#ifndef _CLASS_RCURLY_
-#define _CLASS_RCURLY_
-class RCurly;
-#endif //_CLASS_RCURLY_
-#ifndef _CLASS_LCURLY_
-#define _CLASS_LCURLY_
-class LCurly;
-#endif //_CLASS_LCURLY_
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
-#ifndef _CLASS_INITIALIZERLIST_
-#define _CLASS_INITIALIZERLIST_
-class InitializerList;
-#endif //_CLASS_INITIALIZERLIST_
 
 #endif // _INITIALIZER_H_

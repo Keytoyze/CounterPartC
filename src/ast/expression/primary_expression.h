@@ -2,8 +2,13 @@
 #ifndef _PRIMARY_EXPRESSION_H_
 #define _PRIMARY_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Constant;
+class Expression;
+class Identifier;
+class LRound;
+class RRound;
+class StringLiteral;
 
 class PrimaryExpression: public BasicAST {
 public:
@@ -71,33 +76,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_CONSTANT_
-#define _CLASS_CONSTANT_
-class Constant;
-#endif //_CLASS_CONSTANT_
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_STRINGLITERAL_
-#define _CLASS_STRINGLITERAL_
-class StringLiteral;
-#endif //_CLASS_STRINGLITERAL_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
 
 #endif // _PRIMARY_EXPRESSION_H_

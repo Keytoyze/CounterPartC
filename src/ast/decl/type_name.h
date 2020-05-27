@@ -2,8 +2,9 @@
 #ifndef _TYPE_NAME_H_
 #define _TYPE_NAME_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AbstractDeclarator;
+class SpecifierQualifierList;
 
 class TypeName: public BasicAST {
 public:
@@ -41,17 +42,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_SPECIFIERQUALIFIERLIST_
-#define _CLASS_SPECIFIERQUALIFIERLIST_
-class SpecifierQualifierList;
-#endif //_CLASS_SPECIFIERQUALIFIERLIST_
-#ifndef _CLASS_ABSTRACTDECLARATOR_
-#define _CLASS_ABSTRACTDECLARATOR_
-class AbstractDeclarator;
-#endif //_CLASS_ABSTRACTDECLARATOR_
 
 #endif // _TYPE_NAME_H_

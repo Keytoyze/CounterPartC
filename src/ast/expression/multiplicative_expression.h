@@ -2,8 +2,11 @@
 #ifndef _MULTIPLICATIVE_EXPRESSION_H_
 #define _MULTIPLICATIVE_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class CastExpression;
+class Div;
+class Mod;
+class Mul;
 
 class MultiplicativeExpression: public BasicAST {
 public:
@@ -79,25 +82,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_CASTEXPRESSION_
-#define _CLASS_CASTEXPRESSION_
-class CastExpression;
-#endif //_CLASS_CASTEXPRESSION_
-#ifndef _CLASS_DIV_
-#define _CLASS_DIV_
-class Div;
-#endif //_CLASS_DIV_
-#ifndef _CLASS_MUL_
-#define _CLASS_MUL_
-class Mul;
-#endif //_CLASS_MUL_
-#ifndef _CLASS_MOD_
-#define _CLASS_MOD_
-class Mod;
-#endif //_CLASS_MOD_
 
 #endif // _MULTIPLICATIVE_EXPRESSION_H_

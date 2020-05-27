@@ -2,8 +2,9 @@
 #ifndef _EXPRESSION_H_
 #define _EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AssignmentExpression;
+class Comma;
 
 class Expression: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
-#ifndef _CLASS_ASSIGNMENTEXPRESSION_
-#define _CLASS_ASSIGNMENTEXPRESSION_
-class AssignmentExpression;
-#endif //_CLASS_ASSIGNMENTEXPRESSION_
 
 #endif // _EXPRESSION_H_

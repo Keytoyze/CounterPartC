@@ -2,8 +2,18 @@
 #ifndef _ASSIGNMENT_OPERATOR_H_
 #define _ASSIGNMENT_OPERATOR_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AddAssign;
+class AndAssign;
+class DivAssign;
+class Eq;
+class LeftAssign;
+class ModAssign;
+class MulAssign;
+class OrAssign;
+class RightAssign;
+class SubAssign;
+class XorAssign;
 
 class AssignmentOperator: public BasicAST {
 public:
@@ -165,53 +175,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_ADDASSIGN_
-#define _CLASS_ADDASSIGN_
-class AddAssign;
-#endif //_CLASS_ADDASSIGN_
-#ifndef _CLASS_LEFTASSIGN_
-#define _CLASS_LEFTASSIGN_
-class LeftAssign;
-#endif //_CLASS_LEFTASSIGN_
-#ifndef _CLASS_MULASSIGN_
-#define _CLASS_MULASSIGN_
-class MulAssign;
-#endif //_CLASS_MULASSIGN_
-#ifndef _CLASS_MODASSIGN_
-#define _CLASS_MODASSIGN_
-class ModAssign;
-#endif //_CLASS_MODASSIGN_
-#ifndef _CLASS_ANDASSIGN_
-#define _CLASS_ANDASSIGN_
-class AndAssign;
-#endif //_CLASS_ANDASSIGN_
-#ifndef _CLASS_SUBASSIGN_
-#define _CLASS_SUBASSIGN_
-class SubAssign;
-#endif //_CLASS_SUBASSIGN_
-#ifndef _CLASS_RIGHTASSIGN_
-#define _CLASS_RIGHTASSIGN_
-class RightAssign;
-#endif //_CLASS_RIGHTASSIGN_
-#ifndef _CLASS_EQ_
-#define _CLASS_EQ_
-class Eq;
-#endif //_CLASS_EQ_
-#ifndef _CLASS_DIVASSIGN_
-#define _CLASS_DIVASSIGN_
-class DivAssign;
-#endif //_CLASS_DIVASSIGN_
-#ifndef _CLASS_XORASSIGN_
-#define _CLASS_XORASSIGN_
-class XorAssign;
-#endif //_CLASS_XORASSIGN_
-#ifndef _CLASS_ORASSIGN_
-#define _CLASS_ORASSIGN_
-class OrAssign;
-#endif //_CLASS_ORASSIGN_
 
 #endif // _ASSIGNMENT_OPERATOR_H_

@@ -2,8 +2,10 @@
 #ifndef _SHIFT_EXPRESSION_H_
 #define _SHIFT_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AdditiveExpression;
+class LeftOp;
+class RightOp;
 
 class ShiftExpression: public BasicAST {
 public:
@@ -61,21 +63,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_RIGHTOP_
-#define _CLASS_RIGHTOP_
-class RightOp;
-#endif //_CLASS_RIGHTOP_
-#ifndef _CLASS_LEFTOP_
-#define _CLASS_LEFTOP_
-class LeftOp;
-#endif //_CLASS_LEFTOP_
-#ifndef _CLASS_ADDITIVEEXPRESSION_
-#define _CLASS_ADDITIVEEXPRESSION_
-class AdditiveExpression;
-#endif //_CLASS_ADDITIVEEXPRESSION_
 
 #endif // _SHIFT_EXPRESSION_H_

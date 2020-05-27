@@ -2,8 +2,16 @@
 #ifndef _UNARY_EXPRESSION_H_
 #define _UNARY_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class CastExpression;
+class DecOp;
+class IncOp;
+class LRound;
+class PostfixExpression;
+class RRound;
+class Sizeof;
+class TypeName;
+class UnaryOperator;
 
 class UnaryExpression: public BasicAST {
 public:
@@ -109,45 +117,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_DECOP_
-#define _CLASS_DECOP_
-class DecOp;
-#endif //_CLASS_DECOP_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_INCOP_
-#define _CLASS_INCOP_
-class IncOp;
-#endif //_CLASS_INCOP_
-#ifndef _CLASS_POSTFIXEXPRESSION_
-#define _CLASS_POSTFIXEXPRESSION_
-class PostfixExpression;
-#endif //_CLASS_POSTFIXEXPRESSION_
-#ifndef _CLASS_CASTEXPRESSION_
-#define _CLASS_CASTEXPRESSION_
-class CastExpression;
-#endif //_CLASS_CASTEXPRESSION_
-#ifndef _CLASS_SIZEOF_
-#define _CLASS_SIZEOF_
-class Sizeof;
-#endif //_CLASS_SIZEOF_
-#ifndef _CLASS_TYPENAME_
-#define _CLASS_TYPENAME_
-class TypeName;
-#endif //_CLASS_TYPENAME_
-#ifndef _CLASS_UNARYOPERATOR_
-#define _CLASS_UNARYOPERATOR_
-class UnaryOperator;
-#endif //_CLASS_UNARYOPERATOR_
 
 #endif // _UNARY_EXPRESSION_H_

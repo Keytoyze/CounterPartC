@@ -2,8 +2,10 @@
 #ifndef _EQUALITY_EXPRESSION_H_
 #define _EQUALITY_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class EqOp;
+class NeOp;
+class RelationalExpression;
 
 class EqualityExpression: public BasicAST {
 public:
@@ -61,21 +63,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_EQOP_
-#define _CLASS_EQOP_
-class EqOp;
-#endif //_CLASS_EQOP_
-#ifndef _CLASS_NEOP_
-#define _CLASS_NEOP_
-class NeOp;
-#endif //_CLASS_NEOP_
-#ifndef _CLASS_RELATIONALEXPRESSION_
-#define _CLASS_RELATIONALEXPRESSION_
-class RelationalExpression;
-#endif //_CLASS_RELATIONALEXPRESSION_
 
 #endif // _EQUALITY_EXPRESSION_H_

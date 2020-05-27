@@ -2,8 +2,9 @@
 #ifndef _STRUCT_OR_UNION_H_
 #define _STRUCT_OR_UNION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Struct;
+class Union;
 
 class StructOrUnion: public BasicAST {
 public:
@@ -39,17 +40,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_STRUCT_
-#define _CLASS_STRUCT_
-class Struct;
-#endif //_CLASS_STRUCT_
-#ifndef _CLASS_UNION_
-#define _CLASS_UNION_
-class Union;
-#endif //_CLASS_UNION_
 
 #endif // _STRUCT_OR_UNION_H_

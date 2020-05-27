@@ -2,8 +2,9 @@
 #ifndef _EXTERNAL_DECLARATION_H_
 #define _EXTERNAL_DECLARATION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Declaration;
+class FunctionDefinition;
 
 class ExternalDeclaration: public BasicAST {
 public:
@@ -39,17 +40,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_FUNCTIONDEFINITION_
-#define _CLASS_FUNCTIONDEFINITION_
-class FunctionDefinition;
-#endif //_CLASS_FUNCTIONDEFINITION_
-#ifndef _CLASS_DECLARATION_
-#define _CLASS_DECLARATION_
-class Declaration;
-#endif //_CLASS_DECLARATION_
 
 #endif // _EXTERNAL_DECLARATION_H_

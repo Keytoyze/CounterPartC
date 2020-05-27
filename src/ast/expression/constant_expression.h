@@ -2,8 +2,8 @@
 #ifndef _CONSTANT_EXPRESSION_H_
 #define _CONSTANT_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class ConditionalExpression;
 
 class ConstantExpression: public BasicAST {
 public:
@@ -25,13 +25,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_CONDITIONALEXPRESSION_
-#define _CLASS_CONDITIONALEXPRESSION_
-class ConditionalExpression;
-#endif //_CLASS_CONDITIONALEXPRESSION_
 
 #endif // _CONSTANT_EXPRESSION_H_

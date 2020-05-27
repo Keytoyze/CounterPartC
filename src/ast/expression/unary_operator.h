@@ -2,8 +2,13 @@
 #ifndef _UNARY_OPERATOR_H_
 #define _UNARY_OPERATOR_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Add;
+class And;
+class Exclamation;
+class Mul;
+class Sub;
+class Tilde;
 
 class UnaryOperator: public BasicAST {
 public:
@@ -95,33 +100,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_ADD_
-#define _CLASS_ADD_
-class Add;
-#endif //_CLASS_ADD_
-#ifndef _CLASS_SUB_
-#define _CLASS_SUB_
-class Sub;
-#endif //_CLASS_SUB_
-#ifndef _CLASS_MUL_
-#define _CLASS_MUL_
-class Mul;
-#endif //_CLASS_MUL_
-#ifndef _CLASS_EXCLAMATION_
-#define _CLASS_EXCLAMATION_
-class Exclamation;
-#endif //_CLASS_EXCLAMATION_
-#ifndef _CLASS_TILDE_
-#define _CLASS_TILDE_
-class Tilde;
-#endif //_CLASS_TILDE_
-#ifndef _CLASS_AND_
-#define _CLASS_AND_
-class And;
-#endif //_CLASS_AND_
 
 #endif // _UNARY_OPERATOR_H_

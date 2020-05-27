@@ -2,8 +2,12 @@
 #ifndef _RELATIONAL_EXPRESSION_H_
 #define _RELATIONAL_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class GeOp;
+class LAngle;
+class LeOp;
+class RAngle;
+class ShiftExpression;
 
 class RelationalExpression: public BasicAST {
 public:
@@ -97,29 +101,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_LEOP_
-#define _CLASS_LEOP_
-class LeOp;
-#endif //_CLASS_LEOP_
-#ifndef _CLASS_SHIFTEXPRESSION_
-#define _CLASS_SHIFTEXPRESSION_
-class ShiftExpression;
-#endif //_CLASS_SHIFTEXPRESSION_
-#ifndef _CLASS_RANGLE_
-#define _CLASS_RANGLE_
-class RAngle;
-#endif //_CLASS_RANGLE_
-#ifndef _CLASS_GEOP_
-#define _CLASS_GEOP_
-class GeOp;
-#endif //_CLASS_GEOP_
-#ifndef _CLASS_LANGLE_
-#define _CLASS_LANGLE_
-class LAngle;
-#endif //_CLASS_LANGLE_
 
 #endif // _RELATIONAL_EXPRESSION_H_

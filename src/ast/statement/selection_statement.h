@@ -2,8 +2,14 @@
 #ifndef _SELECTION_STATEMENT_H_
 #define _SELECTION_STATEMENT_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Else;
+class Expression;
+class If;
+class LRound;
+class RRound;
+class Statement;
+class Switch;
 
 class SelectionStatement: public BasicAST {
 public:
@@ -81,37 +87,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_IF_
-#define _CLASS_IF_
-class If;
-#endif //_CLASS_IF_
-#ifndef _CLASS_SWITCH_
-#define _CLASS_SWITCH_
-class Switch;
-#endif //_CLASS_SWITCH_
-#ifndef _CLASS_ELSE_
-#define _CLASS_ELSE_
-class Else;
-#endif //_CLASS_ELSE_
-#ifndef _CLASS_STATEMENT_
-#define _CLASS_STATEMENT_
-class Statement;
-#endif //_CLASS_STATEMENT_
 
 #endif // _SELECTION_STATEMENT_H_

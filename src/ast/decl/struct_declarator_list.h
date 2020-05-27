@@ -2,8 +2,9 @@
 #ifndef _STRUCT_DECLARATOR_LIST_H_
 #define _STRUCT_DECLARATOR_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Comma;
+class StructDeclarator;
 
 class StructDeclaratorList: public BasicAST {
 public:
@@ -43,17 +44,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
-#ifndef _CLASS_STRUCTDECLARATOR_
-#define _CLASS_STRUCTDECLARATOR_
-class StructDeclarator;
-#endif //_CLASS_STRUCTDECLARATOR_
 
 #endif // _STRUCT_DECLARATOR_LIST_H_

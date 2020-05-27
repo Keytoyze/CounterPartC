@@ -2,8 +2,10 @@
 #ifndef _ASSIGNMENT_EXPRESSION_H_
 #define _ASSIGNMENT_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class AssignmentOperator;
+class ConditionalExpression;
+class UnaryExpression;
 
 class AssignmentExpression: public BasicAST {
 public:
@@ -43,21 +45,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_UNARYEXPRESSION_
-#define _CLASS_UNARYEXPRESSION_
-class UnaryExpression;
-#endif //_CLASS_UNARYEXPRESSION_
-#ifndef _CLASS_ASSIGNMENTOPERATOR_
-#define _CLASS_ASSIGNMENTOPERATOR_
-class AssignmentOperator;
-#endif //_CLASS_ASSIGNMENTOPERATOR_
-#ifndef _CLASS_CONDITIONALEXPRESSION_
-#define _CLASS_CONDITIONALEXPRESSION_
-class ConditionalExpression;
-#endif //_CLASS_CONDITIONALEXPRESSION_
 
 #endif // _ASSIGNMENT_EXPRESSION_H_

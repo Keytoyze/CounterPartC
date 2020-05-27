@@ -2,8 +2,10 @@
 #ifndef _STRUCT_DECLARATOR_H_
 #define _STRUCT_DECLARATOR_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Colon;
+class ConstantExpression;
+class Declarator;
 
 class StructDeclarator: public BasicAST {
 public:
@@ -59,21 +61,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_COLON_
-#define _CLASS_COLON_
-class Colon;
-#endif //_CLASS_COLON_
-#ifndef _CLASS_CONSTANTEXPRESSION_
-#define _CLASS_CONSTANTEXPRESSION_
-class ConstantExpression;
-#endif //_CLASS_CONSTANTEXPRESSION_
-#ifndef _CLASS_DECLARATOR_
-#define _CLASS_DECLARATOR_
-class Declarator;
-#endif //_CLASS_DECLARATOR_
 
 #endif // _STRUCT_DECLARATOR_H_

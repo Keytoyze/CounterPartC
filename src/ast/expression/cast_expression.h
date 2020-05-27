@@ -2,8 +2,11 @@
 #ifndef _CAST_EXPRESSION_H_
 #define _CAST_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class LRound;
+class RRound;
+class TypeName;
+class UnaryExpression;
 
 class CastExpression: public BasicAST {
 public:
@@ -45,25 +48,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_UNARYEXPRESSION_
-#define _CLASS_UNARYEXPRESSION_
-class UnaryExpression;
-#endif //_CLASS_UNARYEXPRESSION_
-#ifndef _CLASS_LROUND_
-#define _CLASS_LROUND_
-class LRound;
-#endif //_CLASS_LROUND_
-#ifndef _CLASS_RROUND_
-#define _CLASS_RROUND_
-class RRound;
-#endif //_CLASS_RROUND_
-#ifndef _CLASS_TYPENAME_
-#define _CLASS_TYPENAME_
-class TypeName;
-#endif //_CLASS_TYPENAME_
 
 #endif // _CAST_EXPRESSION_H_

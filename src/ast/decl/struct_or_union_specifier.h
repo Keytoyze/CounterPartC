@@ -2,8 +2,12 @@
 #ifndef _STRUCT_OR_UNION_SPECIFIER_H_
 #define _STRUCT_OR_UNION_SPECIFIER_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Identifier;
+class LCurly;
+class RCurly;
+class StructDeclarationList;
+class StructOrUnion;
 
 class StructOrUnionSpecifier: public BasicAST {
 public:
@@ -69,29 +73,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_RCURLY_
-#define _CLASS_RCURLY_
-class RCurly;
-#endif //_CLASS_RCURLY_
-#ifndef _CLASS_STRUCTORUNION_
-#define _CLASS_STRUCTORUNION_
-class StructOrUnion;
-#endif //_CLASS_STRUCTORUNION_
-#ifndef _CLASS_LCURLY_
-#define _CLASS_LCURLY_
-class LCurly;
-#endif //_CLASS_LCURLY_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
-#ifndef _CLASS_STRUCTDECLARATIONLIST_
-#define _CLASS_STRUCTDECLARATIONLIST_
-class StructDeclarationList;
-#endif //_CLASS_STRUCTDECLARATIONLIST_
 
 #endif // _STRUCT_OR_UNION_SPECIFIER_H_

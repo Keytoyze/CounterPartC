@@ -2,8 +2,12 @@
 #ifndef _STORAGE_CLASS_SPECIFIER_H_
 #define _STORAGE_CLASS_SPECIFIER_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Auto;
+class Extern;
+class Register;
+class Static;
+class Typedef;
 
 class StorageClassSpecifier: public BasicAST {
 public:
@@ -81,29 +85,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_AUTO_
-#define _CLASS_AUTO_
-class Auto;
-#endif //_CLASS_AUTO_
-#ifndef _CLASS_TYPEDEF_
-#define _CLASS_TYPEDEF_
-class Typedef;
-#endif //_CLASS_TYPEDEF_
-#ifndef _CLASS_STATIC_
-#define _CLASS_STATIC_
-class Static;
-#endif //_CLASS_STATIC_
-#ifndef _CLASS_REGISTER_
-#define _CLASS_REGISTER_
-class Register;
-#endif //_CLASS_REGISTER_
-#ifndef _CLASS_EXTERN_
-#define _CLASS_EXTERN_
-class Extern;
-#endif //_CLASS_EXTERN_
 
 #endif // _STORAGE_CLASS_SPECIFIER_H_

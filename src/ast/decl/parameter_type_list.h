@@ -2,8 +2,10 @@
 #ifndef _PARAMETER_TYPE_LIST_H_
 #define _PARAMETER_TYPE_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Comma;
+class Ellipsis;
+class ParameterList;
 
 class ParameterTypeList: public BasicAST {
 public:
@@ -43,21 +45,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_PARAMETERLIST_
-#define _CLASS_PARAMETERLIST_
-class ParameterList;
-#endif //_CLASS_PARAMETERLIST_
-#ifndef _CLASS_COMMA_
-#define _CLASS_COMMA_
-class Comma;
-#endif //_CLASS_COMMA_
-#ifndef _CLASS_ELLIPSIS_
-#define _CLASS_ELLIPSIS_
-class Ellipsis;
-#endif //_CLASS_ELLIPSIS_
 
 #endif // _PARAMETER_TYPE_LIST_H_

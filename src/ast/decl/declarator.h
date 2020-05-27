@@ -2,8 +2,9 @@
 #ifndef _DECLARATOR_H_
 #define _DECLARATOR_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class DirectDeclarator;
+class Pointer;
 
 class Declarator: public BasicAST {
 public:
@@ -41,17 +42,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_DIRECTDECLARATOR_
-#define _CLASS_DIRECTDECLARATOR_
-class DirectDeclarator;
-#endif //_CLASS_DIRECTDECLARATOR_
-#ifndef _CLASS_POINTER_
-#define _CLASS_POINTER_
-class Pointer;
-#endif //_CLASS_POINTER_
 
 #endif // _DECLARATOR_H_

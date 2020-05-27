@@ -2,8 +2,8 @@
 #ifndef _DECLARATION_LIST_H_
 #define _DECLARATION_LIST_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Declaration;
 
 class DeclarationList: public BasicAST {
 public:
@@ -41,13 +41,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_DECLARATION_
-#define _CLASS_DECLARATION_
-class Declaration;
-#endif //_CLASS_DECLARATION_
 
 #endif // _DECLARATION_LIST_H_

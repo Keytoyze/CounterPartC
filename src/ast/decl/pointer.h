@@ -2,8 +2,9 @@
 #ifndef _POINTER_H_
 #define _POINTER_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Mul;
+class TypeQualifierList;
 
 class Pointer: public BasicAST {
 public:
@@ -75,17 +76,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_TYPEQUALIFIERLIST_
-#define _CLASS_TYPEQUALIFIERLIST_
-class TypeQualifierList;
-#endif //_CLASS_TYPEQUALIFIERLIST_
-#ifndef _CLASS_MUL_
-#define _CLASS_MUL_
-class Mul;
-#endif //_CLASS_MUL_
 
 #endif // _POINTER_H_

@@ -2,8 +2,12 @@
 #ifndef _ENUM_SPECIFIER_H_
 #define _ENUM_SPECIFIER_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Enum;
+class EnumeratorList;
+class Identifier;
+class LCurly;
+class RCurly;
 
 class EnumSpecifier: public BasicAST {
 public:
@@ -69,29 +73,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_RCURLY_
-#define _CLASS_RCURLY_
-class RCurly;
-#endif //_CLASS_RCURLY_
-#ifndef _CLASS_LCURLY_
-#define _CLASS_LCURLY_
-class LCurly;
-#endif //_CLASS_LCURLY_
-#ifndef _CLASS_ENUMERATORLIST_
-#define _CLASS_ENUMERATORLIST_
-class EnumeratorList;
-#endif //_CLASS_ENUMERATORLIST_
-#ifndef _CLASS_ENUM_
-#define _CLASS_ENUM_
-class Enum;
-#endif //_CLASS_ENUM_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
 
 #endif // _ENUM_SPECIFIER_H_

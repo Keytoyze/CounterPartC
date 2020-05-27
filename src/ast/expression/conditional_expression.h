@@ -2,8 +2,11 @@
 #ifndef _CONDITIONAL_EXPRESSION_H_
 #define _CONDITIONAL_EXPRESSION_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class Colon;
+class Expression;
+class LogicalOrExpression;
+class Question;
 
 class ConditionalExpression: public BasicAST {
 public:
@@ -47,25 +50,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_COLON_
-#define _CLASS_COLON_
-class Colon;
-#endif //_CLASS_COLON_
-#ifndef _CLASS_EXPRESSION_
-#define _CLASS_EXPRESSION_
-class Expression;
-#endif //_CLASS_EXPRESSION_
-#ifndef _CLASS_QUESTION_
-#define _CLASS_QUESTION_
-class Question;
-#endif //_CLASS_QUESTION_
-#ifndef _CLASS_LOGICALOREXPRESSION_
-#define _CLASS_LOGICALOREXPRESSION_
-class LogicalOrExpression;
-#endif //_CLASS_LOGICALOREXPRESSION_
 
 #endif // _CONDITIONAL_EXPRESSION_H_

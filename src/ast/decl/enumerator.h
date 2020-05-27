@@ -2,8 +2,10 @@
 #ifndef _ENUMERATOR_H_
 #define _ENUMERATOR_H_
 
-#include "ast/ast.h"
-//#header
+//#include "ast/ast.h"
+class ConstantExpression;
+class Eq;
+class Identifier;
 
 class Enumerator: public BasicAST {
 public:
@@ -43,21 +45,5 @@ public:
     virtual void Dump(int depth);
 
 };
-
-
-#else
-
-#ifndef _CLASS_CONSTANTEXPRESSION_
-#define _CLASS_CONSTANTEXPRESSION_
-class ConstantExpression;
-#endif //_CLASS_CONSTANTEXPRESSION_
-#ifndef _CLASS_EQ_
-#define _CLASS_EQ_
-class Eq;
-#endif //_CLASS_EQ_
-#ifndef _CLASS_IDENTIFIER_
-#define _CLASS_IDENTIFIER_
-class Identifier;
-#endif //_CLASS_IDENTIFIER_
 
 #endif // _ENUMERATOR_H_
