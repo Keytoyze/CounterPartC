@@ -5,15 +5,18 @@
 // (DirectDeclarator -> Identifier)
 IRValuePtr DirectDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
-    return nullptr;
+    auto identifierName = this->identifierAst1->content;
+    auto ptr = context.newVar(TYPE_IDENTIFIER, false);
+    ptr->content = identifierName;
+//    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
+    return ptr;
 }
 
 // direct_declarator -> '(' declarator ')'
 // (DirectDeclarator -> LRound Declarator RRound)
 IRValuePtr DirectDeclarator2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator2 Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +24,7 @@ IRValuePtr DirectDeclarator2::GenerateIR(Context& context) {
 // (DirectDeclarator -> DirectDeclarator LSquare ConstantExpression RSquare)
 IRValuePtr DirectDeclarator3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
+    std::cerr << "DirectDeclarator3 Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -37,7 +40,8 @@ IRValuePtr DirectDeclarator4::GenerateIR(Context& context) {
 // (DirectDeclarator -> DirectDeclarator LRound ParameterTypeList RRound)
 IRValuePtr DirectDeclarator5::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
+    this->directDeclaratorAst1->GenerateIR(context);
+    std::cerr << "DirectDeclarator5 Not implemented!" << std::endl;
     return nullptr;
 }
 

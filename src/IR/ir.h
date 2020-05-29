@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include "ir/value.h"
+#include "IR/value.h"
 
 class Constant;
 

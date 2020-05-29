@@ -5,7 +5,7 @@
 
 class Constant: public BasicToken {
 public:
-    Constant(const char* yytext) {}
+    explicit Constant(const char* yytext) {}
 
 };
 

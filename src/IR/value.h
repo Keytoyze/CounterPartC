@@ -7,12 +7,13 @@
 #include <vector>
 
 enum Type {
-    TYPE_VOID, TYPE_BOOL, TYPE_INT, TYPE_DOUBLE // TODO: more types
+    TYPE_VOID, TYPE_BOOL, TYPE_INT, TYPE_DOUBLE, TYPE_IDENTIFIER // TODO: more types
 };
 
 struct IRValue {
     int id;
     Type type;
+    std::string content = "";
     bool useAddress = false;
 };
 
