@@ -4,8 +4,6 @@
 // expression_statement -> ';'
 // (ExpressionStatement -> SimicolonSingle)
 IRValuePtr ExpressionStatement1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "ExpressionStatement Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +11,7 @@ IRValuePtr ExpressionStatement1::GenerateIR(Context& context) {
 // (ExpressionStatement -> Expression SimicolonSingle)
 IRValuePtr ExpressionStatement2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "ExpressionStatement Not implemented!" << std::endl;
+    this->expressionAst1->GenerateIR(context);
     return nullptr;
 }
 

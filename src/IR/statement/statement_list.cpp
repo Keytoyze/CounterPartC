@@ -4,16 +4,15 @@
 // statement_list -> statement
 // (StatementList -> Statement)
 IRValuePtr StatementList1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "StatementList Not implemented!" << std::endl;
+    this->statementAst1->GenerateIR(context);
     return nullptr;
 }
 
 // statement_list -> statement_list statement
 // (StatementList -> StatementList Statement)
 IRValuePtr StatementList2::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "StatementList Not implemented!" << std::endl;
+    this->statementListAst1->GenerateIR(context);
+    this->statementAst2->GenerateIR(context);
     return nullptr;
 }
 

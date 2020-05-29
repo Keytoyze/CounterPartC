@@ -50,6 +50,9 @@ public:
     std::map<std::string, IRValuePtr> varTable;
     std::map<std::string, IRValuePtr> arrayTable;
     bool breakable = false;
+    bool continuable = false;
+    int breakLabel = -1;
+    int continueLabel = -1;
 };
 
 using BlockPtr = std::shared_ptr<Block>;
