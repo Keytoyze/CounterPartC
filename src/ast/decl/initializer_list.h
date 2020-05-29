@@ -8,6 +8,7 @@ class Initializer;
 
 class InitializerList: public BasicAST {
 public:
+    std::shared_ptr<std::vector<IRValuePtr>> initializerVector;
     virtual ~InitializerList() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

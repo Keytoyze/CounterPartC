@@ -15,7 +15,9 @@ IRValuePtr ExternalDeclaration1::GenerateIR(Context& context) {
 // external_declaration -> declaration
 // (ExternalDeclaration -> Declaration)
 IRValuePtr ExternalDeclaration2::GenerateIR(Context& context) {
+    this->declarationAst1->declarationType = DeclarationType::VARIABLE;
     this->declarationAst1->GenerateIR(context);
+
     // std::cerr << "ExternalDeclaration Not implemented!" << std::endl;
     return nullptr;
 }

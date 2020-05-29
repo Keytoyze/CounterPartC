@@ -23,7 +23,6 @@ IRValuePtr DeclarationSpecifiers3::GenerateIR(Context& context) {
     // TODO: implement me!
     this->typeSpecifierAst1->GenerateIR(context);
     this->specifierType = this->typeSpecifierAst1->specifierType;
-    std::cerr << "DeclarationSpecifiers3 Not implemented!" << std::endl;
     return nullptr;
 }
 

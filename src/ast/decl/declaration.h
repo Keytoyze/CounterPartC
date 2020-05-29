@@ -3,6 +3,8 @@
 #define _DECLARATION_H_
 
 //#include "ast/ast.h"
+#include "ast/declaration_type.h"
+
 class DeclarationSpecifiers;
 class InitDeclaratorList;
 class SimicolonSingle;
@@ -10,7 +12,8 @@ class SimicolonSingle;
 class Declaration: public BasicAST {
 public:
     Type specifierType;
-    FunctionParameterList parameterList;
+    DeclarationType declarationType = DeclarationType::UNKNOWN;
+    FunctionParameterList parameterList; // valid when declarationType == DeclarationType::FUNCTION
     virtual ~Declaration() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
