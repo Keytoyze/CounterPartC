@@ -8,10 +8,15 @@
 
 #include "IR/ir.h"
 #include "IR/value.h"
+enum Parsing{
+    PARSING_NULL,
+    PARSING_FUNCTION
+};
 
 class Context {
 public:
     IR ir;
+    Parsing parsingContext;
     std::map<std::string, FunctionValuePtr> functionPool;
     std::vector<BlockPtr> blockStack;
 

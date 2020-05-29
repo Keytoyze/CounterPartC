@@ -9,6 +9,7 @@ class Declarator;
 
 class ParameterDeclaration: public BasicAST {
 public:
+    std::pair<Type, std::string> parameter;
     virtual ~ParameterDeclaration() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

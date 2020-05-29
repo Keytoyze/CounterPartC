@@ -24,5 +24,6 @@ Context::Context() {
     arrayNum = 0;
     varNum = 0;
     labelNum = 0;
+    parsingContext = PARSING_NULL;
 }
 

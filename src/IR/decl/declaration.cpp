@@ -5,15 +5,19 @@
 // (Declaration -> DeclarationSpecifiers SimicolonSingle)
 IRValuePtr Declaration1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "Declaration Not implemented!" << std::endl;
+    this->declarationSpecifiersAst1->GenerateIR(context);
+    std::cerr << "Declaration1 Not implemented!" << std::endl;
     return nullptr;
 }
 
 // declaration -> declaration_specifiers init_declarator_list ';'
 // (Declaration -> DeclarationSpecifiers InitDeclaratorList SimicolonSingle)
 IRValuePtr Declaration2::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "Declaration Not implemented!" << std::endl;
+    // function declaration
+    this->declarationSpecifiersAst1->GenerateIR(context);
+    this->initDeclaratorListAst2->GenerateIR(context);
+
+    std::cerr << "Declaration2 Not implemented!" << std::endl;
     return nullptr;
 }
 

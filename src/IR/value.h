@@ -7,7 +7,14 @@
 #include <vector>
 
 enum Type {
-    TYPE_VOID, TYPE_BOOL, TYPE_INT, TYPE_DOUBLE, TYPE_IDENTIFIER // TODO: more types
+    TYPE_VOID, TYPE_BOOL, TYPE_INT, TYPE_DOUBLE // TODO: more types
+};
+
+static const char * TypeToStr[] = {
+        "void",
+        "bool",
+        "int",
+        "double"
 };
 
 struct IRValue {
@@ -19,6 +26,11 @@ struct IRValue {
 
 using IRValuePtr = std::shared_ptr<IRValue>;
 
+
+
+using FunctionParameter = std::pair<Type, std::string>;
+using FunctionParameterList = std::vector<FunctionParameter>;
+
 class Block {
 public:
     int id;
@@ -29,13 +41,19 @@ public:
 
 using BlockPtr = std::shared_ptr<Block>;
 
-class FunctionValue: public Block {
+class FunctionValue : public Block {
 public:
+    FunctionValue(Type type,
+                  FunctionParameterList &list,
+                  bool hasDefined = false) :
+            returnType(type), parameters(list),
+            hasDefined(hasDefined) {};
     Type returnType;
-    std::vector<IRValuePtr> parameters;
-    bool hasDefined = false;
+    FunctionParameterList &parameters;
+    bool hasDefined;
 };
 
 using FunctionValuePtr = std::shared_ptr<FunctionValue>;
+
 
 #endif // _IR_VALUE_H_

@@ -29,8 +29,11 @@ IRValuePtr TypeSpecifier3::GenerateIR(Context& context) {
 // (TypeSpecifier -> Int)
 IRValuePtr TypeSpecifier4::GenerateIR(Context& context) {
 //    std::cerr << "TypeSpecifier int Not implemented!" << std::endl;
-    return context.newVar(Type::TYPE_INT, false);
+//    return context.newVar(Type::TYPE_INT, false);
+    specifierType = Type::TYPE_INT;
+    return nullptr;
 }
+
 
 // type_specifier -> LONG
 // (TypeSpecifier -> Long)

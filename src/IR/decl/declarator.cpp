@@ -3,7 +3,7 @@
 
 // declarator -> pointer direct_declarator
 // (Declarator -> Pointer DirectDeclarator)
-IRValuePtr Declarator1::GenerateIR(Context& context) {
+IRValuePtr Declarator1::GenerateIR(Context &context) {
     // TODO: implement me!
     this->directDeclaratorAst2->GenerateIR(context);
     std::cerr << "Declarator Not implemented!" << std::endl;
@@ -12,9 +12,16 @@ IRValuePtr Declarator1::GenerateIR(Context& context) {
 
 // declarator -> direct_declarator
 // (Declarator -> DirectDeclarator)
-IRValuePtr Declarator2::GenerateIR(Context& context) {
+IRValuePtr Declarator2::GenerateIR(Context &context) {
     // TODO: implement me!
-    return this->directDeclaratorAst1->GenerateIR(context);
+    // used by : function def,
+    this->directDeclaratorAst1->GenerateIR(context);
+    this->identifier = directDeclaratorAst1->identifier;
+    this->parameterList = directDeclaratorAst1->parameterList;
+    for (int i = 0; i < parameterList.size(); i++) {
+        std::cout << "param" << i << " " << parameterList[i].first << " " << parameterList[i].second << std::endl;
+    }
 //    std::cerr << "Declarator Not implemented!" << std::endl;
+    return nullptr;
 }
 

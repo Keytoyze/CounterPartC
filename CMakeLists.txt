@@ -36,7 +36,7 @@ add_executable(
         "src/IR/ir.cpp"
         ${FLEX_lexer_OUTPUTS}
         ${BISON_parser_OUTPUTS}
-        src/IR/context.cpp)
+        src/IR/context.cpp src/IR/value.cpp)
 
 target_include_directories(${CMAKE_PROJECT_NAME}
         PRIVATE

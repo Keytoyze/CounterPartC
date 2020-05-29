@@ -5,11 +5,12 @@
 // (DirectDeclarator -> Identifier)
 IRValuePtr DirectDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
-    auto identifierName = this->identifierAst1->content;
-    auto ptr = context.newVar(TYPE_IDENTIFIER, false);
-    ptr->content = identifierName;
-//    std::cerr << "DirectDeclarator Not implemented!" << std::endl;
-    return ptr;
+    this->identifier = this->identifierAst1->content;
+//    auto identifierName = this->identifierAst1->content;
+//    auto ptr = context.newVar(TYPE_IDENTIFIER, false);
+//    ptr->content = identifierName;
+    std::cout << "DirectDeclarator identifier: " << identifier << std::endl;
+    return nullptr;
 }
 
 // direct_declarator -> '(' declarator ')'
@@ -41,6 +42,11 @@ IRValuePtr DirectDeclarator4::GenerateIR(Context& context) {
 IRValuePtr DirectDeclarator5::GenerateIR(Context& context) {
     // TODO: implement me!
     this->directDeclaratorAst1->GenerateIR(context);
+    // Parse parameter list, function name is identifier
+    this->parameterTypeListAst3->GenerateIR(context);
+    this->identifier = this->directDeclaratorAst1->identifier;
+    // TODO: vector copy is not the best solution here , deciding...
+    this->parameterList = parameterTypeListAst3->parameterList;
     std::cerr << "DirectDeclarator5 Not implemented!" << std::endl;
     return nullptr;
 }

@@ -11,6 +11,8 @@ void IR::label(int labelId) {
 
 void IR::functionDefinition(FunctionValuePtr function) {
     // TODO
+    // since the stack block is contained in function
+    // information to generate the complete code is presented
 }
 
 void IR::valueToValue(IRValuePtr x, IRValuePtr y) {
