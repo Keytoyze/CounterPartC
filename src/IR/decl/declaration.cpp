@@ -16,6 +16,9 @@ IRValuePtr Declaration2::GenerateIR(Context& context) {
     // function declaration
     this->declarationSpecifiersAst1->GenerateIR(context);
     this->initDeclaratorListAst2->GenerateIR(context);
+    this->specifierType = declarationSpecifiersAst1->specifierType;
+    // distinguish [function | variable] declaration
+
 
     std::cerr << "Declaration2 Not implemented!" << std::endl;
     return nullptr;

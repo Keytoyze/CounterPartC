@@ -7,14 +7,27 @@
 #include <vector>
 
 enum Type {
-    TYPE_VOID, TYPE_BOOL, TYPE_INT, TYPE_DOUBLE // TODO: more types
+    TYPE_VOID,
+    TYPE_CHAR,
+    TYPE_SHORT,
+    TYPE_INT,
+    TYPE_LONG,
+    TYPE_FLOAT,
+    TYPE_DOUBLE,
+    TYPE_SIGNED,
+    TYPE_UNSIGNED // TODO: maybe there are more ?
 };
 
 static const char * TypeToStr[] = {
         "void",
-        "bool",
+        "char",
+        "short",
         "int",
-        "double"
+        "long",
+        "float",
+        "double",
+        "signed",
+        "unsigned"
 };
 
 struct IRValue {

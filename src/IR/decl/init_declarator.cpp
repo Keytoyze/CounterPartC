@@ -5,6 +5,8 @@
 // (InitDeclarator -> Declarator)
 IRValuePtr InitDeclarator1::GenerateIR(Context& context) {
     // TODO: implement me!
+    // from function declaration
+    this->declaratorAst1->GenerateIR(context);
     std::cerr << "InitDeclarator Not implemented!" << std::endl;
     return nullptr;
 }

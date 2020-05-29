@@ -4,32 +4,27 @@
 // type_specifier -> VOID
 // (TypeSpecifier -> Void)
 IRValuePtr TypeSpecifier1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "TypeSpecifier void Not implemented!" << std::endl;
+    this->specifierType = Type::TYPE_VOID;
     return nullptr;
 }
 
 // type_specifier -> CHAR
 // (TypeSpecifier -> Char)
 IRValuePtr TypeSpecifier2::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "TypeSpecifier char Not implemented!" << std::endl;
+    this->specifierType = Type::TYPE_CHAR;
     return nullptr;
 }
 
 // type_specifier -> SHORT
 // (TypeSpecifier -> Short)
 IRValuePtr TypeSpecifier3::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "TypeSpecifier short Not implemented!" << std::endl;
+    this->specifierType = Type::TYPE_SHORT;
     return nullptr;
 }
 
 // type_specifier -> INT
 // (TypeSpecifier -> Int)
 IRValuePtr TypeSpecifier4::GenerateIR(Context& context) {
-//    std::cerr << "TypeSpecifier int Not implemented!" << std::endl;
-//    return context.newVar(Type::TYPE_INT, false);
     specifierType = Type::TYPE_INT;
     return nullptr;
 }
@@ -38,40 +33,35 @@ IRValuePtr TypeSpecifier4::GenerateIR(Context& context) {
 // type_specifier -> LONG
 // (TypeSpecifier -> Long)
 IRValuePtr TypeSpecifier5::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
+    this->specifierType = Type::TYPE_LONG;
     return nullptr;
 }
 
 // type_specifier -> FLOAT
 // (TypeSpecifier -> Float)
 IRValuePtr TypeSpecifier6::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
+    this->specifierType = Type::TYPE_FLOAT;
     return nullptr;
 }
 
 // type_specifier -> DOUBLE
 // (TypeSpecifier -> Double)
 IRValuePtr TypeSpecifier7::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
+    this->specifierType = Type::TYPE_DOUBLE;
     return nullptr;
 }
 
 // type_specifier -> SIGNED
 // (TypeSpecifier -> Signed)
 IRValuePtr TypeSpecifier8::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
+    this->specifierType = Type::TYPE_SIGNED;
     return nullptr;
 }
 
 // type_specifier -> UNSIGNED
 // (TypeSpecifier -> Unsigned)
 IRValuePtr TypeSpecifier9::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "TypeSpecifier Not implemented!" << std::endl;
+    this->specifierType = Type::TYPE_UNSIGNED;
     return nullptr;
 }
 

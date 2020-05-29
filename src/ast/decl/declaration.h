@@ -9,6 +9,8 @@ class SimicolonSingle;
 
 class Declaration: public BasicAST {
 public:
+    Type specifierType;
+    FunctionParameterList parameterList;
     virtual ~Declaration() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
