@@ -4,20 +4,12 @@
 // assignment_expression -> conditional_expression
 // (AssignmentExpression -> ConditionalExpression)
 IRValuePtr AssignmentExpression1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    //std::cerr << "AssignmentExpression Not implemented!" << std::endl;
-    //return nullptr;
-
     return conditionalExpressionAst1->GenerateIR(context);
 }
 
 // assignment_expression -> unary_expression assignment_operator assignment_expression
 // (AssignmentExpression -> UnaryExpression AssignmentOperator AssignmentExpression)
 IRValuePtr AssignmentExpression2::GenerateIR(Context& context) {
-    // TODO: implement me!
-    //std::cerr << "AssignmentExpression Not implemented!" << std::endl;
-    //return nullptr;
-
     IRValuePtr p1 = unaryExpressionAst1->GenerateIR(context);
     IRValuePtr p2 = assignmentExpressionAst3->GenerateIR(context);
 

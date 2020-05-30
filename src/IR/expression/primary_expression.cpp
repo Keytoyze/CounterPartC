@@ -12,13 +12,10 @@ IRValuePtr PrimaryExpression1::GenerateIR(Context& context) {
 // primary_expression -> CONSTANT
 // (PrimaryExpression -> Constant)
 IRValuePtr PrimaryExpression2::GenerateIR(Context& context) {
-
-    IRValuePtr p ;
-
-        p = context.newVar(TYPE_INT,false);
-        context.ir.constantToValue(p,*constantAst1);
+    IRValuePtr p;
+    p = context.newVar(TYPE_INT, false);
+    context.ir.constantToValue(p, *constantAst1);
     return p;
-
 }
 
 // primary_expression -> STRING_LITERAL

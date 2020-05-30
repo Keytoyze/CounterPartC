@@ -69,17 +69,17 @@ IS          ((u|U)|(u|U)?(l|L|ll|LL)|(l|L|ll|LL)(u|U))
 
 {L}({L}|{D})*		{ count(); yylval.identifier = new Identifier(yytext); return(check_type()); }
 
-0[xX]{H}+{IS}?		{ count(); yylval.constant = new IntConstant(yytext); return(CONSTANT); }
-0[0-7]*{IS}?		{ count(); yylval.constant = new IntConstant(yytext); return(CONSTANT); }
-[1-9]{D}*{IS}?		{ count(); yylval.constant = new IntConstant(yytext); return(CONSTANT); }
-L?'(\\.|[^\\'\n])+'	{ count(); yylval.constant = new IntConstant(yytext); return(CONSTANT); }
+0[xX]{H}+{IS}?		{ count(); yylval.constant = new IntConstant(yytext, IntType::HEX); return(CONSTANT); }
+0[0-7]*{IS}?		{ count(); yylval.constant = new IntConstant(yytext, IntType::OCT); return(CONSTANT); }
+[1-9]{D}*{IS}?		{ count(); yylval.constant = new IntConstant(yytext, IntType::DEC); return(CONSTANT); }
+L?'(\\.|[^\\'\n])+'	{ count(); yylval.constant = new IntConstant(yytext, IntType::CHR); return(CONSTANT); }
 
-{D}+{E}{FS}?		{ count(); yylval.constant = new IntConstant(yytext); return(CONSTANT); }
+{D}+{E}{FS}?		{ count(); yylval.constant = new IntConstant(yytext, IntType::NOT_IMPL); return(CONSTANT); }
 {D}*"."{D}+{E}?{FS}?	{ count(); yylval.constant = new DoubleConstant(yytext); return(CONSTANT); }
 {D}+"."{D}*{E}?{FS}?	{ count(); yylval.constant = new DoubleConstant(yytext); return(CONSTANT); }
-0[xX]{H}+{P}{FS}?	{ count(); yylval.constant = new IntConstant(yytext); return(CONSTANT); }
-0[xX]{H}*"."{H}+{P}{FS}?     { count(); yylval.constant = new IntConstant(yytext); return(CONSTANT); }
-0[xX]{H}+"."{H}*{P}{FS}?     { count(); yylval.constant = new IntConstant(yytext); return(CONSTANT); }
+0[xX]{H}+{P}{FS}?	{ count(); yylval.constant = new IntConstant(yytext, IntType::NOT_IMPL); return(CONSTANT); }
+0[xX]{H}*"."{H}+{P}{FS}?     { count(); yylval.constant = new IntConstant(yytext, IntType::NOT_IMPL); return(CONSTANT); }
+0[xX]{H}+"."{H}*{P}{FS}?     { count(); yylval.constant = new IntConstant(yytext, IntType::NOT_IMPL); return(CONSTANT); }
 
 
 L?\"(\\.|[^\\"\n])*\"	{ count(); yylval.stringLiteral = new StringLiteral(yytext); return(STRING_LITERAL); }

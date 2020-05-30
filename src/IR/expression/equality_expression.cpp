@@ -4,18 +4,12 @@
 // equality_expression -> relational_expression
 // (EqualityExpression -> RelationalExpression)
 IRValuePtr EqualityExpression1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    //std::cerr << "EqualityExpression Not implemented!" << std::endl;
-    //return nullptr;
     return relationalExpressionAst1->GenerateIR(context);
 }
 
 // equality_expression -> equality_expression EQ_OP relational_expression
 // (EqualityExpression -> EqualityExpression EqOp RelationalExpression)
 IRValuePtr EqualityExpression2::GenerateIR(Context& context) {
-    // TODO: implement me!
-    //std::cerr << "EqualityExpression Not implemented!" << std::endl;
-    //return nullptr;
     IRValuePtr p1 = equalityExpressionAst1->GenerateIR(context);
     IRValuePtr p2 = relationalExpressionAst3->GenerateIR(context);
 

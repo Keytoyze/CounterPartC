@@ -4,18 +4,12 @@
 // inclusive_or_expression -> exclusive_or_expression
 // (InclusiveOrExpression -> ExclusiveOrExpression)
 IRValuePtr InclusiveOrExpression1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    //std::cerr << "InclusiveOrExpression Not implemented!" << std::endl;
-    //return nullptr;
     return exclusiveOrExpressionAst1->GenerateIR(context);
 }
 
 // inclusive_or_expression -> inclusive_or_expression '|' exclusive_or_expression
 // (InclusiveOrExpression -> InclusiveOrExpression Vertical ExclusiveOrExpression)
 IRValuePtr InclusiveOrExpression2::GenerateIR(Context& context) {
-    // TODO: implement me!
-    //std::cerr << "InclusiveOrExpression Not implemented!" << std::endl;
-    //return nullptr;
     IRValuePtr p1 = inclusiveOrExpressionAst1->GenerateIR(context);
     IRValuePtr p2 = exclusiveOrExpressionAst3->GenerateIR(context);
 

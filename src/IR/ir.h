@@ -28,7 +28,7 @@ public:
     // *x = y
     void valueToPtr(IRValuePtr x, IRValuePtr y);
     // x = CONSTANT
-    void constantToValue(IRValuePtr x, Constant constant);
+    void constantToValue(IRValuePtr x, Constant &constant);
     // GOTO label
     void jump(int labelId);
     // IF condition GOTO label

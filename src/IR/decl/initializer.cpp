@@ -4,7 +4,6 @@
 // initializer -> assignment_expression
 // (Initializer -> AssignmentExpression)
 IRValuePtr Initializer1::GenerateIR(Context& context) {
-    // TODO: unknown implementation...
     IRValuePtr child = this->assignmentExpressionAst1->GenerateIR(context);
     this->initializerVector = std::make_shared<std::vector<IRValuePtr>>();
     this->initializerVector->push_back(child);

@@ -53,10 +53,18 @@ void IR::valueToPtr(IRValuePtr x, IRValuePtr y) {
     this->codeStream << "ASSIGN *" << x->id << " " << y->id << std::endl;
 }
 
-void IR::constantToValue(IRValuePtr x, Constant constant) {
-    this->codeStream << "ASSIGN_CONST " << x->id << " ";
-    constant.write(this->codeStream);
-    this->codeStream << std::endl;
+void IR::constantToValue(IRValuePtr x, Constant& constant) {
+    auto intPtr = dynamic_cast<IntConstant*>(&constant);
+    if (intPtr != nullptr) {
+        this->codeStream << "ASSIGN_CONST_INT " << x->id << " " << intPtr->value << std::endl;
+        return;
+    }
+    auto doublePtr = dynamic_cast<DoubleConstant*>(&constant);
+    if (doublePtr != nullptr) {
+        this->codeStream << "ASSIGN_CONST_DOUBLE " << x->id << " " << doublePtr->value << std::endl;
+        return;
+    }
+    std::cerr << "Find unknown constant type in IR::constantToValue!" << std::endl;
 }
 
 void IR::jump(int labelId) {

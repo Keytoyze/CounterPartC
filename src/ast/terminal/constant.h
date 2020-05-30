@@ -8,38 +8,33 @@ class Constant: public BasicToken {
 public:
     explicit Constant(const char* yytext) {}
     Constant() {}
-    virtual std::ostream& write(std::ostream& sm) const;
+};
+
+enum IntType {
+    DEC, HEX, OCT, CHR, NOT_IMPL
 };
 
 class IntConstant: public Constant {
 public:
     int value;
-    IntConstant(const char* yytext): Constant(yytext) {
-        // TODO: parse int
-    }
+    IntConstant(const char* yytext, IntType intType);
 
     IntConstant(){}
 
     virtual void Dump(int depth) {
         std::cout << "[" << depth << "] IntConstant: " << value << std::endl;
     }
-
-    virtual std::ostream& write(std::ostream& sm) const;
 };
 
 class DoubleConstant: public Constant {
 public:
     double value;
     DoubleConstant(){}
-    DoubleConstant(const char* yytext): Constant(yytext) {
-        // TODO: parse double
-    }
+    DoubleConstant(const char* yytext);
 
     virtual void Dump(int depth) {
         std::cout << "[" << depth << "] DoubleConstant: " << value << std::endl;
     }
-
-    virtual std::ostream& write(std::ostream& sm) const;
 };
 
 

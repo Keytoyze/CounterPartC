@@ -4,10 +4,6 @@
 // logical_and_expression -> inclusive_or_expression
 // (LogicalAndExpression -> InclusiveOrExpression)
 IRValuePtr LogicalAndExpression1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    //std::cerr << "LogicalAndExpression Not implemented!" << std::endl;
-    //return nullptr;
-
     return inclusiveOrExpressionAst1->GenerateIR(context);
 }
 
