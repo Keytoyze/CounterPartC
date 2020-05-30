@@ -12,7 +12,7 @@ IRValuePtr SelectionStatement1::GenerateIR(Context& context) {
     context.ir.jump(label2);
     context.ir.label(label1);
     // insert the block
-    auto blockPtr = std::make_shared<Block>();
+    auto blockPtr = context.newBlock(context.blockStack.back());
     context.blockStack.push_back(blockPtr);
     this->statementAst5->GenerateIR(context);
     // pop the block
@@ -32,8 +32,9 @@ IRValuePtr SelectionStatement2::GenerateIR(Context& context) {
     context.ir.conditionJump(res, label1);
     context.ir.jump(label2);
     context.ir.label(label1);
+    auto currentBlock = context.blockStack.back();
     // insert the block
-    auto blockPtr = std::make_shared<Block>();
+    auto blockPtr = context.newBlock(currentBlock);
     context.blockStack.push_back(blockPtr);
     this->statementAst5->GenerateIR(context);
     // pop the block
@@ -41,7 +42,7 @@ IRValuePtr SelectionStatement2::GenerateIR(Context& context) {
     context.ir.jump(label3);
     context.ir.label(label2);
     // insert the block
-    auto block2Ptr = std::make_shared<Block>();
+    auto block2Ptr = context.newBlock(currentBlock);
     context.blockStack.push_back(block2Ptr);
     this->statementAst7->GenerateIR(context);
     // pop the block
@@ -53,8 +54,21 @@ IRValuePtr SelectionStatement2::GenerateIR(Context& context) {
 // selection_statement -> SWITCH '(' expression ')' statement
 // (SelectionStatement -> Switch LRound Expression RRound Statement)
 IRValuePtr SelectionStatement3::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "Switch Not implemented!" << std::endl;
+    auto res = this->expressionAst3->GenerateIR(context);
+    // TODO: get the evaluation of the expression
+    auto breakLabel = context.newLabelId();
+    auto currentBlock = context.blockStack.back();
+    auto blockPtr = context.newBlock(currentBlock);
+    blockPtr->breakLabel = breakLabel;
+    blockPtr->breakable = true;
+    blockPtr->switchable = true;
+    blockPtr->switchValue = res;
+    context.blockStack.push_back(blockPtr);
+
+    this->statementAst5->GenerateIR(context);
+
+    context.blockStack.pop_back();
+    context.ir.label(breakLabel);
     return nullptr;
 }
 

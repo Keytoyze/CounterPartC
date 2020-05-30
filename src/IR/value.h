@@ -51,8 +51,12 @@ public:
     std::map<std::string, IRValuePtr> arrayTable;
     bool breakable = false;
     bool continuable = false;
+    bool switchable = false;
     int breakLabel = -1;
     int continueLabel = -1;
+    IRValuePtr switchValue = nullptr;
+    std::shared_ptr<Block> parentBlock = nullptr;
+    // Please modify Context::newBlock if you append new attribute here
 };
 
 using BlockPtr = std::shared_ptr<Block>;

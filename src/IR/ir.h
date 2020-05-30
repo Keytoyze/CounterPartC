@@ -31,6 +31,8 @@ public:
     void jump(int labelId);
     // IF condition GOTO label
     void conditionJump(IRValuePtr condition, int labelId);
+    // IF x != y GOTO label
+    void notEqualJump(IRValuePtr x, IRValuePtr y, int labelId);
     // return x
     void returnValue(IRValuePtr x);
     // x = malloc [size]

@@ -4,15 +4,13 @@
 // statement -> labeled_statement
 // (Statement -> LabeledStatement)
 IRValuePtr Statement1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "Statement Not implemented!" << std::endl;
+    this->labeledStatementAst1->GenerateIR(context);
     return nullptr;
 }
 
 // statement -> compound_statement
 // (Statement -> CompoundStatement)
 IRValuePtr Statement2::GenerateIR(Context& context) {
-    // TODO: implement me!
     this->compoundStatementAst1->GenerateIR(context);
     return nullptr;
 }

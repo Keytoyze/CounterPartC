@@ -3,16 +3,19 @@
 
 void IR::operation(IRValuePtr z, IRValuePtr x, IRValuePtr y) {
     // TODO
+    std::cout << "operation" << std::endl;
 }
 
 void IR::label(int labelId) {
     // TODO
+    std::cout << "label " << labelId << std::endl;
 }
 
 void IR::functionDefinition(FunctionValuePtr function) {
     // TODO
     // since the stack block is contained in function
     // information to generate the complete code is presented
+    std::cout << "functionDefinition " << std::endl;
 }
 
 void IR::valueToValue(IRValuePtr x, IRValuePtr y) {
@@ -37,10 +40,17 @@ void IR::constantToValue(IRValuePtr x, Constant constant) {
 
 void IR::jump(int labelId) {
     // TODO
+    std::cout << "goto " << labelId << std::endl;
 }
 
 void IR::conditionJump(IRValuePtr condition, int labelId) {
     // TODO
+    std::cout << "if goto " << labelId << std::endl;
+}
+
+void IR::notEqualJump(IRValuePtr x1, IRValuePtr x2, int labelId) {
+    // TODO
+    std::cout << "if neq goto " << labelId << std::endl;
 }
 
 void IR::returnValue(IRValuePtr x) {

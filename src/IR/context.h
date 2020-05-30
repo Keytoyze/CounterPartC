@@ -28,6 +28,8 @@ public:
 
     void error(std::string err);
 
+    BlockPtr newBlock(BlockPtr parent);
+
 private:
     int varNum, labelNum, arrayNum;
 };
