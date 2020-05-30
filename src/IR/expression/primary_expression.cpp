@@ -13,7 +13,15 @@ IRValuePtr PrimaryExpression1::GenerateIR(Context& context) {
 // (PrimaryExpression -> Constant)
 IRValuePtr PrimaryExpression2::GenerateIR(Context& context) {
     IRValuePtr p;
-    p = context.newVar(TYPE_INT, false);
+    Type type = Type::TYPE_INT;
+    if (dynamic_cast<IntConstant*>(constantAst1)) {
+        type = Type::TYPE_INT;
+    } else if (dynamic_cast<DoubleConstant*>(constantAst1)) {
+        type = Type::TYPE_DOUBLE;
+    } else {
+        context.error("Unknown type in PrimaryExpression2!!!");
+    }
+    p = context.newVar(type, false);
     context.ir.constantToValue(p, *constantAst1);
     return p;
 }
