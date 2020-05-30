@@ -14,7 +14,7 @@ IRValuePtr Declarator1::GenerateIR(Context &context) {
 // (Declarator -> DirectDeclarator)
 IRValuePtr Declarator2::GenerateIR(Context &context) {
     // TODO: implement me!
-    // used by : function def,
+    // used by : function def, dec
     this->directDeclaratorAst1->GenerateIR(context);
     this->identifier = directDeclaratorAst1->identifier;
     this->parameterList = directDeclaratorAst1->parameterList;

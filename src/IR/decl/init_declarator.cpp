@@ -5,8 +5,10 @@
 // (InitDeclarator -> Declarator)
 IRValuePtr InitDeclarator1::GenerateIR(Context& context) {
     this->declaratorAst1->GenerateIR(context);
-    this->identifier = this->declaratorAst1->identifier;
     this->initializerValue = nullptr;
+    this->identifier = this->declaratorAst1->identifier;
+    this->parameterList = this->declaratorAst1->parameterList;
+
     return nullptr;
 }
 

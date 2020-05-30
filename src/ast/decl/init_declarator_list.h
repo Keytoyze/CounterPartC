@@ -9,6 +9,8 @@ class InitDeclarator;
 class InitDeclaratorList: public BasicAST {
 public:
     std::shared_ptr<std::vector<InitDeclarator*>> list;
+    std::string identifier;
+    FunctionParameterList parameterList;
     virtual ~InitDeclaratorList() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

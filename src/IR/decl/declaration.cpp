@@ -20,9 +20,31 @@ IRValuePtr Declaration2::GenerateIR(Context& context) {
     this->declarationSpecifiersAst1->GenerateIR(context);
     this->initDeclaratorListAst2->GenerateIR(context);
     this->specifierType = declarationSpecifiersAst1->specifierType;
+    // judge declaration type
+    if (!this->initDeclaratorListAst2->identifier.empty()) {
+        this->declarationType = DeclarationType::FUNCTION;
+    } else {
+        this->declarationType = DeclarationType::VARIABLE;
+    }
     if (this->declarationType == DeclarationType::FUNCTION) {
         // function declaration
-        // TODO: fill parameterList
+        auto &funcName = this->initDeclaratorListAst2->identifier;
+        auto type = this->specifierType;
+        auto &parameterList = this->initDeclaratorListAst2->parameterList;
+        std::cout << "Function declaration" << std::endl;
+        auto &pool = context.functionPool;
+        if (pool.find(funcName) != pool.end()) {
+            if (pool[funcName]->hasDefined) {
+                context.error("Function " + funcName + " already defined.");
+            } else {
+                context.error("Function " + funcName + " already declared.");
+            }
+        } else {
+            // has not been declared or defined
+            FunctionValuePtr funcValue = std::make_shared<FunctionValue>(type, parameterList, false);
+            // add to function pool
+            pool.insert({funcName, funcValue});
+        }
     } else if (this->declarationType == DeclarationType::VARIABLE) {
         // variable declaration
         // assign value

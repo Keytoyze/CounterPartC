@@ -1,5 +1,2 @@
-int main(int a) {
-    for(;;){
-        
-    }
-}
+int main(int a);
+int main(int h);

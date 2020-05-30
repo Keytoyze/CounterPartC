@@ -47,7 +47,6 @@ IRValuePtr DirectDeclarator5::GenerateIR(Context& context) {
     this->identifier = this->directDeclaratorAst1->identifier;
     // TODO: vector copy is not the best solution here , deciding...
     this->parameterList = parameterTypeListAst3->parameterList;
-    std::cerr << "DirectDeclarator5 Not implemented!" << std::endl;
     return nullptr;
 }
 

@@ -7,6 +7,9 @@ IRValuePtr InitDeclaratorList1::GenerateIR(Context& context) {
     this->initDeclaratorAst1->GenerateIR(context);
     this->list = std::make_shared<std::vector<InitDeclarator*>>();
     this->list->push_back(this->initDeclaratorAst1);
+    // func dec
+    this->identifier = this->initDeclaratorAst1->identifier;
+    this->parameterList = this->initDeclaratorAst1->parameterList;
     return nullptr;
 }
 
