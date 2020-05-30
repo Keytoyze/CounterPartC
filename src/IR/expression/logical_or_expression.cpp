@@ -4,9 +4,7 @@
 // logical_or_expression -> logical_and_expression
 // (LogicalOrExpression -> LogicalAndExpression)
 IRValuePtr LogicalOrExpression1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "LogicalOrExpression Not implemented!" << std::endl;
-    return nullptr;
+    return logicalAndExpressionAst1->GenerateIR(context);
 }
 
 // logical_or_expression -> logical_or_expression OR_OP logical_and_expression
