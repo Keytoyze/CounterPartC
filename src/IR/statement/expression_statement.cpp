@@ -10,7 +10,6 @@ IRValuePtr ExpressionStatement1::GenerateIR(Context& context) {
 // expression_statement -> expression ';'
 // (ExpressionStatement -> Expression SimicolonSingle)
 IRValuePtr ExpressionStatement2::GenerateIR(Context& context) {
-    // TODO: implement me!
     this->expressionAst1->GenerateIR(context);
     return nullptr;
 }

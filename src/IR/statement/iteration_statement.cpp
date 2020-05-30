@@ -7,7 +7,7 @@ IRValuePtr IterationStatement1::GenerateIR(Context& context) {
     auto label1 = context.newLabelId();
     auto label2 = context.newLabelId();
     auto label3 = context.newLabelId();
-    auto blockPtr = std::make_shared<Block>();
+    auto blockPtr = context.newBlock(context.blockStack.back());
     blockPtr->breakable = true;
     blockPtr->continuable = true;
     blockPtr->continueLabel = label1;
@@ -35,7 +35,7 @@ IRValuePtr IterationStatement2::GenerateIR(Context& context) {
     auto label1 = context.newLabelId();
     auto breakLabel = context.newLabelId();
     auto continueLable = context.newLabelId();
-    auto blockPtr = std::make_shared<Block>();
+    auto blockPtr = context.newBlock(context.blockStack.back());
     blockPtr->breakable = true;
     blockPtr->continuable = true;
     blockPtr->breakLabel = breakLabel;
@@ -60,7 +60,7 @@ IRValuePtr IterationStatement3::GenerateIR(Context& context) {
     auto label2 = context.newLabelId();
     auto label3 = context.newLabelId();
     // generate for block
-    auto blockPtr = std::make_shared<Block>();
+    auto blockPtr = context.newBlock(context.blockStack.back());
     // TODO: break is not implemented for now
     blockPtr->breakable = true;
     blockPtr->continuable = true;
@@ -90,7 +90,7 @@ IRValuePtr IterationStatement4::GenerateIR(Context& context) {
     auto label2 = context.newLabelId();
     auto label3 = context.newLabelId();
     auto continueLabel = context.newLabelId();
-    auto blockPtr = std::make_shared<Block>();
+    auto blockPtr = context.newBlock(context.blockStack.back());
     blockPtr->breakable = true;
     blockPtr->continuable = true;
     blockPtr->breakLabel = label3;

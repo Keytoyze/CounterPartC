@@ -4,7 +4,16 @@
 // jump_statement -> GOTO IDENTIFIER ';'
 // (JumpStatement -> Goto Identifier SimicolonSingle)
 IRValuePtr JumpStatement1::GenerateIR(Context &context) {
-    std::cerr << "Goto Statement Not implemented!" << std::endl;
+    auto& identifier = identifierAst2->content;
+    auto& labelPool = context.identifierLabelPool;
+    int labelId;
+    if (labelPool.find(identifier) != labelPool.end()) {
+        labelId = labelPool[identifier];
+    } else {
+        labelId = context.newLabelId();
+        labelPool[identifier] = labelId;
+    }
+    context.ir.jump(labelId);
     return nullptr;
 }
 

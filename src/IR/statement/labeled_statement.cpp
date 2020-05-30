@@ -4,8 +4,19 @@
 // labeled_statement -> IDENTIFIER ':' statement
 // (LabeledStatement -> Identifier Colon Statement)
 IRValuePtr LabeledStatement1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "LabeledStatement Not implemented!" << std::endl;
+    auto& identifier = identifierAst1->content;
+    auto& labelPool = context.identifierLabelPool;
+    int labelId;
+    if (labelPool.find(identifier) != labelPool.end()) {
+        labelId = labelPool[identifier];
+    } else {
+        labelId = context.newLabelId();
+        labelPool[identifier] = labelId;
+    }
+    context.ir.label(labelId);
+
+    this->statementAst3->GenerateIR(context);
+
     return nullptr;
 }
 

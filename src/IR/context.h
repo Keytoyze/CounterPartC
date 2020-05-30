@@ -19,6 +19,7 @@ public:
     Parsing parsingContext;
     std::map<std::string, FunctionValuePtr> functionPool;
     std::vector<BlockPtr> blockStack;
+    std::map<std::string, int> identifierLabelPool; // identifier -> labelId
 
     Context();
 

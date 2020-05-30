@@ -4,7 +4,6 @@
 // compound_statement -> '{' '}'
 // (CompoundStatement -> LCurly RCurly)
 IRValuePtr CompoundStatement1::GenerateIR(Context& context) {
-//    std::cerr << "CompoundStatement Not implemented!" << std::endl;
     std::cout << "Empty statement body." << std::endl;
     return nullptr;
 }

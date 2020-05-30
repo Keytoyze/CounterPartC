@@ -5,7 +5,6 @@
 // (TranslationUnit -> ExternalDeclaration)
 IRValuePtr TranslationUnit1::GenerateIR(Context& context) {
     this->externalDeclarationAst1->GenerateIR(context);
-    // std::cerr << "TranslationUnit Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -14,7 +13,6 @@ IRValuePtr TranslationUnit1::GenerateIR(Context& context) {
 IRValuePtr TranslationUnit2::GenerateIR(Context& context) {
     this->translationUnitAst1->GenerateIR(context);
     this->externalDeclarationAst2->GenerateIR(context);
-    // std::cerr << "TranslationUnit Not implemented!" << std::endl;
     return nullptr;
 }
 
