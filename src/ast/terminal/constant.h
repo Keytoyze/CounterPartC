@@ -6,7 +6,7 @@
 class Constant: public BasicToken {
 public:
     explicit Constant(const char* yytext) {}
-
+    Constant() {}
 };
 
 class IntConstant: public Constant {
@@ -16,6 +16,8 @@ public:
         // TODO: parse int
     }
 
+    IntConstant(){}
+
     virtual void Dump(int depth) {
         std::cout << "[" << depth << "] IntConstant: " << value << std::endl;
     }
@@ -24,6 +26,7 @@ public:
 class DoubleConstant: public Constant {
 public:
     double value;
+    DoubleConstant(){}
     DoubleConstant(const char* yytext): Constant(yytext) {
         // TODO: parse double
     }

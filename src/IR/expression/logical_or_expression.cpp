@@ -13,7 +13,17 @@ IRValuePtr LogicalOrExpression1::GenerateIR(Context& context) {
 // (LogicalOrExpression -> LogicalOrExpression OrOp LogicalAndExpression)
 IRValuePtr LogicalOrExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "LogicalOrExpression Not implemented!" << std::endl;
-    return nullptr;
+    //std::cerr << "LogicalOrExpression Not implemented!" << std::endl;
+    //return nullptr;
+    IRValuePtr p1 = logicalOrExpressionAst1->GenerateIR(context);
+    IRValuePtr p2 = logicalAndExpressionAst3->GenerateIR(context);
+
+    if(p1->type!=TYPE_BOOL||p2->type!=TYPE_BOOL)
+        std::cerr<< "not bool type in LogicalOrExpression2"<<std::endl;
+
+    IRValuePtr p3 = context.newVar(p1->type,false);
+    context.ir.operation(p3,LOGICAL_OR,p1,p2);
+
+    return p3;
 }
 

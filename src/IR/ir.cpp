@@ -1,7 +1,7 @@
 #include "IR/ir.h"
 #include "ast/terminal/constant.h"
 
-void IR::operation(IRValuePtr z, IRValuePtr x, IRValuePtr y) {
+void IR::operation(IRValuePtr z,Oper op, IRValuePtr x, IRValuePtr y) {
     // TODO
     std::cout << "operation" << std::endl;
 }
