@@ -28,6 +28,9 @@ IRValuePtr CompoundStatement3::GenerateIR(Context& context) {
 // (CompoundStatement -> LCurly DeclarationList StatementList RCurly)
 IRValuePtr CompoundStatement4::GenerateIR(Context& context) {
     // TODO: implement me!
+    // try to set to variable declaration
+    // since function declaration is not allowed in {}
+    this->declarationListAst2->declarationType = DeclarationType::VARIABLE;
     this->declarationListAst2->GenerateIR(context);
     this->statementListAst3->GenerateIR(context);
     // std::cerr << "CompoundStatement Not implemented!" << std::endl;

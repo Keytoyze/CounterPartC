@@ -3,7 +3,7 @@
 
 // declaration -> declaration_specifiers ';'
 // (Declaration -> DeclarationSpecifiers SimicolonSingle)
-IRValuePtr Declaration1::GenerateIR(Context& context) {
+IRValuePtr Declaration1::GenerateIR(Context &context) {
     // TODO: implement me!
     this->declarationSpecifiersAst1->GenerateIR(context);
     std::cerr << "Declaration1 Not implemented!" << std::endl;
@@ -12,7 +12,7 @@ IRValuePtr Declaration1::GenerateIR(Context& context) {
 
 // declaration -> declaration_specifiers init_declarator_list ';'
 // (Declaration -> DeclarationSpecifiers InitDeclaratorList SimicolonSingle)
-IRValuePtr Declaration2::GenerateIR(Context& context) {
+IRValuePtr Declaration2::GenerateIR(Context &context) {
     if (this->declarationType == DeclarationType::UNKNOWN) {
         context.error("Unknown type of declaration!!!!!");
         return nullptr;
@@ -20,11 +20,13 @@ IRValuePtr Declaration2::GenerateIR(Context& context) {
     this->declarationSpecifiersAst1->GenerateIR(context);
     this->initDeclaratorListAst2->GenerateIR(context);
     this->specifierType = declarationSpecifiersAst1->specifierType;
-    // judge declaration type
-    if (!this->initDeclaratorListAst2->identifier.empty()) {
-        this->declarationType = DeclarationType::FUNCTION;
-    } else {
-        this->declarationType = DeclarationType::VARIABLE;
+    // judge declaration type TODO: fix this (one fix is applied)
+    if (this->declarationType == DeclarationType::UNKNOWN) {
+        if (!this->initDeclaratorListAst2->identifier.empty()) {
+            this->declarationType = DeclarationType::FUNCTION;
+        } else {
+            this->declarationType = DeclarationType::VARIABLE;
+        }
     }
     if (this->declarationType == DeclarationType::FUNCTION) {
         // function declaration
@@ -49,11 +51,11 @@ IRValuePtr Declaration2::GenerateIR(Context& context) {
         // variable declaration
         // assign value
         std::cout << "Insert variable" << std::endl;
-        std::cout << "type: " << TypeToStr[(int)this->specifierType] << std::endl;
-        
+        std::cout << "type: " << TypeToStr[(int) this->specifierType] << std::endl;
+
         auto variableInitPair = this->initDeclaratorListAst2->list;
         for (auto it = variableInitPair->begin(); it != variableInitPair->end(); it++) {
-		    std::cout << "identifier: " << (*it)->identifier << std::endl;
+            std::cout << "identifier: " << (*it)->identifier << std::endl;
             auto initializerValue = (*it)->initializerValue;
             // TODO: array
             auto var = context.newVar(this->specifierType, false);
@@ -63,7 +65,7 @@ IRValuePtr Declaration2::GenerateIR(Context& context) {
             }
         }
 
-        context.blockStack.back();
+//        context.blockStack.back();
     }
 
     return nullptr;
