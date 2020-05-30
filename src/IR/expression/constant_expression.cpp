@@ -5,7 +5,8 @@
 // (ConstantExpression -> ConditionalExpression)
 IRValuePtr ConstantExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "ConstantExpression Not implemented!" << std::endl;
-    return nullptr;
+    //std::cerr << "ConstantExpression Not implemented!" << std::endl;
+    //return nullptr;
+    return conditionalExpressionAst1->GenerateIR(context);
 }
 

@@ -5,8 +5,9 @@
 // (CastExpression -> UnaryExpression)
 IRValuePtr CastExpression1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "CastExpression Not implemented!" << std::endl;
-    return nullptr;
+    //std::cerr << "CastExpression Not implemented!" << std::endl;
+    //return nullptr;
+    return unaryExpressionAst1->GenerateIR(context);
 }
 
 // cast_expression -> '(' type_name ')' cast_expression
@@ -15,5 +16,7 @@ IRValuePtr CastExpression2::GenerateIR(Context& context) {
     // TODO: implement me!
     std::cerr << "CastExpression Not implemented!" << std::endl;
     return nullptr;
+
 }
 
+//缺少typename 大类

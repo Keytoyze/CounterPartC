@@ -10,6 +10,12 @@ enum Type {
     TYPE_VOID, TYPE_BOOL, TYPE_INT, TYPE_DOUBLE // TODO: more types
 };
 
+enum Oper{
+    LOGICAL_AND,LOGICAL_OR,OP_ADD,OP_SUB, OP_MUL, OP_DIV, OP_MOD, OP_LS, OP_RS, OP_LT, OP_GT, OP_LTE, OP_GTE, OP_EQ, OP_NEQ, OP_AND, OP_OR,OP_XOR
+};
+
+
+
 struct IRValue {
     int id;
     Type type;

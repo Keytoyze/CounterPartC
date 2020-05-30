@@ -12,7 +12,7 @@ private:
     std::vector<std::string> codeList;
 public:
     // z = x [op] y
-    void operation(IRValuePtr z, IRValuePtr x, IRValuePtr y);
+    void operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
     // definite label
     void label(int labelId);
     // definite function
