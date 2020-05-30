@@ -3,15 +3,22 @@
 
 // parameter_declaration -> declaration_specifiers declarator
 // (ParameterDeclaration -> DeclarationSpecifiers Declarator)
-IRValuePtr ParameterDeclaration1::GenerateIR(Context& context) {
+IRValuePtr ParameterDeclaration1::GenerateIR(Context &context) {
     // TODO: implement me!
-    std::cerr << "ParameterDeclaration Not implemented!" << std::endl;
+    this->declarationSpecifiersAst1->GenerateIR(context);
+    this->declaratorAst2->GenerateIR(context);
+    auto specifierType = declarationSpecifiersAst1->specifierType;
+    auto identifier = declaratorAst2->identifier;
+    // assign to the parameter
+    this->parameter.first = specifierType;
+    this->parameter.second = identifier;
+    std::cout << "ParameterDeclaration Type: " << specifierType << " identifier: " << identifier << std::endl;
     return nullptr;
 }
 
 // parameter_declaration -> declaration_specifiers abstract_declarator
 // (ParameterDeclaration -> DeclarationSpecifiers AbstractDeclarator)
-IRValuePtr ParameterDeclaration2::GenerateIR(Context& context) {
+IRValuePtr ParameterDeclaration2::GenerateIR(Context &context) {
     // TODO: implement me!
     std::cerr << "ParameterDeclaration Not implemented!" << std::endl;
     return nullptr;
@@ -19,7 +26,7 @@ IRValuePtr ParameterDeclaration2::GenerateIR(Context& context) {
 
 // parameter_declaration -> declaration_specifiers
 // (ParameterDeclaration -> DeclarationSpecifiers)
-IRValuePtr ParameterDeclaration3::GenerateIR(Context& context) {
+IRValuePtr ParameterDeclaration3::GenerateIR(Context &context) {
     // TODO: implement me!
     std::cerr << "ParameterDeclaration Not implemented!" << std::endl;
     return nullptr;

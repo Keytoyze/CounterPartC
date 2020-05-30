@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include "ast/ast.h"
+#include "IR/context.h"
 using namespace std;
 
 extern char *yytext;
@@ -1004,8 +1005,9 @@ int main(int argc,char* argv[]) {
 	
 	//freopen("output/output.txt","w", stdout);
 	yyparse();
-
+    Context context;
     root -> Dump(0);
+    root -> GenerateIR(context);
     delete root;
 	fclose(yyin);
 	return 0;

@@ -7,7 +7,27 @@
 #include <vector>
 
 enum Type {
-    TYPE_VOID, TYPE_BOOL, TYPE_INT, TYPE_DOUBLE // TODO: more types
+    TYPE_VOID,
+    TYPE_CHAR,
+    TYPE_SHORT,
+    TYPE_INT,
+    TYPE_LONG,
+    TYPE_FLOAT,
+    TYPE_DOUBLE,
+    TYPE_SIGNED,
+    TYPE_UNSIGNED // TODO: maybe there are more ?
+};
+
+static const char * TypeToStr[] = {
+        "void",
+        "char",
+        "short",
+        "int",
+        "long",
+        "float",
+        "double",
+        "signed",
+        "unsigned"
 };
 
 enum Oper{
@@ -19,10 +39,16 @@ enum Oper{
 struct IRValue {
     int id;
     Type type;
+    std::string content = "";
     bool useAddress = false;
 };
 
 using IRValuePtr = std::shared_ptr<IRValue>;
+
+
+
+using FunctionParameter = std::pair<Type, std::string>;
+using FunctionParameterList = std::vector<FunctionParameter>;
 
 class Block {
 public:
@@ -30,17 +56,30 @@ public:
     std::map<std::string, IRValuePtr> varTable;
     std::map<std::string, IRValuePtr> arrayTable;
     bool breakable = false;
+    bool continuable = false;
+    bool switchable = false;
+    int breakLabel = -1;
+    int continueLabel = -1;
+    IRValuePtr switchValue = nullptr;
+    std::shared_ptr<Block> parentBlock = nullptr;
+    // Please modify Context::newBlock if you append new attribute here
 };
 
 using BlockPtr = std::shared_ptr<Block>;
 
-class FunctionValue: public Block {
+class FunctionValue : public Block {
 public:
+    FunctionValue(Type type,
+                  FunctionParameterList &list,
+                  bool hasDefined = false) :
+            returnType(type), parameters(list),
+            hasDefined(hasDefined) {};
     Type returnType;
-    std::vector<IRValuePtr> parameters;
-    bool hasDefined = false;
+    FunctionParameterList &parameters;
+    bool hasDefined;
 };
 
 using FunctionValuePtr = std::shared_ptr<FunctionValue>;
+
 
 #endif // _IR_VALUE_H_

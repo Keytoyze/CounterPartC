@@ -4,16 +4,22 @@
 // init_declarator_list -> init_declarator
 // (InitDeclaratorList -> InitDeclarator)
 IRValuePtr InitDeclaratorList1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "InitDeclaratorList Not implemented!" << std::endl;
+    this->initDeclaratorAst1->GenerateIR(context);
+    this->list = std::make_shared<std::vector<InitDeclarator*>>();
+    this->list->push_back(this->initDeclaratorAst1);
+    // func dec
+    this->identifier = this->initDeclaratorAst1->identifier;
+    this->parameterList = this->initDeclaratorAst1->parameterList;
     return nullptr;
 }
 
 // init_declarator_list -> init_declarator_list ',' init_declarator
 // (InitDeclaratorList -> InitDeclaratorList Comma InitDeclarator)
 IRValuePtr InitDeclaratorList2::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "InitDeclaratorList Not implemented!" << std::endl;
+    this->initDeclaratorListAst1->GenerateIR(context);
+    this->list = this->initDeclaratorListAst1->list;
+    this->initDeclaratorAst3->GenerateIR(context);
+    this->list->push_back(this->initDeclaratorAst3);
     return nullptr;
 }
 

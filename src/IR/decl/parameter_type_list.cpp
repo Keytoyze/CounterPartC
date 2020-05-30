@@ -5,7 +5,8 @@
 // (ParameterTypeList -> ParameterList)
 IRValuePtr ParameterTypeList1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "ParameterTypeList Not implemented!" << std::endl;
+    this->parameterListAst1->GenerateIR(context);
+    this->parameterList = parameterListAst1->parameterList;
     return nullptr;
 }
 

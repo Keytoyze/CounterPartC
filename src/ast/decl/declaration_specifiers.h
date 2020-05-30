@@ -9,6 +9,7 @@ class TypeSpecifier;
 
 class DeclarationSpecifiers: public BasicAST {
 public:
+    Type specifierType;
     virtual ~DeclarationSpecifiers() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

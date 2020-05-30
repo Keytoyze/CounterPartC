@@ -10,6 +10,7 @@ class Declarator;
 
 class FunctionDefinition: public BasicAST {
 public:
+    std::string functionName;
     virtual ~FunctionDefinition() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

@@ -5,6 +5,9 @@
 // (DeclarationList -> Declaration)
 IRValuePtr DeclarationList1::GenerateIR(Context& context) {
     // TODO: implement me!
+    if (this->declarationType == DeclarationType::UNKNOWN) {
+        context.error("DeclarationList.declarationType = UNKNOWN!!!!");
+    }
     std::cerr << "DeclarationList Not implemented!" << std::endl;
     return nullptr;
 }
@@ -13,6 +16,9 @@ IRValuePtr DeclarationList1::GenerateIR(Context& context) {
 // (DeclarationList -> DeclarationList Declaration)
 IRValuePtr DeclarationList2::GenerateIR(Context& context) {
     // TODO: implement me!
+    if (this->declarationType == DeclarationType::UNKNOWN) {
+        context.error("DeclarationList.declarationType = UNKNOWN!!!!");
+    }
     std::cerr << "DeclarationList Not implemented!" << std::endl;
     return nullptr;
 }

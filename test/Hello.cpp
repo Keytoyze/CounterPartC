@@ -1,3 +1,2 @@
-int main(void) {
-    print("Hello!");
-}
+int main(int a);
+int main(int h);

@@ -8,6 +8,7 @@ class ParameterDeclaration;
 
 class ParameterList: public BasicAST {
 public:
+    std::vector<std::pair<Type, std::string>> parameterList;
     virtual ~ParameterList() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

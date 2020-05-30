@@ -5,7 +5,7 @@
 // (DeclarationSpecifiers -> StorageClassSpecifier)
 IRValuePtr DeclarationSpecifiers1::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
+    std::cerr << "DeclarationSpecifiers1 Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -13,7 +13,7 @@ IRValuePtr DeclarationSpecifiers1::GenerateIR(Context& context) {
 // (DeclarationSpecifiers -> StorageClassSpecifier DeclarationSpecifiers)
 IRValuePtr DeclarationSpecifiers2::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
+    std::cerr << "DeclarationSpecifiers2 Not implemented!" << std::endl;
     return nullptr;
 }
 
@@ -21,7 +21,8 @@ IRValuePtr DeclarationSpecifiers2::GenerateIR(Context& context) {
 // (DeclarationSpecifiers -> TypeSpecifier)
 IRValuePtr DeclarationSpecifiers3::GenerateIR(Context& context) {
     // TODO: implement me!
-    std::cerr << "DeclarationSpecifiers Not implemented!" << std::endl;
+    this->typeSpecifierAst1->GenerateIR(context);
+    this->specifierType = this->typeSpecifierAst1->specifierType;
     return nullptr;
 }
 

@@ -9,8 +9,10 @@ class InitializerList;
 class LCurly;
 class RCurly;
 
+// TODO: struct initializer; current support only array and single value.
 class Initializer: public BasicAST {
 public:
+    std::shared_ptr<std::vector<IRValuePtr>> initializerVector;
     virtual ~Initializer() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

@@ -18,6 +18,7 @@ class Void;
 
 class TypeSpecifier: public BasicAST {
 public:
+    Type specifierType;
     virtual ~TypeSpecifier() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

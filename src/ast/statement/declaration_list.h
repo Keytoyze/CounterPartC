@@ -3,10 +3,13 @@
 #define _DECLARATION_LIST_H_
 
 //#include "ast/ast.h"
+#include "ast/declaration_type.h"
+
 class Declaration;
 
 class DeclarationList: public BasicAST {
 public:
+    DeclarationType declarationType = DeclarationType::UNKNOWN;
     virtual ~DeclarationList() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

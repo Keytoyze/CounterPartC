@@ -9,6 +9,10 @@ class Initializer;
 
 class InitDeclarator: public BasicAST {
 public:
+    std::string identifier;
+    std::shared_ptr<std::vector<IRValuePtr>> initializerValue = nullptr;
+    FunctionParameterList parameterList;
+public:
     virtual ~InitDeclarator() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}
