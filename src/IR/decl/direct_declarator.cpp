@@ -9,7 +9,7 @@ IRValuePtr DirectDeclarator1::GenerateIR(Context& context) {
 //    auto identifierName = this->identifierAst1->content;
 //    auto ptr = context.newVar(TYPE_IDENTIFIER, false);
 //    ptr->content = identifierName;
-    std::cout << "DirectDeclarator identifier: " << identifier << std::endl;
+    //std::cout << "DirectDeclarator identifier: " << identifier << std::endl;
     return nullptr;
 }
 

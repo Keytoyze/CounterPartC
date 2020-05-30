@@ -78,7 +78,8 @@ public:
     int breakLabel = -1;
     int continueLabel = -1;
     IRValuePtr switchValue = nullptr;
-    std::shared_ptr<Block> parentBlock = nullptr;
+    // redundant information, just traverse the stack
+//    std::shared_ptr<Block> parentBlock = nullptr;
     // Please modify Context::newBlock if you append new attribute here
 };
 
