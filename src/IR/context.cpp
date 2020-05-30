@@ -28,15 +28,14 @@ void Context::error(std::string err) {
 
 BlockPtr Context::newBlock(BlockPtr parent) {
     auto newBlock = std::make_shared<Block>();
-//    if (parent != nullptr) {
-//        newBlock->breakable = parent->breakable;
-//        newBlock->continuable = parent->continuable;
-//        // newBlock->switchable = parent->switchable;
-//        newBlock->breakLabel = parent->breakLabel;
-//        newBlock->continueLabel = parent->continueLabel;
-//        // newBlock->switchValue = parent->switchValue;
-//        newBlock->parentBlock = parent;
-//    }
+   if (parent != nullptr) {
+       newBlock->breakable = parent->breakable;
+       newBlock->continuable = parent->continuable;
+       // newBlock->switchable = parent->switchable;
+       newBlock->breakLabel = parent->breakLabel;
+       newBlock->continueLabel = parent->continueLabel;
+       // newBlock->switchValue = parent->switchValue;
+   }
     return newBlock;
 }
 
