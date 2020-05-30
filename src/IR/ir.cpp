@@ -1,71 +1,92 @@
 #include "IR/ir.h"
 #include "ast/terminal/constant.h"
 
-void IR::operation(IRValuePtr z,Oper op, IRValuePtr x, IRValuePtr y) {
-    // TODO
-    std::cout << "operation" << std::endl;
+static const char * OpToStr[] = {
+    "LOGICAL_AND", 
+    "LOGICAL_OR", 
+    "OP_ADD", 
+    "OP_SUB", 
+    "OP_MUL", 
+    "OP_DIV", 
+    "OP_MOD", 
+    "OP_LS", 
+    "OP_RS", 
+    "OP_LT", 
+    "OP_GT", 
+    "OP_LTE", 
+    "OP_GTE", 
+    "OP_EQ", 
+    "OP_NEQ", 
+    "OP_AND", 
+    "OP_OR", 
+    "OP_XOR"
+};
+
+void IR::operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
+    this->codeStream << "OP " << OpToStr[(int)op];
+    this->codeStream << " " << z->id << " " << x->id << " " << y->id;
+    this->codeStream << std::endl;
 }
 
 void IR::label(int labelId) {
-    // TODO
-    std::cout << "label " << labelId << std::endl;
+    this->codeStream << "LABEL " << labelId << std::endl;
 }
 
 void IR::functionDefinition(FunctionValuePtr function) {
-    // TODO
-    // since the stack block is contained in function
-    // information to generate the complete code is presented
-    std::cout << "functionDefinition " << std::endl;
+    // this->codeStream << "FUN " << TypeToStr[(int)function->returnType] << " ";
+    // std::cout << "functionDefinition " << std::endl;
 }
 
 void IR::valueToValue(IRValuePtr x, IRValuePtr y) {
-    // TODO
+    this->codeStream << "ASSIGN " << x->id << " " << y->id << std::endl;
 }
 
 void IR::addressToValue(IRValuePtr x, IRValuePtr y) {
-    // TODO
+    this->codeStream << "ASSIGN " << x->id << " &" << y->id << std::endl;
 }
 
 void IR::ptrToValue(IRValuePtr x, IRValuePtr y) {
-    // TODO
+    this->codeStream << "ASSIGN " << x->id << " *" << y->id << std::endl;
 }
 
 void IR::valueToPtr(IRValuePtr x, IRValuePtr y) {
-    // TODO
+    this->codeStream << "ASSIGN *" << x->id << " " << y->id << std::endl;
 }
 
 void IR::constantToValue(IRValuePtr x, Constant constant) {
-    // TODO
+    this->codeStream << "ASSIGN_CONST " << x->id << " ";
+    constant.write(this->codeStream);
+    this->codeStream << std::endl;
 }
 
 void IR::jump(int labelId) {
-    // TODO
-    std::cout << "goto " << labelId << std::endl;
+    this->codeStream << "GOTO " << labelId << std::endl;
 }
 
 void IR::conditionJump(IRValuePtr condition, int labelId) {
-    // TODO
-    std::cout << "if goto " << labelId << std::endl;
+    this->codeStream << "BEQ_1 " << condition->id << " " << labelId << std::endl;
 }
 
 void IR::notEqualJump(IRValuePtr x1, IRValuePtr x2, int labelId) {
-    // TODO
-    std::cout << "if neq goto " << labelId << std::endl;
+    std::cout << "BNE " << x1->id << " " << x2->id << " " << labelId << std::endl;
 }
 
 void IR::returnValue(IRValuePtr x) {
-    // TODO
+    std::cout << "RETURN " << x->id << std::endl;
 }
 
 void IR::malloc(IRValuePtr x, IRValuePtr size) {
-    // TODO
+    std::cout << "MALLOC " << x->id << " " << size << std::endl;
 }
 
 void IR::argument(IRValuePtr node) {
-    // TODO
+    std::cout << "ARGUMENT " << node->id << std::endl;
 }
 
 void IR::parameter(IRValuePtr node) {
-    // TODO
+    std::cout << "PARAMETER " << node->id << std::endl;
 }
 
+std::string IR::getCode() {
+    return this->codeStream.str();
+}

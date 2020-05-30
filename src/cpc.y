@@ -1006,8 +1006,12 @@ int main(int argc,char* argv[]) {
 	//freopen("output/output.txt","w", stdout);
 	yyparse();
     Context context;
-    root -> Dump(0);
-    root -> GenerateIR(context);
+    std::cout << "Dump: " << std::endl;
+    root->Dump(0);
+    std::cout << "Generate IR: " << std::endl;
+    root->GenerateIR(context);
+    std::cout << "IR: " << std::endl;
+    std::cout << context.ir.getCode();
     delete root;
 	fclose(yyin);
 	return 0;

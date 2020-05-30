@@ -31,6 +31,8 @@ public:
 
     BlockPtr newBlock(BlockPtr parent);
 
+    IRValuePtr findVar(std::string& identifier);
+
 private:
     int varNum, labelNum, arrayNum;
 };

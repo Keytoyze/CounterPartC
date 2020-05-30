@@ -6,15 +6,7 @@
 // primary_expression -> IDENTIFIER
 // (PrimaryExpression -> Identifier)
 IRValuePtr PrimaryExpression1::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::string name = identifierAst1->content;
-    int N = context.blockStack.size();
-    for(int i=N-1;i--;i>=0){
-        if(context.blockStack[i]->varTable.find(name)!=context.blockStack[i]->varTable.end())
-            return context.blockStack[i]->varTable[name];
-    }
-    std::cerr<<"not defined variable"<<std::endl;
-    return nullptr;
+    return context.findVar(identifierAst1->content);
 }
 
 // primary_expression -> CONSTANT

@@ -55,16 +55,15 @@ IRValuePtr Declaration2::GenerateIR(Context& context) {
         for (auto it = variableInitPair->begin(); it != variableInitPair->end(); it++) {
 		    std::cout << "identifier: " << (*it)->identifier << std::endl;
             auto initializerValue = (*it)->initializerValue;
-            if (initializerValue == nullptr) {
-                std::cout << "No initialize value!" << std::endl;
-            } else {
-                std::cout << "Initialize value count: " << initializerValue->size() << std::endl;
+            // TODO: array
+            auto var = context.newVar(this->specifierType, false);
+            context.blockStack.back()->varTable[(*it)->identifier] = var;
+            if (initializerValue != nullptr) {
+                context.ir.valueToValue(var, initializerValue->at(0));
             }
         }
 
         context.blockStack.back();
-
-        std::cout << "=======" << std::endl;
     }
 
     return nullptr;

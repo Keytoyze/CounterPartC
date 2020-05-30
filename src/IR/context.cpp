@@ -32,6 +32,19 @@ BlockPtr Context::newBlock(BlockPtr parent) {
     return newBlock;
 }
 
+IRValuePtr Context::findVar(std::string& identifier) {
+    auto block = blockStack.back();
+    while (block != nullptr) {
+        auto &varTable = block->varTable;
+        if (varTable.find(identifier) != varTable.end()) {
+            return varTable[identifier];
+        }
+        block = block->parentBlock;
+    }
+    error("Cannot find identifier " + identifier);
+    return nullptr;
+}
+
 Context::Context() {
     arrayNum = 0;
     varNum = 0;

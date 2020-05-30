@@ -15,26 +15,43 @@ enum Type {
     TYPE_FLOAT,
     TYPE_DOUBLE,
     TYPE_SIGNED,
-    TYPE_UNSIGNED // TODO: maybe there are more ?
+    TYPE_UNSIGNED, // TODO: maybe there are more ?
+    TYPE_BOOL // TODO: move to int
 };
 
 static const char * TypeToStr[] = {
-        "void",
-        "char",
-        "short",
-        "int",
-        "long",
-        "float",
-        "double",
-        "signed",
-        "unsigned"
+    "void",
+    "char",
+    "short",
+    "int",
+    "long",
+    "float",
+    "double",
+    "signed",
+    "unsigned",
+    "bool"
 };
 
-enum Oper{
-    LOGICAL_AND,LOGICAL_OR,OP_ADD,OP_SUB, OP_MUL, OP_DIV, OP_MOD, OP_LS, OP_RS, OP_LT, OP_GT, OP_LTE, OP_GTE, OP_EQ, OP_NEQ, OP_AND, OP_OR,OP_XOR
+enum Oper {
+    LOGICAL_AND,
+    LOGICAL_OR,
+    OP_ADD,
+    OP_SUB, 
+    OP_MUL, 
+    OP_DIV, 
+    OP_MOD, 
+    OP_LS, 
+    OP_RS, 
+    OP_LT, 
+    OP_GT, 
+    OP_LTE, 
+    OP_GTE,
+    OP_EQ, 
+    OP_NEQ, 
+    OP_AND, 
+    OP_OR,
+    OP_XOR
 };
-
-
 
 struct IRValue {
     int id;

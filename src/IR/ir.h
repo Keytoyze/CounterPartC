@@ -4,12 +4,14 @@
 #include <vector>
 #include <string>
 #include "IR/value.h"
+#include <sstream>
 
 class Constant;
 
 class IR {
 private:
-    std::vector<std::string> codeList;
+    std::stringstream codeStream;
+    void addCode(std::string& str);
 public:
     // z = x [op] y
     void operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
@@ -41,6 +43,8 @@ public:
     void argument(IRValuePtr node);
     // definite parameters
     void parameter(IRValuePtr node);
+
+    std::string getCode();
 };
 
 #endif // _IR_H_
