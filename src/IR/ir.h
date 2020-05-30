@@ -39,6 +39,8 @@ public:
     void returnValue(IRValuePtr x);
     // x = malloc [size]
     void malloc(IRValuePtr x, IRValuePtr size);
+    // x = malloc [const]
+    void mallocConst(IRValuePtr x, Type base, int size);
     // push arguments
     void argument(IRValuePtr node);
     // definite parameters

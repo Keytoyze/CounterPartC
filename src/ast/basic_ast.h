@@ -5,7 +5,7 @@
 
 class BasicAST {
 public:
-    ~BasicAST() {};
+    virtual ~BasicAST() {};
 
     virtual IRValuePtr GenerateIR(Context& context) = 0;
     virtual void Dump(int depth) {}

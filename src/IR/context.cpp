@@ -8,6 +8,12 @@ IRValuePtr Context::newVar(Type type, bool useAddress) {
     newValue->id = varNum++;
     newValue->type = type;
     newValue->useAddress = useAddress;
+    // TODO: array
+    if (useAddress) {
+        ir.mallocConst(newValue, Type::TYPE_POINTER, 1);
+    } else {
+        ir.mallocConst(newValue, type, 1);
+    }
     return newValue;
 }
 

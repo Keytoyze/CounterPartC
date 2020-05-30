@@ -51,7 +51,7 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
         // variable declaration
         // assign value
         std::cout << "Insert variable" << std::endl;
-        std::cout << "type: " << TypeToStr[(int) this->specifierType] << std::endl;
+        std::cout << "type: " << TypeToStr(this->specifierType) << std::endl;
 
         auto variableInitPair = this->initDeclaratorListAst2->list;
         for (auto it = variableInitPair->begin(); it != variableInitPair->end(); it++) {

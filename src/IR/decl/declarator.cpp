@@ -18,7 +18,7 @@ IRValuePtr Declarator2::GenerateIR(Context &context) {
     this->directDeclaratorAst1->GenerateIR(context);
     this->identifier = directDeclaratorAst1->identifier;
     this->parameterList = directDeclaratorAst1->parameterList;
-    for (int i = 0; i < parameterList.size(); i++) {
+    for (size_t i = 0; i < parameterList.size(); i++) {
         std::cout << "param" << i << " " << parameterList[i].first << " " << parameterList[i].second << std::endl;
     }
 //    std::cerr << "Declarator Not implemented!" << std::endl;

@@ -15,22 +15,28 @@ enum Type {
     TYPE_FLOAT,
     TYPE_DOUBLE,
     TYPE_SIGNED,
-    TYPE_UNSIGNED, // TODO: maybe there are more ?
-    TYPE_BOOL // TODO: move to int
+    TYPE_UNSIGNED, 
+    TYPE_BOOL, // TODO: move to int
+    TYPE_POINTER
+    // TODO: maybe there are more ?
 };
 
-static const char * TypeToStr[] = {
-    "void",
-    "char",
-    "short",
-    "int",
-    "long",
-    "float",
-    "double",
-    "signed",
-    "unsigned",
-    "bool"
-};
+inline const char* TypeToStr(Type type) {
+    switch (type) {
+        case Type::TYPE_VOID: return "void";
+        case Type::TYPE_CHAR: return "char";
+        case Type::TYPE_SHORT: return "short";
+        case Type::TYPE_INT: return "int";
+        case Type::TYPE_LONG: return "long";
+        case Type::TYPE_FLOAT: return "float";
+        case Type::TYPE_DOUBLE: return "double";
+        case Type::TYPE_SIGNED: return "signed";
+        case Type::TYPE_UNSIGNED: return "unsigned";
+        case Type::TYPE_BOOL: return "bool";
+        case Type::TYPE_POINTER: return "void*";
+    }
+    return nullptr;
+}
 
 enum Oper {
     LOGICAL_AND,

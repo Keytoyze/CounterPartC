@@ -55,7 +55,7 @@ IRValuePtr JumpStatement4::GenerateIR(Context &context) {
     if (function != nullptr) {
         if (function->returnType != Type::TYPE_VOID) {
             context.error(std::string("Function expected ") +
-                          TypeToStr[function->returnType] + " as return type but void is returned.");
+                          TypeToStr(function->returnType) + " as return type but void is returned.");
         }
         context.ir.returnValue(nullptr);
     } else {
@@ -80,8 +80,8 @@ IRValuePtr JumpStatement5::GenerateIR(Context &context) {
         auto res = this->expressionAst2->GenerateIR(context);
         if (function->returnType != res->type) {
             context.error(std::string("Function expected ")
-                          + TypeToStr[function->returnType] + " as return type but "
-                          + TypeToStr[res->type] + " is returned.");
+                          + TypeToStr(function->returnType) + " as return type but "
+                          + TypeToStr(res->type) + " is returned.");
         }
         context.ir.returnValue(res);
     } else {

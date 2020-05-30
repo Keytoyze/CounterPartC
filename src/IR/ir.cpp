@@ -34,7 +34,7 @@ void IR::label(int labelId) {
 
 void IR::functionDefinition(FunctionValuePtr function) {
     // this->codeStream << "FUN " << TypeToStr[(int)function->returnType] << " ";
-    // std::cout << "functionDefinition " << std::endl;
+    // this->codeStream << "functionDefinition " << std::endl;
 }
 
 void IR::valueToValue(IRValuePtr x, IRValuePtr y) {
@@ -76,23 +76,27 @@ void IR::conditionJump(IRValuePtr condition, int labelId) {
 }
 
 void IR::notEqualJump(IRValuePtr x1, IRValuePtr x2, int labelId) {
-    std::cout << "BNE " << x1->id << " " << x2->id << " " << labelId << std::endl;
+    this->codeStream << "BNE " << x1->id << " " << x2->id << " " << labelId << std::endl;
 }
 
 void IR::returnValue(IRValuePtr x) {
-    std::cout << "RETURN " << x->id << std::endl;
+    this->codeStream << "RETURN " << x->id << std::endl;
 }
 
 void IR::malloc(IRValuePtr x, IRValuePtr size) {
-    std::cout << "MALLOC " << x->id << " " << size << std::endl;
+    this->codeStream << "MALLOC " << x->id << " " << size << std::endl;
+}
+
+void IR::mallocConst(IRValuePtr x, Type base, int size) {
+    this->codeStream << "MALLOC_CONST " << x->id << " " << TypeToStr(base) << " * " << size << std::endl;
 }
 
 void IR::argument(IRValuePtr node) {
-    std::cout << "ARGUMENT " << node->id << std::endl;
+    this->codeStream << "ARGUMENT " << node->id << std::endl;
 }
 
 void IR::parameter(IRValuePtr node) {
-    std::cout << "PARAMETER " << node->id << std::endl;
+    this->codeStream << "PARAMETER " << node->id << std::endl;
 }
 
 std::string IR::getCode() {

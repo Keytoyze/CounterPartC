@@ -40,8 +40,8 @@ IRValuePtr FunctionDefinition2::GenerateIR(Context &context) {
         auto &func = pool[identifier];
         if (func->returnType != type) {
             context.error("Function " + identifier + " return type mismatched,"
-                          + " expecting " + TypeToStr[func->returnType]
-                          + " but found " + TypeToStr[type] + ".");
+                          + " expecting " + TypeToStr(func->returnType)
+                          + " but found " + TypeToStr(type) + ".");
         }
         if (func->parameters.size() != parameterList.size()) {
             context.error("Function " + identifier + " parameter count mismatched.");
@@ -49,8 +49,8 @@ IRValuePtr FunctionDefinition2::GenerateIR(Context &context) {
         for (int i = 0; i < func->parameters.size(); i++) {
             if (func->parameters[i].first != parameterList[i].first) {
                 context.error("Function " + identifier + " parameter type mismatched."
-                              + " expecting " + TypeToStr[func->parameters[i].first]
-                              + " but found " + TypeToStr[parameterList[i].first] + ".");
+                              + " expecting " + TypeToStr(func->parameters[i].first)
+                              + " but found " + TypeToStr(parameterList[i].first) + ".");
             }
         }
     }
