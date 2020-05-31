@@ -69,14 +69,15 @@ IRValuePtr FunctionDefinition2::GenerateIR(Context &context) {
     }
     // init stack block & parse compound statement
     context.blockStack.push_back(funcValue);
-    this->compoundStatementAst3->GenerateIR(context);
 
-    // generate IR code
-    context.ir.functionDefinition(funcValue);
+    // generate IR code for function definition
+    context.ir.functionDefinition(identifier, funcValue);
     for(auto &it: varList) {
         // put arguments into stack
         context.ir.parameter(it);
     }
+
+    this->compoundStatementAst3->GenerateIR(context);
     // pop the block from stack
     context.blockStack.pop_back();
     return nullptr;

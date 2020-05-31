@@ -32,8 +32,8 @@ void IR::label(int labelId) {
     this->codeStream << "LABEL " << labelId << std::endl;
 }
 
-void IR::functionDefinition(FunctionValuePtr function) {
-    // this->codeStream << "FUN " << TypeToStr[(int)function->returnType] << " ";
+void IR::functionDefinition(std::string functionName, FunctionValuePtr function) {
+     this->codeStream << "FUNCTION " << functionName << " "<< TypeToStr(function->returnType) << ":";
     // this->codeStream << "functionDefinition " << std::endl;
 }
 
