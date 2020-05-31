@@ -32,8 +32,8 @@ void IR::label(int labelId) {
     this->codeStream << "LABEL " << labelId << std::endl;
 }
 
-void IR::functionDefinition(FunctionValuePtr function) {
-    // this->codeStream << "FUN " << TypeToStr[(int)function->returnType] << " ";
+void IR::functionDefinition(std::string functionName, FunctionValuePtr function) {
+     this->codeStream << "FUNCTION " << functionName << " "<< TypeToStr(function->returnType) << ":" << std::endl;
     // this->codeStream << "functionDefinition " << std::endl;
 }
 
@@ -92,13 +92,17 @@ void IR::mallocConst(IRValuePtr x, Type base, int size) {
 }
 
 void IR::argument(IRValuePtr node) {
-    this->codeStream << "ARGUMENT " << node->id << std::endl;
+    this->codeStream << "ARGUMENT var" << node->id << std::endl;
 }
 
 void IR::parameter(IRValuePtr node) {
-    this->codeStream << "PARAMETER " << node->id << std::endl;
+    this->codeStream << "PARAMETER var" << node->id << std::endl;
 }
 
 std::string IR::getCode() {
     return this->codeStream.str();
+}
+
+void IR::functionCall(std::string functionName) {
+    this->codeStream << "CALL " << functionName << std::endl;
 }

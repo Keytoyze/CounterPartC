@@ -5,13 +5,14 @@ void processDeclaration(Declaration* declaration, DeclarationType declarationTyp
     if (declarationType == DeclarationType::UNKNOWN) {
         context.error("DeclarationList.declarationType = UNKNOWN!!!!");
     } 
-    declaration->declarationType = DeclarationType::VARIABLE;
+    // declaration->declarationType = DeclarationType::VARIABLE;
     declaration->GenerateIR(context);
 }
 
 // declaration_list -> declaration
 // (DeclarationList -> Declaration)
 IRValuePtr DeclarationList1::GenerateIR(Context& context) {
+    this->declarationAst1->declarationType = this->declarationType;
     processDeclaration(this->declarationAst1, this->declarationType, context);
     return nullptr;
 }
