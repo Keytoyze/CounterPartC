@@ -4,14 +4,12 @@
 // relational_expression -> shift_expression
 // (RelationalExpression -> ShiftExpression)
 IRValuePtr RelationalExpression1::GenerateIR(Context& context) {
-    // TODO: implement me!
     return shiftExpressionAst1->GenerateIR(context);
 }
 
 // relational_expression -> relational_expression '<' shift_expression
 // (RelationalExpression -> RelationalExpression LAngle ShiftExpression)
 IRValuePtr RelationalExpression2::GenerateIR(Context& context) {
-    // TODO: implement me!
     IRValuePtr p1 = relationalExpressionAst1->GenerateIR(context);
     IRValuePtr p2 = shiftExpressionAst3->GenerateIR(context);
 

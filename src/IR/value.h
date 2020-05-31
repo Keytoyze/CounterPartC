@@ -17,7 +17,8 @@ enum Type {
     TYPE_SIGNED,
     TYPE_UNSIGNED, 
     TYPE_BOOL, // TODO: move to int
-    TYPE_POINTER
+    TYPE_POINTER,
+    TYPE_FUNCTION
     // TODO: maybe there are more ?
 };
 
@@ -34,6 +35,7 @@ inline const char* TypeToStr(Type type) {
         case Type::TYPE_UNSIGNED: return "unsigned";
         case Type::TYPE_BOOL: return "bool";
         case Type::TYPE_POINTER: return "void*";
+        case Type::TYPE_FUNCTION: return "function";
     }
     return nullptr;
 }

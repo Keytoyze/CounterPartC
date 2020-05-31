@@ -92,13 +92,17 @@ void IR::mallocConst(IRValuePtr x, Type base, int size) {
 }
 
 void IR::argument(IRValuePtr node) {
-    this->codeStream << "ARGUMENT " << node->id << std::endl;
+    this->codeStream << "ARGUMENT var" << node->id << std::endl;
 }
 
 void IR::parameter(IRValuePtr node) {
-    this->codeStream << "PARAMETER " << node->id << std::endl;
+    this->codeStream << "PARAMETER var" << node->id << std::endl;
 }
 
 std::string IR::getCode() {
     return this->codeStream.str();
+}
+
+void IR::functionCall(std::string functionName) {
+    this->codeStream << "CALL " << functionName << std::endl;
 }

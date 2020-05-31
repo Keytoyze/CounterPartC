@@ -59,11 +59,24 @@ IRValuePtr FunctionDefinition2::GenerateIR(Context &context) {
     FunctionValuePtr funcValue = std::make_shared<FunctionValue>(type, parameterList, true);
     // put into the pool
     pool.insert({identifier, funcValue});
+
+    auto &varTable = funcValue->varTable;
+    std::vector<IRValuePtr> varList;
+    for(auto & it : parameterList) {
+        auto var = context.newVar(it.first, false);
+        varTable[it.second] = var;
+        varList.push_back(var);
+    }
     // init stack block & parse compound statement
     context.blockStack.push_back(funcValue);
     this->compoundStatementAst3->GenerateIR(context);
+
     // generate IR code
     context.ir.functionDefinition(funcValue);
+    for(auto &it: varList) {
+        // put arguments into stack
+        context.ir.parameter(it);
+    }
     // pop the block from stack
     context.blockStack.pop_back();
     return nullptr;

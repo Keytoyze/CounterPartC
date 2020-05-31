@@ -13,10 +13,10 @@ IRValuePtr Declaration1::GenerateIR(Context &context) {
 // declaration -> declaration_specifiers init_declarator_list ';'
 // (Declaration -> DeclarationSpecifiers InitDeclaratorList SimicolonSingle)
 IRValuePtr Declaration2::GenerateIR(Context &context) {
-    if (this->declarationType == DeclarationType::UNKNOWN) {
-        context.error("Unknown type of declaration!!!!!");
-        return nullptr;
-    }
+//    if (this->declarationType == DeclarationType::UNKNOWN) {
+//        context.error("Unknown type of declaration!!!!!");
+//        return nullptr;
+//    }
     this->declarationSpecifiersAst1->GenerateIR(context);
     this->initDeclaratorListAst2->GenerateIR(context);
     this->specifierType = declarationSpecifiersAst1->specifierType;

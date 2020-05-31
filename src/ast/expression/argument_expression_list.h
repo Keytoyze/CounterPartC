@@ -8,6 +8,7 @@ class Comma;
 
 class ArgumentExpressionList: public BasicAST {
 public:
+    std::vector<IRValuePtr> argumentList;
     virtual ~ArgumentExpressionList() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

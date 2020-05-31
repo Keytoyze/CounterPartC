@@ -18,7 +18,7 @@ IRValuePtr Statement2::GenerateIR(Context& context) {
 // statement -> expression_statement
 // (Statement -> ExpressionStatement)
 IRValuePtr Statement3::GenerateIR(Context& context) {
-    // like a = 1;
+    // like a = 1; hello(1.1);
     this->expressionStatementAst1->GenerateIR(context);
     return nullptr;
 }

@@ -31,8 +31,9 @@ public:
 
     BlockPtr newBlock(BlockPtr parent);
 
-    IRValuePtr findVar(std::string& identifier);
+    IRValuePtr findVar(std::string& identifier, bool mute = false);
 
+    IRValuePtr findFunction(const std::string &functionName);
 private:
     int varNum, labelNum, arrayNum;
 };

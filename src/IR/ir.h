@@ -45,6 +45,8 @@ public:
     void argument(IRValuePtr node);
     // definite parameters
     void parameter(IRValuePtr node);
+    // call function
+    void functionCall(std::string functionName);
 
     std::string getCode();
 };

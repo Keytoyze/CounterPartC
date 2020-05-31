@@ -39,7 +39,7 @@ BlockPtr Context::newBlock(BlockPtr parent) {
     return newBlock;
 }
 
-IRValuePtr Context::findVar(std::string &identifier) {
+IRValuePtr Context::findVar(std::string &identifier, bool mute) {
 //    auto block = blockStack.back();
 //    while (block != nullptr) {
 //        auto &varTable = block->varTable;
@@ -56,7 +56,9 @@ IRValuePtr Context::findVar(std::string &identifier) {
             return table[identifier];
         }
     }
-    error("Cannot find identifier " + identifier);
+    if (!mute) {
+        error("Cannot find identifier " + identifier);
+    }
     return nullptr;
 }
 
@@ -67,5 +69,16 @@ Context::Context() {
     parsingContext = PARSING_NULL;
 
     blockStack.push_back(newBlock(nullptr));
+}
+
+IRValuePtr Context::findFunction(const std::string &functionName) {
+    if (functionPool.find(functionName) != functionPool.end()) {
+        IRValuePtr valuePtr = std::make_shared<IRValue>();
+        valuePtr->id = -1;
+        valuePtr->type = Type::TYPE_FUNCTION;
+        valuePtr->content = functionName;
+        return valuePtr;
+    }
+    return nullptr;
 }
 

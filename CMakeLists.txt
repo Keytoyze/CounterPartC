@@ -33,6 +33,7 @@ file(GLOB_RECURSE SOURCE_FILES "src/*.cpp" "src/*.h")
 add_executable(
         ${CMAKE_PROJECT_NAME}
         ${SOURCE_FILES}
+        "src/IR/context.cpp"
         ${FLEX_lexer_OUTPUTS}
         ${BISON_parser_OUTPUTS})
 
