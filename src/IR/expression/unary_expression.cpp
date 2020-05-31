@@ -53,15 +53,17 @@ IRValuePtr UnaryExpression4::GenerateIR(Context& context) {
     if(dynamic_cast<UnaryOperator3*>(unaryOperatorAst1)!=nullptr){
         if(p->type!=TYPE_INT||p->type!=TYPE_DOUBLE)
             std::cerr<<"not capable type for UnaryExpression"<<std::endl;
-        return p;
+        
     }
     else if(dynamic_cast<UnaryOperator4*>(unaryOperatorAst1)!=nullptr){
         IRValuePtr temp=context.newVar(p->type,false);
         if(p->type!=TYPE_INT||p->type!=TYPE_DOUBLE)
             std::cerr<<"not capable type for UnaryExpression"<<std::endl;
         context.ir.constantToValue(temp,icons);
+        
         context.ir.operation(p,OP_SUB,temp,p);
 
+        
     }
     else if(dynamic_cast<UnaryOperator5*>(unaryOperatorAst1)!=nullptr){
         IRValuePtr temp=context.newVar(p->type,false);
@@ -69,11 +71,15 @@ IRValuePtr UnaryExpression4::GenerateIR(Context& context) {
             std::cerr<<"not capable type for UnaryExpression"<<std::endl;
         context.ir.constantToValue(temp,icons);
         context.ir.operation(p,OP_XOR,temp,p);
+
+        
     }
     else if(dynamic_cast<UnaryOperator6*>(unaryOperatorAst1)!=nullptr){
         std::cerr<<"! not implemented"<<std::endl;
         return nullptr;
     }
+
+    return p;
 }
 
 // unary_expression -> SIZEOF unary_expression
