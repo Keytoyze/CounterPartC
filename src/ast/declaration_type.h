@@ -1,8 +1,8 @@
-#ifndef _DECLARATION_TYPE_H
-#define _DECLARATION_TYPE_H
+#ifndef _DECLARATION_TYPE_H_
+#define _DECLARATION_TYPE_H_
 
 enum DeclarationType {
     UNKNOWN, FUNCTION, VARIABLE
 };
 
-#endif
+#endif // _DECLARATION_TYPE_H_
