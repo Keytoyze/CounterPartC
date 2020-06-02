@@ -67,7 +67,7 @@ public:
     void parameter(IRValuePtr node);
 
     // call function
-    void functionCall(std::string functionName);
+    void functionCall(std::string functionName, IRValuePtr returnValue);
 
     std::string getCode();
 };

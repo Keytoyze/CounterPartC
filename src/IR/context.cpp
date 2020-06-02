@@ -50,7 +50,7 @@ IRValuePtr Context::findVar(std::string &identifier, bool mute) {
 //    }
     // traverse the block stack to find the var
     int blockcount = this->blockStack.size();
-    for (int i = blockcount; i >= 0; i--) {
+    for (int i = blockcount - 1; i >= 0; i--) {
         auto &table = blockStack[i]->varTable;
         if (table.find(identifier) != table.end()) {
             return table[identifier];

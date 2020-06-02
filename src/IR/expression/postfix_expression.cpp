@@ -10,24 +10,23 @@ IRValuePtr PostfixExpression1::GenerateIR(Context &context) {
 // postfix_expression -> postfix_expression '[' expression ']'
 // (PostfixExpression -> PostfixExpression LSquare Expression RSquare)
 IRValuePtr PostfixExpression2::GenerateIR(Context &context) {
-    // TODO: implement me!
-    std::cerr << "PostfixExpression Not implemented!" << std::endl;
-    return nullptr;
+    auto pointer = postfixExpressionAst1->GenerateIR(context);
+    // TODO: type check
+    // if (!pointer->useAddress) {
+    //     context.error("invalid types for array subscript!");
+    //     return nullptr;
+    // }
+    auto addressOffset = context.newVar(pointer->type, true);
+    auto offset = expressionAst3->GenerateIR(context);
+    context.ir.operation(addressOffset, Oper::OP_ADD, pointer, offset);
+    auto result = context.newVar(pointer->type, false);
+    context.ir.ptrToValue(result, addressOffset);
+    return result;
 }
 
-// postfix_expression -> postfix_expression '(' ')'
-// (PostfixExpression -> PostfixExpression LRound RRound)
-IRValuePtr PostfixExpression3::GenerateIR(Context &context) {
-    // function call
-    this->postfixExpressionAst1->GenerateIR(context);
-    return nullptr;
-}
-
-// postfix_expression -> postfix_expression '(' argument_expression_list ')'
-// (PostfixExpression -> PostfixExpression LRound ArgumentExpressionList RRound)
-IRValuePtr PostfixExpression4::GenerateIR(Context &context) {
+IRValuePtr callFunction(Context &context, PostfixExpression* postfixExpression, ArgumentExpressionList* arguments) {
     // function call with parameters
-    auto function = this->postfixExpressionAst1->GenerateIR(context);
+    auto function = postfixExpression->GenerateIR(context);
     if (function == nullptr) {
         // TODO: maybe return the identifier name instead of nullptr
         context.error("function not found");
@@ -40,12 +39,17 @@ IRValuePtr PostfixExpression4::GenerateIR(Context &context) {
     }
     // now we have the function name
     auto &functionName = function->content;
-    this->argumentExpressionListAst3->GenerateIR(context);
-    auto &argumentList = this->argumentExpressionListAst3->argumentList;
+    std::vector<IRValuePtr> argumentList;
+    if (arguments != nullptr) {
+        arguments->GenerateIR(context);
+        argumentList = arguments->argumentList;
+    }
     // check against function pool
     auto &pool = context.functionPool;
+    Type returnType = Type::TYPE_INT;
     if (pool.find(functionName) != pool.end()) {
         auto &functionValue = pool[functionName];
+        returnType = functionValue->returnType;
         int expectedSize = functionValue->parameters.size();
         if (expectedSize != argumentList.size()) {
             context.error("function argument count "
@@ -67,8 +71,21 @@ IRValuePtr PostfixExpression4::GenerateIR(Context &context) {
     for (auto &it:argumentList) {
         context.ir.argument(it);
     }
-    context.ir.functionCall(functionName);
-    return nullptr;
+    auto returnValue = context.newVar(returnType, false);
+    context.ir.functionCall(functionName, returnValue);
+    return returnValue;
+}
+
+// postfix_expression -> postfix_expression '(' ')'
+// (PostfixExpression -> PostfixExpression LRound RRound)
+IRValuePtr PostfixExpression3::GenerateIR(Context &context) {
+    return callFunction(context, this->postfixExpressionAst1, nullptr);    
+}
+
+// postfix_expression -> postfix_expression '(' argument_expression_list ')'
+// (PostfixExpression -> PostfixExpression LRound ArgumentExpressionList RRound)
+IRValuePtr PostfixExpression4::GenerateIR(Context &context) {
+    return callFunction(context, this->postfixExpressionAst1, this->argumentExpressionListAst3);
 }
 
 // postfix_expression -> postfix_expression '.' IDENTIFIER

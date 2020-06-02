@@ -103,6 +103,6 @@ std::string IR::getCode() {
     return this->codeStream.str();
 }
 
-void IR::functionCall(std::string functionName) {
-    this->codeStream << "CALL " << functionName << std::endl;
+void IR::functionCall(std::string functionName, IRValuePtr returnValue) {
+    this->codeStream << "CALL " << functionName << " var" << returnValue->id << std::endl;
 }
