@@ -47,5 +47,5 @@ cpc [file]
 - [ ] Target code
 
 ### Others
-- [ ] AST visualization
+- [X] AST visualization
 - [ ] Command line argument

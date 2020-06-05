@@ -997,22 +997,3 @@ void yyerror(char const *s)
 	fflush(stdout);
 	printf("\n%*s\n%*s\n", column, "^", column, s);
 }
-
-
-int main(int argc,char* argv[]) {
-
-	yyin = fopen(argv[1],"r");
-	
-	//freopen("output/output.txt","w", stdout);
-	yyparse();
-    Context context;
-    std::cout << "Dump: " << std::endl;
-    root->Dump(0);
-    std::cout << "Generate IR: " << std::endl;
-    root->GenerateIR(context);
-    std::cout << "IR: " << std::endl;
-    std::cout << context.ir.getCode();
-    delete root;
-	fclose(yyin);
-	return 0;
-}

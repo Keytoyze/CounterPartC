@@ -3,6 +3,7 @@
 #define _TOKEN_H_
 
 #include "ast/basic_ast.h"
+#include "ast/render.h"
 #include <iostream>
 #include <string>
 
@@ -16,9 +17,7 @@ public:
 
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {
-        if (tokenName.length() != 0) {
-            std::cout << "[" << depth << "] " << tokenName << std::endl;
-        }
+        TreeRender::push(tokenName.c_str(), true);
     }
 };
 

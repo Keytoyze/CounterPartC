@@ -4,6 +4,7 @@
 #include "ast/terminal/token.h"
 #include <string>
 #include <cstring>
+#include <sstream>
 
 class Identifier: public BasicToken {
 public:
@@ -19,7 +20,9 @@ public:
     }
 
     virtual void Dump(int depth) {
-        std::cout << "[" << depth << "] Identifier: " << content << std::endl;
+        std::stringstream ss;
+        ss << "Identifier: " << content;
+        TreeRender::push(ss.str().c_str(), true);
     }
 
 };

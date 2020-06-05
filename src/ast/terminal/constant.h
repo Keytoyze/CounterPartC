@@ -2,7 +2,8 @@
 #define _CONSTANT_H_
 
 #include "ast/terminal/token.h"
-#include "ostream"
+#include "ast/render.h"
+#include <sstream>
 
 class Constant: public BasicToken {
 public:
@@ -22,7 +23,9 @@ public:
     IntConstant(){}
 
     virtual void Dump(int depth) {
-        std::cout << "[" << depth << "] IntConstant: " << value << std::endl;
+        std::stringstream ss;
+        ss << "int: " << value;
+        TreeRender::push(ss.str().c_str(), true);
     }
 };
 
@@ -33,7 +36,9 @@ public:
     DoubleConstant(const char* yytext);
 
     virtual void Dump(int depth) {
-        std::cout << "[" << depth << "] DoubleConstant: " << value << std::endl;
+        std::stringstream ss;
+        ss << "double: " << value;
+        TreeRender::push(ss.str().c_str(), true);
     }
 };
 

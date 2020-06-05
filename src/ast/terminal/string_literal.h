@@ -2,9 +2,9 @@
 #define _STRING_LITERAL_H_
 
 #include "ast/terminal/token.h"
+#include "ast/render.h"
 #include <string>
 #include <cstring>
-#include <iostream>
 
 class StringLiteral: public BasicToken {
 public:
@@ -22,7 +22,7 @@ public:
     }
 
     virtual void Dump(int depth) {
-        std::cout << "[" << depth << "] StringLiteral: " << text << std::endl;
+        TreeRender::push(text.c_str(), true);
     }
 
 };
