@@ -21,6 +21,9 @@ public:
     // z = x [op] y
     void operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
 
+    // y = [op] x
+    void singleOperation(IRValuePtr y, SingleOper op, IRValuePtr x);
+
     // definite label
     void label(int labelId);
 

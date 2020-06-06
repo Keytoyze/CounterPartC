@@ -22,6 +22,19 @@ static const char * OpToStr[] = {
     "OP_XOR"
 };
 
+static const char * SingleOpToStr[] = {
+    "NOT", 
+    "SUB", 
+    "XOR"
+};
+
+void IR::singleOperation(IRValuePtr y, SingleOper op, IRValuePtr x) {
+    this->codeStream << "OP_SINGLE " << SingleOpToStr[op];
+    this->codeStream << " var" << y->id << " var" << x->id;
+    this->codeStream << std::endl;
+}
+
+
 void IR::operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
     this->codeStream << "OP " << OpToStr[(int)op];
     this->codeStream << " var" << z->id << " var" << x->id << " var" << y->id;
@@ -33,7 +46,7 @@ void IR::label(int labelId) {
 }
 
 void IR::functionDefinition(std::string functionName, FunctionValuePtr function) {
-     this->codeStream << "FUNCTION " << functionName << " "<< TypeToStr(function->returnType) << ":" << std::endl;
+     this->codeStream << "FUNCTION " << functionName << " " << TypeToStr(function->returnType) << ":" << std::endl;
     // this->codeStream << "functionDefinition " << std::endl;
 }
 

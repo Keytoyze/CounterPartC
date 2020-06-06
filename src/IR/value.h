@@ -79,6 +79,12 @@ enum Oper {
     OP_XOR
 };
 
+enum SingleOper {
+    NOT,
+    SUB,
+    XOR
+};
+
 struct IRValue {
     int id;
     Type type;

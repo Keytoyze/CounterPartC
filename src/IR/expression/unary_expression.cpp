@@ -46,40 +46,28 @@ IRValuePtr UnaryExpression3::GenerateIR(Context& context) {
 // (UnaryExpression -> UnaryOperator CastExpression)
 IRValuePtr UnaryExpression4::GenerateIR(Context& context) {
     IRValuePtr p = castExpressionAst2->GenerateIR(context);
-    IntConstant icons;
-    DoubleConstant dcons; 
-    icons.value=0;
-    dcons.value=0;
-    if(dynamic_cast<UnaryOperator3*>(unaryOperatorAst1)!=nullptr){
-        if(p->type!=TYPE_INT||p->type!=TYPE_DOUBLE)
-            std::cerr<<"not capable type for UnaryExpression"<<std::endl;
-        
-    }
-    else if(dynamic_cast<UnaryOperator4*>(unaryOperatorAst1)!=nullptr){
-        IRValuePtr temp=context.newVar(p->type,false);
-        if(p->type!=TYPE_INT||p->type!=TYPE_DOUBLE)
-            std::cerr<<"not capable type for UnaryExpression"<<std::endl;
-        context.ir.constantToValue(temp,icons);
-        
-        context.ir.operation(p,OP_SUB,temp,p);
-
-        
-    }
-    else if(dynamic_cast<UnaryOperator5*>(unaryOperatorAst1)!=nullptr){
-        IRValuePtr temp=context.newVar(p->type,false);
-        if(p->type!=TYPE_INT)
-            std::cerr<<"not capable type for UnaryExpression"<<std::endl;
-        context.ir.constantToValue(temp,icons);
-        context.ir.operation(p,OP_XOR,temp,p);
-
-        
-    }
-    else if(dynamic_cast<UnaryOperator6*>(unaryOperatorAst1)!=nullptr){
-        std::cerr<<"! not implemented"<<std::endl;
-        return nullptr;
+    if (p->type != TYPE_INT && p->type != TYPE_DOUBLE) {
+        context.error("not capable type for UnaryExpression: " + std::string(TypeToStr(p->type)));
     }
 
-    return p;
+    if (dynamic_cast<UnaryOperator3*>(unaryOperatorAst1) != nullptr) { // +
+        return p;
+    }
+
+    IRValuePtr p2 = context.newVar(p->type, p->useAddress);
+
+    if (dynamic_cast<UnaryOperator1*>(unaryOperatorAst1) != nullptr) { // &
+        context.ir.addressToValue(p2, p);
+    } else if (dynamic_cast<UnaryOperator2*>(unaryOperatorAst1) != nullptr) { // *
+        context.ir.ptrToValue(p2, p);
+    } else if (dynamic_cast<UnaryOperator4*>(unaryOperatorAst1) != nullptr) { // -
+        context.ir.singleOperation(p2, SingleOper::SUB, p);
+    } else if (dynamic_cast<UnaryOperator5*>(unaryOperatorAst1) != nullptr) { // ~
+        context.ir.singleOperation(p2, SingleOper::XOR, p);
+    } else if (dynamic_cast<UnaryOperator6*>(unaryOperatorAst1) != nullptr) { // !
+        context.ir.singleOperation(p2, SingleOper::NOT, p);
+    }
+    return p2;
 }
 
 // unary_expression -> SIZEOF unary_expression
