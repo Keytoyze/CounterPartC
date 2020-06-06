@@ -19,6 +19,7 @@ public:
     std::vector<std::pair<Type, std::string>> parameterList;
 
     // array declarator: a[xxx]
+    bool isPointer = false;
     bool isArray = false;
     bool isArrayHasSize = false;
     IRValuePtr arraySize = nullptr;

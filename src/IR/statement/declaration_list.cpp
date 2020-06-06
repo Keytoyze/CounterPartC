@@ -24,6 +24,7 @@ IRValuePtr DeclarationList2::GenerateIR(Context& context) {
         context.error("DeclarationList.declarationType = UNKNOWN!!!!");
     }
     this->declarationListAst1->declarationType = this->declarationType;
+    this->declarationAst2->declarationType = this->declarationType;
     this->declarationListAst1->GenerateIR(context);
 
     processDeclaration(this->declarationAst2, this->declarationType, context);

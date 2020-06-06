@@ -54,20 +54,33 @@ IRValuePtr UnaryExpression4::GenerateIR(Context& context) {
         return p;
     }
 
-    IRValuePtr p2 = context.newVar(p->type, p->useAddress);
 
     if (dynamic_cast<UnaryOperator1*>(unaryOperatorAst1) != nullptr) { // &
+        IRValuePtr p2 = context.newVar(p->type, false);
         context.ir.addressToValue(p2, p);
+        return p2;
     } else if (dynamic_cast<UnaryOperator2*>(unaryOperatorAst1) != nullptr) { // *
-        context.ir.ptrToValue(p2, p);
+        if (context.parsingContext == Parsing::PARSING_ASSIGN_LEFT) {
+            p->useAddress = true;
+            return p;
+        } else {
+            IRValuePtr p2 = context.newVar(p->type, false);
+            context.ir.ptrToValue(p2, p);
+            return p2;
+        }
     } else if (dynamic_cast<UnaryOperator4*>(unaryOperatorAst1) != nullptr) { // -
+        IRValuePtr p2 = context.newVar(p->type, false);
         context.ir.singleOperation(p2, SingleOper::SUB, p);
+        return p2;
     } else if (dynamic_cast<UnaryOperator5*>(unaryOperatorAst1) != nullptr) { // ~
+        IRValuePtr p2 = context.newVar(p->type, false);
         context.ir.singleOperation(p2, SingleOper::XOR, p);
+        return p2;
     } else if (dynamic_cast<UnaryOperator6*>(unaryOperatorAst1) != nullptr) { // !
+        IRValuePtr p2 = context.newVar(p->type, false);
         context.ir.singleOperation(p2, SingleOper::NOT, p);
+        return p2;
     }
-    return p2;
 }
 
 // unary_expression -> SIZEOF unary_expression

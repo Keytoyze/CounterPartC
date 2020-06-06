@@ -23,11 +23,12 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
     auto directDeclarator = this->initDeclaratorListAst2->directDeclarator;
     // judge declaration type TODO: fix this (one fix is applied)
     if (this->declarationType == DeclarationType::UNKNOWN) {
-        if (!directDeclarator->identifier.empty()) {
-            this->declarationType = DeclarationType::FUNCTION;
-        } else {
-            this->declarationType = DeclarationType::VARIABLE;
-        }
+        // if (!directDeclarator->identifier.empty()) {
+        //     this->declarationType = DeclarationType::FUNCTION;
+        // } else {
+        //     this->declarationType = DeclarationType::VARIABLE;
+        // }
+       context.error("Unknown type of declaration!!!!!");
     }
     if (this->declarationType == DeclarationType::FUNCTION) {
         // function declaration
@@ -71,10 +72,13 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
                     }
                     var = context.newVar(this->specifierType, true, initializerValue->size());
                 }
+            } else if (directDeclarator->isPointer) {
+                var = context.newVar(this->specifierType, true);
             } else {
                 var = context.newVar(this->specifierType, false);
             }
 
+            var->useAddress = false;
             context.blockStack.back()->varTable[directDeclarator->identifier] = var;
 
             // initialize
@@ -91,7 +95,8 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
                         context.ir.operation(tempAddress, Oper::OP_ADD, tempAddress, typeSize);
                     }
                 } else {
-                    context.ir.valueToValue(var, initializerValue->at(0));                    
+                    // pointer or value
+                    context.ir.valueToValue(var, initializerValue->at(0));
                 }
             }
             

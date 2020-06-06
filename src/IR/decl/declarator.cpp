@@ -4,8 +4,13 @@
 // declarator -> pointer direct_declarator
 // (Declarator -> Pointer DirectDeclarator)
 IRValuePtr Declarator1::GenerateIR(Context &context) {
+    if (dynamic_cast<Pointer1*>(pointerAst1) == nullptr) {
+        context.error("Only support first level pointer");
+        return nullptr;
+    }
     this->directDeclaratorAst2->GenerateIR(context);
     this->directDeclarator = this->directDeclaratorAst2;
+    this->directDeclarator->isPointer = true;
     return nullptr;
 }
 

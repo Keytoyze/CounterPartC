@@ -13,6 +13,7 @@ IRValuePtr PrimaryExpression1::GenerateIR(Context &context) {
         context.error("Conflicting function and variable name: " + identifierAst1->content);
     } else if (function != nullptr && var == nullptr) {
         // it's a function identifier
+        std::cout << "wefwef " << identifierAst1->content << std::endl;
         return function;
     } else if (function == nullptr && var != nullptr) {
         // it's a variable identifier
