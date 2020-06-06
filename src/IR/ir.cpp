@@ -83,12 +83,16 @@ void IR::returnValue(IRValuePtr x) {
     this->codeStream << "RETURN var" << x->id << std::endl;
 }
 
-void IR::malloc(IRValuePtr x, IRValuePtr size) {
-    this->codeStream << "MALLOC var" << x->id << " " << size << std::endl;
+void IR::malloc(IRValuePtr x, Type base, IRValuePtr size) {
+    IRValuePtr typeSize = this->context.newVar(Type::TYPE_INT, false);
+    IntConstant constant(sizeOf(base));
+    this->constantToValue(typeSize, constant);
+    this->operation(typeSize, Oper::OP_MUL, typeSize, size);
+    this->codeStream << "MALLOC var" << x->id << " var" << typeSize->id << " (bytes)" << std::endl;
 }
 
 void IR::mallocConst(IRValuePtr x, Type base, int size) {
-    this->codeStream << "MALLOC_CONST var" << x->id << " " << TypeToStr(base) << " * " << size << std::endl;
+    this->codeStream << "MALLOC_CONST var" << x->id << " " << size * sizeOf(base) << " (bytes)" << std::endl;
 }
 
 void IR::argument(IRValuePtr node) {

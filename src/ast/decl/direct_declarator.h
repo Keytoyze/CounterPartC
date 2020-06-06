@@ -17,6 +17,12 @@ class DirectDeclarator: public BasicAST {
 public:
     std::string identifier;
     std::vector<std::pair<Type, std::string>> parameterList;
+
+    // array declarator: a[xxx]
+    bool isArray = false;
+    bool isArrayHasSize = false;
+    IRValuePtr arraySize = nullptr;
+
     virtual ~DirectDeclarator() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

@@ -16,10 +16,11 @@ IRValuePtr FunctionDefinition1::GenerateIR(Context &context) {
 IRValuePtr FunctionDefinition2::GenerateIR(Context &context) {
     this->declarationSpecifiersAst1->GenerateIR(context);
     this->declaratorAst2->GenerateIR(context);
+    auto directDeclarator = this->declaratorAst2->directDeclarator;
     // get the parsed data (stored in AST access with reference)
     Type type = declarationSpecifiersAst1->specifierType;
-    std::string &identifier = declaratorAst2->identifier;
-    auto &parameterList = declaratorAst2->parameterList;
+    std::string &identifier = directDeclarator->identifier;
+    auto &parameterList = directDeclarator->parameterList;
     // generate IR for function
     // check function pool
     auto &pool = context.functionPool;

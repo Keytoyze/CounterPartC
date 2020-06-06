@@ -3,15 +3,24 @@
 //
 #include "context.h"
 
-IRValuePtr Context::newVar(Type type, bool useAddress) {
+IRValuePtr Context::newVar(Type type, bool useAddress, int arrayConstSize, IRValuePtr arrayVarSize) {
     auto newValue = std::make_shared<IRValue>();
     newValue->id = varNum++;
     newValue->type = type;
     newValue->useAddress = useAddress;
-    // TODO: array
     if (useAddress) {
-        ir.mallocConst(newValue, Type::TYPE_POINTER, 1);
+        if (arrayConstSize != -1) {
+            // int a[] = {1, 2, 3}
+            ir.mallocConst(newValue, Type::TYPE_INT, arrayConstSize);
+        } else if (arrayVarSize != nullptr) {
+            // int a[x]
+            ir.malloc(newValue, Type::TYPE_INT, arrayVarSize);
+        } else {
+            // int *a
+            ir.mallocConst(newValue, Type::TYPE_INT, 1);
+        }
     } else {
+        // int a
         ir.mallocConst(newValue, type, 1);
     }
     return newValue;
@@ -62,7 +71,7 @@ IRValuePtr Context::findVar(std::string &identifier, bool mute) {
     return nullptr;
 }
 
-Context::Context() {
+Context::Context(): ir(*this) {
     arrayNum = 0;
     varNum = 0;
     labelNum = 0;

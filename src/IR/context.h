@@ -23,7 +23,7 @@ public:
 
     Context();
 
-    IRValuePtr newVar(Type type, bool useAddress);
+    IRValuePtr newVar(Type type, bool useAddress, int arrayConstSize = -1, IRValuePtr arrayVarSize = nullptr);
 
     int newLabelId();
 

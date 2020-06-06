@@ -6,12 +6,12 @@
 class Declarator;
 class Eq;
 class Initializer;
+class DirectDeclarator;
 
 class InitDeclarator: public BasicAST {
 public:
-    std::string identifier;
+    DirectDeclarator *directDeclarator;
     std::shared_ptr<std::vector<IRValuePtr>> initializerValue = nullptr;
-    FunctionParameterList parameterList;
 public:
     virtual ~InitDeclarator() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }

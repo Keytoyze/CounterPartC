@@ -5,12 +5,12 @@
 //#include "ast/ast.h"
 class Comma;
 class InitDeclarator;
+class DirectDeclarator;
 
 class InitDeclaratorList: public BasicAST {
 public:
     std::shared_ptr<std::vector<InitDeclarator*>> list;
-    std::string identifier;
-    FunctionParameterList parameterList;
+    DirectDeclarator* directDeclarator = nullptr;
     virtual ~InitDeclaratorList() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

@@ -40,6 +40,24 @@ inline const char* TypeToStr(Type type) {
     return nullptr;
 }
 
+inline int sizeOf(Type type) {
+    switch (type) {
+        case Type::TYPE_VOID: return 0;
+        case Type::TYPE_CHAR: return 1;
+        case Type::TYPE_SHORT: return 2;
+        case Type::TYPE_INT: return 4;
+        case Type::TYPE_LONG: return 8;
+        case Type::TYPE_FLOAT: return 4;
+        case Type::TYPE_DOUBLE: return 8;
+        case Type::TYPE_SIGNED: return sizeOf(Type::TYPE_INT);
+        case Type::TYPE_UNSIGNED: return sizeOf(Type::TYPE_INT);
+        case Type::TYPE_BOOL: return sizeOf(Type::TYPE_INT);
+        case Type::TYPE_POINTER: return sizeOf(Type::TYPE_LONG);
+        case Type::TYPE_FUNCTION: return 0;
+    }
+    return 0;
+}
+
 enum Oper {
     LOGICAL_AND,
     LOGICAL_OR,

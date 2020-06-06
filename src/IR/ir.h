@@ -7,14 +7,17 @@
 #include <sstream>
 
 class Constant;
+class Context;
 
 class IR {
 private:
+    Context& context;
     std::stringstream codeStream;
-
     void addCode(std::string &str);
-
 public:
+
+    IR(Context& context): context(context) {}
+
     // z = x [op] y
     void operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
 
@@ -55,7 +58,7 @@ public:
     void returnValue(IRValuePtr x);
 
     // x = malloc [size]
-    void malloc(IRValuePtr x, IRValuePtr size);
+    void malloc(IRValuePtr x, Type base, IRValuePtr size);
 
     // x = malloc [const]
     void mallocConst(IRValuePtr x, Type base, int size);

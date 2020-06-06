@@ -8,8 +8,8 @@ class Pointer;
 
 class Declarator: public BasicAST {
 public:
-    std::string identifier;
-    std::vector<std::pair<Type, std::string>> parameterList;
+    DirectDeclarator* directDeclarator;
+
     virtual ~Declarator() {}
     virtual IRValuePtr GenerateIR(Context& context) { return nullptr; }
     virtual void Dump(int depth) {}

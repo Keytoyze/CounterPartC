@@ -20,9 +20,10 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
     this->declarationSpecifiersAst1->GenerateIR(context);
     this->initDeclaratorListAst2->GenerateIR(context);
     this->specifierType = declarationSpecifiersAst1->specifierType;
+    auto directDeclarator = this->initDeclaratorListAst2->directDeclarator;
     // judge declaration type TODO: fix this (one fix is applied)
     if (this->declarationType == DeclarationType::UNKNOWN) {
-        if (!this->initDeclaratorListAst2->identifier.empty()) {
+        if (!directDeclarator->identifier.empty()) {
             this->declarationType = DeclarationType::FUNCTION;
         } else {
             this->declarationType = DeclarationType::VARIABLE;
@@ -30,9 +31,9 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
     }
     if (this->declarationType == DeclarationType::FUNCTION) {
         // function declaration
-        auto &funcName = this->initDeclaratorListAst2->identifier;
+        auto &funcName = directDeclarator->identifier;
         auto type = this->specifierType;
-        auto &parameterList = this->initDeclaratorListAst2->parameterList;
+        auto &parameterList = directDeclarator->parameterList;
         std::cout << "Function declaration" << std::endl;
         auto &pool = context.functionPool;
         if (pool.find(funcName) != pool.end()) {
@@ -55,17 +56,49 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
 
         auto variableInitPair = this->initDeclaratorListAst2->list;
         for (auto it = variableInitPair->begin(); it != variableInitPair->end(); it++) {
-            std::cout << "identifier: " << (*it)->identifier << std::endl;
+            DirectDeclarator* directDeclarator = (*it)->directDeclarator;
+            std::cout << "identifier: " << directDeclarator->identifier << std::endl;
             auto initializerValue = (*it)->initializerValue;
-            // TODO: array
-            auto var = context.newVar(this->specifierType, false);
-            context.blockStack.back()->varTable[(*it)->identifier] = var;
-            if (initializerValue != nullptr) {
-                context.ir.valueToValue(var, initializerValue->at(0));
-            }
-        }
 
-//        context.blockStack.back();
+            IRValuePtr var;
+
+            if (directDeclarator->isArray) {
+                if (directDeclarator->isArrayHasSize) {
+                    // int a[x]
+                    var = context.newVar(this->specifierType, true, -1, directDeclarator->arraySize);
+                } else {
+                    // int a[] = {}
+                    if (initializerValue == nullptr || initializerValue->size() == 0) {
+                        context.error("Array without specified size should have initialize list!");
+                        return nullptr;
+                    }
+                    var = context.newVar(this->specifierType, true, initializerValue->size());
+                }
+            } else {
+                var = context.newVar(this->specifierType, false);
+            }
+
+            context.blockStack.back()->varTable[directDeclarator->identifier] = var;
+
+            // initialize
+            if (initializerValue != nullptr && initializerValue->size() != 0) {
+                if (directDeclarator->isArray) {
+                    IRValuePtr tempAddress = context.newVar(Type::TYPE_INT, true);
+                    context.ir.valueToValue(tempAddress, var);
+                    IRValuePtr typeSize = context.newVar(Type::TYPE_INT, false);
+                    IntConstant typeSizeConstant(sizeOf(this->specifierType));
+                    context.ir.constantToValue(typeSize, typeSizeConstant);
+                    for (auto it2 = initializerValue->begin(); it2 != initializerValue->end(); it2++) {
+                        context.ir.valueToPtr(tempAddress, *it2);
+                        // increase tempAddress
+                        context.ir.operation(tempAddress, Oper::OP_ADD, tempAddress, typeSize);
+                    }
+                } else {
+                    context.ir.valueToValue(var, initializerValue->at(0));                    
+                }
+            }
+            
+        }
     }
 
     return nullptr;

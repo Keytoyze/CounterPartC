@@ -22,6 +22,8 @@ public:
 
     IntConstant(){}
 
+    IntConstant(int value): value(value) {}
+
     virtual void Dump(int depth) {
         std::stringstream ss;
         ss << "int: " << value;

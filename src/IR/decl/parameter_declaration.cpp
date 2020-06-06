@@ -8,7 +8,7 @@ IRValuePtr ParameterDeclaration1::GenerateIR(Context &context) {
     this->declarationSpecifiersAst1->GenerateIR(context);
     this->declaratorAst2->GenerateIR(context);
     auto specifierType = declarationSpecifiersAst1->specifierType;
-    auto identifier = declaratorAst2->identifier;
+    auto identifier = declaratorAst2->directDeclarator->identifier;
     // assign to the parameter
     this->parameter.first = specifierType;
     this->parameter.second = identifier;

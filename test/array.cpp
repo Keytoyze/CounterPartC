@@ -1,4 +1,5 @@
+int a[6] = {1, 2, 3};
+
 int main(void) {
-    int a;
-    a[1];
+    a[3] = 4;
 }
