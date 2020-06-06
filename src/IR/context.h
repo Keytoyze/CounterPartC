@@ -8,9 +8,12 @@
 
 #include "IR/ir.h"
 #include "IR/value.h"
-enum Parsing{
+
+enum Parsing {
     PARSING_NULL,
-    PARSING_FUNCTION
+    PARSING_FUNCTION,
+    PARSING_ASSIGN_LEFT,
+    PARSING_ASSIGN_RIGHT
 };
 
 class Context {

@@ -10,13 +10,17 @@ IRValuePtr AssignmentExpression1::GenerateIR(Context& context) {
 // assignment_expression -> unary_expression assignment_operator assignment_expression
 // (AssignmentExpression -> UnaryExpression AssignmentOperator AssignmentExpression)
 IRValuePtr AssignmentExpression2::GenerateIR(Context& context) {
+
+    context.parsingContext = Parsing::PARSING_ASSIGN_LEFT;
     IRValuePtr p1 = unaryExpressionAst1->GenerateIR(context);
+
+    context.parsingContext = Parsing::PARSING_ASSIGN_RIGHT;
     IRValuePtr p2 = assignmentExpressionAst3->GenerateIR(context);
 
     IRValuePtr p3;
 
-    if(dynamic_cast<AssignmentOperator1*>(assignmentOperatorAst2)!=NULL){
-        p3=p2;
+    if(dynamic_cast<AssignmentOperator1*>(assignmentOperatorAst2) != NULL) {
+        p3 = p2;
     }
     else{
         p3 = context.newVar(p2->type,false);
@@ -74,11 +78,12 @@ IRValuePtr AssignmentExpression2::GenerateIR(Context& context) {
 
     }
 
-    //ir修正(
-    //赋值地址使用判断？
-    context.ir.valueToValue(p1,p3);
+    if (p1->useAddress) {
+        context.ir.valueToPtr(p1, p3);
+    } else {
+        context.ir.valueToValue(p1, p3);
+    }
 
-    return p1;
-
+    return p3;
 }
 

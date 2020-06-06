@@ -18,6 +18,7 @@ IRValuePtr DirectDeclarator2::GenerateIR(Context& context) {
 // direct_declarator -> direct_declarator '[' constant_expression ']'
 // (DirectDeclarator -> DirectDeclarator LSquare ConstantExpression RSquare)
 IRValuePtr DirectDeclarator3::GenerateIR(Context& context) {
+    this->directDeclaratorAst1->GenerateIR(context);
     auto directDeclarator = dynamic_cast<DirectDeclarator1*>(this->directDeclaratorAst1);
     if (directDeclarator == nullptr) {
         context.error("Array only support identifier!");
@@ -33,6 +34,7 @@ IRValuePtr DirectDeclarator3::GenerateIR(Context& context) {
 // direct_declarator -> direct_declarator '[' ']'
 // (DirectDeclarator -> DirectDeclarator LSquare RSquare)
 IRValuePtr DirectDeclarator4::GenerateIR(Context& context) {
+    this->directDeclaratorAst1->GenerateIR(context);
     auto directDeclarator = dynamic_cast<DirectDeclarator1*>(this->directDeclaratorAst1);
     if (directDeclarator == nullptr) {
         context.error("Array only support identifier!");

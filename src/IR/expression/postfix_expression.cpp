@@ -16,12 +16,28 @@ IRValuePtr PostfixExpression2::GenerateIR(Context &context) {
     //     context.error("invalid types for array subscript!");
     //     return nullptr;
     // }
-    auto addressOffset = context.newVar(pointer->type, true);
+    
+    // get type size
+    auto size = context.newVar(Type::TYPE_INT, false);
+    IntConstant constant(sizeOf(pointer->type));
+    context.ir.constantToValue(size, constant);
+
+    // calculate offset
     auto offset = expressionAst3->GenerateIR(context);
-    context.ir.operation(addressOffset, Oper::OP_ADD, pointer, offset);
-    auto result = context.newVar(pointer->type, false);
-    context.ir.ptrToValue(result, addressOffset);
-    return result;
+    auto offsetMul = context.newVar(Type::TYPE_INT, false);
+    context.ir.operation(offsetMul, Oper::OP_MUL, offset, size);
+    auto addressOffset = context.newVar(pointer->type, true);
+    context.ir.operation(addressOffset, Oper::OP_ADD, pointer, offsetMul);
+
+    if (context.parsingContext == Parsing::PARSING_ASSIGN_LEFT) {
+        // return pointer if is in left
+        return addressOffset;
+    } else {
+        // fetch value if is in right
+        auto result = context.newVar(pointer->type, false);
+        context.ir.ptrToValue(result, addressOffset);
+        return result;
+    }
 }
 
 IRValuePtr callFunction(Context &context, PostfixExpression* postfixExpression, ArgumentExpressionList* arguments) {

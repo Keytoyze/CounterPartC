@@ -51,13 +51,10 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
     } else if (this->declarationType == DeclarationType::VARIABLE) {
         // variable declaration
         // assign value
-        std::cout << "Insert variable" << std::endl;
-        std::cout << "type: " << TypeToStr(this->specifierType) << std::endl;
 
         auto variableInitPair = this->initDeclaratorListAst2->list;
         for (auto it = variableInitPair->begin(); it != variableInitPair->end(); it++) {
             DirectDeclarator* directDeclarator = (*it)->directDeclarator;
-            std::cout << "identifier: " << directDeclarator->identifier << std::endl;
             auto initializerValue = (*it)->initializerValue;
 
             IRValuePtr var;

@@ -52,7 +52,7 @@ inline int sizeOf(Type type) {
         case Type::TYPE_SIGNED: return sizeOf(Type::TYPE_INT);
         case Type::TYPE_UNSIGNED: return sizeOf(Type::TYPE_INT);
         case Type::TYPE_BOOL: return sizeOf(Type::TYPE_INT);
-        case Type::TYPE_POINTER: return sizeOf(Type::TYPE_LONG);
+        case Type::TYPE_POINTER: return sizeOf(Type::TYPE_INT);
         case Type::TYPE_FUNCTION: return 0;
     }
     return 0;
