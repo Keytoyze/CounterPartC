@@ -33,13 +33,14 @@ cpc [file]
 - [X] Function call & function definition
 - [X] Variable initialization & definition
 - [ ] Conditional expression: ` ? : `
-- [ ] Array initialization & operation
+- [X] Array initialization & operation
 - [ ] Enum
 - [ ] String literal
 - [ ] Struct
 - [ ] Type cast: `(int) a`
-- [ ] Pointer
+- [X] Pointer
 - [ ] Type quailifier: `const volatile`
+- [X] `sizeof(exp)`
 
 ### Code generation
 - [X] IR
