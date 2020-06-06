@@ -86,9 +86,11 @@ IRValuePtr UnaryExpression4::GenerateIR(Context& context) {
 // unary_expression -> SIZEOF unary_expression
 // (UnaryExpression -> Sizeof UnaryExpression)
 IRValuePtr UnaryExpression5::GenerateIR(Context& context) {
-    // TODO: implement me!
-    std::cerr << "sizeof Not implemented!" << std::endl;
-    return nullptr;
+    auto p = this->unaryExpressionAst2->GenerateIR(context);
+    auto result = context.newVar(Type::TYPE_INT, false);
+    IntConstant constant(sizeOf(p->type));
+    context.ir.constantToValue(result, constant);
+    return result;
 }
 
 // unary_expression -> SIZEOF '(' type_name ')'
