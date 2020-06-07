@@ -91,3 +91,11 @@ IRValuePtr Context::findFunction(const std::string &functionName) {
     return nullptr;
 }
 
+bool Context::optimizationEnabled(unsigned long flag) {
+    return flag & optimization;
+}
+
+void Context::setOptimizationFlags(unsigned long flag) {
+    optimization = optimization | flag;
+}
+

@@ -20,6 +20,8 @@ int main(int argc,char* argv[]) {
     fout << TreeRender::render();
 
     Context context;
+    // test
+    context.setOptimizationFlags(0x1);
     std::cout << "Generate IR: " << std::endl;
     root->GenerateIR(context);
 

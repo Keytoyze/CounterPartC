@@ -1,5 +1,6 @@
 #include "IR/ir.h"
 #include "ast/terminal/constant.h"
+#include "CodeOptimization.h"
 
 static const char * OpToStr[] = {
     "LOGICAL_AND", 
@@ -65,6 +66,7 @@ void IR::functionDefinition(std::string functionName, FunctionValuePtr function)
 }
 
 void IR::valueToValue(IRValuePtr x, IRValuePtr y) {
+    CodeOptimization::valueAssignment(x, y);
     this->codeStream << "ASSIGN var" << x->id << " var" << y->id << std::endl;
 }
 
@@ -81,13 +83,17 @@ void IR::valueToPtr(IRValuePtr x, IRValuePtr y) {
 }
 
 void IR::constantToValue(IRValuePtr x, Constant& constant) {
+    // call when a variable is initialized with a constant value
+    x->isConstant = true;
     auto intPtr = dynamic_cast<IntConstant*>(&constant);
     if (intPtr != nullptr) {
+        x->constVal.intVal = intPtr->value;
         this->codeStream << "ASSIGN_CONST_INT var" << x->id << " " << intPtr->value << std::endl;
         return;
     }
     auto doublePtr = dynamic_cast<DoubleConstant*>(&constant);
     if (doublePtr != nullptr) {
+        x->constVal.doubleVal = doublePtr->value;
         this->codeStream << "ASSIGN_CONST_DOUBLE var" << x->id << " " << doublePtr->value << std::endl;
         return;
     }
@@ -119,6 +125,7 @@ void IR::malloc(IRValuePtr x, Type base, IRValuePtr size) {
 }
 
 void IR::mallocConst(IRValuePtr x, Type base, int size) {
+    x->isConstant = true;
     this->codeStream << "MALLOC_CONST var" << x->id << " " << size * sizeOf(base) << " (bytes)" << std::endl;
 }
 
