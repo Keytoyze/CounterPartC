@@ -45,6 +45,9 @@ cpc [file]
 ### Code generation
 - [X] IR
 - [ ] Code optimization
+    - [ ] const expression in if statement
+    - [ ] temp variable in pointer assignment
+    - [ ] ...
 - [ ] Target code
 
 ### Others

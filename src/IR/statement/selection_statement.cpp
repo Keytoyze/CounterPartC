@@ -6,6 +6,17 @@
 IRValuePtr SelectionStatement1::GenerateIR(Context& context) {
     auto res = this->expressionAst3->GenerateIR(context);
     // TODO: get the evaluation of the expression
+    if (context.optimizationEnabled(UNREACHABLE_CODE_FLAG)
+            && res->type == Type::TYPE_BOOL && res->isConstant) {
+        if (res->constVal.intVal == 0) {
+            // always false
+            return nullptr;
+        } else {
+            // always true
+            this->statementAst5->GenerateIR(context);
+        }
+        return nullptr;
+    }
     auto label1 = context.newLabelId();
     auto label2 = context.newLabelId();
     context.ir.conditionJump(res, label1);
@@ -25,6 +36,17 @@ IRValuePtr SelectionStatement1::GenerateIR(Context& context) {
 // (SelectionStatement -> If LRound Expression RRound Statement Else Statement)
 IRValuePtr SelectionStatement2::GenerateIR(Context& context) {
     auto res = this->expressionAst3->GenerateIR(context);
+    if (context.optimizationEnabled(UNREACHABLE_CODE_FLAG)
+        && res->type == Type::TYPE_BOOL && res->isConstant) {
+        if (res->constVal.intVal == 0) {
+            // always false
+            this->statementAst7->GenerateIR(context);
+        } else {
+            // always true
+            this->statementAst5->GenerateIR(context);
+        }
+        return nullptr;
+    }
     // TODO: get the evaluation of the expression
     auto label1 = context.newLabelId();
     auto label2 = context.newLabelId();

@@ -90,6 +90,11 @@ struct IRValue {
     Type type;
     std::string content = "";
     bool useAddress = false;
+    bool isConstant = false;
+    union const_val{
+        int intVal;
+        double doubleVal;
+    } constVal;
 };
 
 using IRValuePtr = std::shared_ptr<IRValue>;

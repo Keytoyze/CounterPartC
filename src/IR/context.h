@@ -8,13 +8,14 @@
 
 #include "IR/ir.h"
 #include "IR/value.h"
-
+#include "CodeOptimization.h"
 enum Parsing {
     PARSING_NULL,
     PARSING_FUNCTION,
     PARSING_ASSIGN_LEFT,
     PARSING_ASSIGN_RIGHT
 };
+
 
 class Context {
 public:
@@ -37,8 +38,13 @@ public:
     IRValuePtr findVar(std::string& identifier, bool mute = false);
 
     IRValuePtr findFunction(const std::string &functionName);
+
+    bool optimizationEnabled(unsigned long flag);
+
+    void setOptimizationFlags(unsigned long flag);
 private:
     int varNum, labelNum, arrayNum;
+    unsigned long optimization;
 };
 
 #endif // _CONTEXT_H_

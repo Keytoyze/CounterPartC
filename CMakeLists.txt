@@ -34,8 +34,10 @@ add_executable(
         ${CMAKE_PROJECT_NAME}
         ${SOURCE_FILES}
         "src/IR/context.cpp"
+        "src/ast/render.cpp"
+        "src/IR/CodeOptimization.cpp"
         ${FLEX_lexer_OUTPUTS}
-        ${BISON_parser_OUTPUTS})
+        ${BISON_parser_OUTPUTS} )
 
 target_include_directories(${CMAKE_PROJECT_NAME}
         PRIVATE
