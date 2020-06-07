@@ -31,7 +31,7 @@ public:
 
     int newLabelId();
 
-    void error(std::string err);
+    void error(std::string err) const;
 
     BlockPtr newBlock(BlockPtr parent);
 

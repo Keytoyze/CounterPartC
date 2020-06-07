@@ -96,6 +96,21 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
                     }
                 } else {
                     // pointer or value
+                    if (context.optimizationEnabled(CONSTANT_FOLDING_FLAG)){
+                        auto &irValue =  initializerValue->at(0);
+                        if (irValue->isConstant) {
+                            if (irValue->type == Type::TYPE_INT) {
+                                auto intConst = IntConstant(irValue->constVal.intVal);
+                                context.ir.constantToValue(irValue, intConst);
+                                return nullptr;
+                            } else if (irValue->type == Type::TYPE_DOUBLE) {
+                                auto doubleConst = DoubleConstant();
+                                doubleConst.value = irValue->constVal.doubleVal;
+                                context.ir.constantToValue(irValue, doubleConst);
+                                return nullptr;
+                            }
+                        }
+                    }
                     context.ir.valueToValue(var, initializerValue->at(0));
                 }
             }
