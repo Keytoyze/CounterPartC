@@ -21,7 +21,7 @@ int main(int argc,char* argv[]) {
 
     Context context;
     // test
-    context.setOptimizationFlags(0x1);
+    context.setOptimizationFlags(0x1 + (((unsigned long)(0x1)) << 1));
     std::cout << "Generate IR: " << std::endl;
     root->GenerateIR(context);
 

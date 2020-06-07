@@ -30,7 +30,7 @@ int Context::newLabelId() {
     return labelNum++;
 }
 
-void Context::error(std::string err) {
+void Context::error(std::string err) const {
     // TODO: print line number
     std::cerr << err << std::endl;
 }

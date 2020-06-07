@@ -19,6 +19,7 @@ IRValuePtr MultiplicativeExpression2::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in MultiplicativeExpression2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(p1->type,false);
+    CodeOptimization::evalMultiplicativeExpression(p1, p2, p3, context, false);
     context.ir.operation(p3,OP_MUL,p1,p2);
 
     return p3;    
@@ -34,6 +35,7 @@ IRValuePtr MultiplicativeExpression3::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in MultiplicativeExpression3"<<std::endl;
 
     IRValuePtr p3 = context.newVar(p1->type,false);
+    CodeOptimization::evalMultiplicativeExpression(p1, p2, p3, context, true);
     context.ir.operation(p3,OP_DIV,p1,p2);
 
     return p3;   

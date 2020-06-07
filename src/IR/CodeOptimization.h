@@ -6,12 +6,14 @@
 #define CPC_CODEOPTIMIZATION_H
 
 #include "value.h"
+#include "context.h"
 #include <cmath>
 #define EPSILON 1e-5
 
 // remove redundant code caused by equality expression
 // in if statement
-#define UNREACHABLE_CODE_FLAG 0x1
+#define UNREACHABLE_CODE_FLAG (0x1)
+#define CONSTANT_FOLDING_FLAG (((unsigned long)0x1) << 1)
 
 
 class CodeOptimization {
@@ -23,6 +25,19 @@ public:
             const IRValuePtr& res,
             bool isEqual = true
     );
+    static void evalMultiplicativeExpression(
+            const IRValuePtr& lval,
+            const IRValuePtr& rval,
+            const IRValuePtr& res,
+            const Context &context,
+            bool isDivide = false
+            );
+    static void evalAdditiveExpression(
+            const IRValuePtr& lval,
+            const IRValuePtr& rval,
+            const IRValuePtr& res,
+            bool isSubtract = false
+            );
 };
 
 
