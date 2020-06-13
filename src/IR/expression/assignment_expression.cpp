@@ -11,11 +11,12 @@ IRValuePtr AssignmentExpression1::GenerateIR(Context& context) {
 // (AssignmentExpression -> UnaryExpression AssignmentOperator AssignmentExpression)
 IRValuePtr AssignmentExpression2::GenerateIR(Context& context) {
 
+    Parsing preParsing = context.parsingContext;
     context.parsingContext = Parsing::PARSING_ASSIGN_LEFT;
     IRValuePtr p1 = unaryExpressionAst1->GenerateIR(context);
-
     context.parsingContext = Parsing::PARSING_ASSIGN_RIGHT;
     IRValuePtr p2 = assignmentExpressionAst3->GenerateIR(context);
+    context.parsingContext = preParsing;
 
     IRValuePtr p3, p11;
     if (!p1->useAddress) {
