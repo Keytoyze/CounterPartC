@@ -33,14 +33,14 @@ void IR::singleOperation(IRValuePtr y, SingleOper op, IRValuePtr x) {
     this->codeStream << " var" << y->id << " var" << x->id;
     this->codeStream << std::endl;
 }
-
+/*
 //including logical operation , shift operation and relational operation
 void IR::operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
     this->codeStream << "OP " << OpToStr[(int)op];
     this->codeStream << " var" << z->id << " var" << x->id << " var" << y->id;
     this->codeStream << std::endl;
 }
-
+*/
 
 void IR::operation_int(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
     this->codeStream << "OP_INT " << OpToStr[(int)op];

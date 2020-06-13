@@ -17,7 +17,13 @@ IRValuePtr RelationalExpression2::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in RelationalExpression2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(TYPE_BOOL,false);
-    context.ir.operation(p3,OP_LT,p1,p2);
+    if(p1->type==TYPE_INT)
+        context.ir.operation_int(p3,OP_LS,p1,p2);
+    else
+    {
+        context.ir.operation_double(p3,OP_LS,p1,p2);
+    }
+    
 
     return p3;    
 }
@@ -33,7 +39,13 @@ IRValuePtr RelationalExpression3::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in RelationalExpression2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(TYPE_BOOL,false);
-    context.ir.operation(p3,OP_GT,p1,p2);
+    if(p1->type==TYPE_INT)
+        context.ir.operation_int(p3,OP_GT,p1,p2);
+    else
+    {
+        context.ir.operation_double(p3,OP_GT,p1,p2);
+    }
+    
 
     return p3;   
 }
@@ -48,7 +60,12 @@ IRValuePtr RelationalExpression4::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in RelationalExpression2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(TYPE_BOOL,false);
-    context.ir.operation(p3,OP_LTE,p1,p2);
+    if(p1->type==TYPE_INT)
+        context.ir.operation_int(p3,OP_LTE,p1,p2);
+    else
+    {
+        context.ir.operation_double(p3,OP_LTE,p1,p2);
+    }
 
     return p3;   
 }
@@ -63,8 +80,12 @@ IRValuePtr RelationalExpression5::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in RelationalExpression2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(TYPE_BOOL,false);
-    context.ir.operation(p3,OP_GTE,p1,p2);
-
+    if(p1->type==TYPE_INT)
+        context.ir.operation_int(p3,OP_GTE,p1,p2);
+    else
+    {
+        context.ir.operation_double(p3,OP_GTE,p1,p2);
+    }
     return p3;   
 }
 
