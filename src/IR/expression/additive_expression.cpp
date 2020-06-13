@@ -22,7 +22,13 @@ IRValuePtr AdditiveExpression2::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in additive expression 2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(p1->type,false);
-    context.ir.operation(p3,OP_ADD,p1,p2);
+    if(p1->type){
+        context.ir.operation_int(p3,OP_ADD,p1,p2);
+    }
+    else{
+        context.ir.operation_double(p3,OP_ADD,p1,p2);
+    }
+
 
     return p3;
     //std::cerr << "AdditiveExpression Not implemented!" << std::endl;
@@ -43,7 +49,12 @@ IRValuePtr AdditiveExpression3::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in additive expression 3"<<std::endl;
 
     IRValuePtr p3 = context.newVar(p1->type,false);
-    context.ir.operation(p3,OP_SUB,p1,p2);
+    if(p1->type){
+        context.ir.operation_int(p3,OP_SUB,p1,p2);
+    }
+    else{
+        context.ir.operation_double(p3,OP_SUB,p1,p2);
+    }
 
     return p3;
 }

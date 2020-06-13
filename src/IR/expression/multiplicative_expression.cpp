@@ -19,7 +19,11 @@ IRValuePtr MultiplicativeExpression2::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in MultiplicativeExpression2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(p1->type,false);
-    context.ir.operation(p3,OP_MUL,p1,p2);
+    if(p1->type==TYPE_INT)
+        context.ir.operation_int(p3,OP_MUL,p1,p2);
+    else{
+        context.ir.operation_double(p3,OP_MUL,p1,p2);
+    }
 
     return p3;    
 }
@@ -34,7 +38,11 @@ IRValuePtr MultiplicativeExpression3::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in MultiplicativeExpression3"<<std::endl;
 
     IRValuePtr p3 = context.newVar(p1->type,false);
-    context.ir.operation(p3,OP_DIV,p1,p2);
+    if(p1->type==TYPE_INT)
+        context.ir.operation_int(p3,OP_DIV,p1,p2);
+    else{
+        context.ir.operation_double(p3,OP_DIV,p1,p2);
+    }
 
     return p3;   
 }
@@ -49,8 +57,11 @@ IRValuePtr MultiplicativeExpression4::GenerateIR(Context& context) {
         std::cerr<< "Different type for two variable in MultiplicativeExpression4"<<std::endl;
 
     IRValuePtr p3 = context.newVar(p1->type,false);
-    context.ir.operation(p3,OP_MOD,p1,p2);
-
+    if(p1->type==TYPE_INT)
+        context.ir.operation_int(p3,OP_MOD,p1,p2);
+    else{
+        context.ir.operation_double(p3,OP_MOD,p1,p2);
+    }
     return p3;   
 }
 

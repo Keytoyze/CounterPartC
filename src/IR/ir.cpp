@@ -34,12 +34,26 @@ void IR::singleOperation(IRValuePtr y, SingleOper op, IRValuePtr x) {
     this->codeStream << std::endl;
 }
 
-
+//including logical operation , shift operation and relational operation
 void IR::operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
     this->codeStream << "OP " << OpToStr[(int)op];
     this->codeStream << " var" << z->id << " var" << x->id << " var" << y->id;
     this->codeStream << std::endl;
 }
+
+
+void IR::operation_int(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
+    this->codeStream << "OP_INT " << OpToStr[(int)op];
+    this->codeStream << " var" << z->id << " var" << x->id << " var" << y->id;
+    this->codeStream << std::endl;
+}
+
+void IR::operation_double(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
+    this->codeStream << "OP_DOUBLE " << OpToStr[(int)op];
+    this->codeStream << " var" << z->id << " var" << x->id << " var" << y->id;
+    this->codeStream << std::endl;
+}
+
 
 void IR::label(int labelId) {
     this->codeStream << "LABEL " << labelId << std::endl;
@@ -100,7 +114,7 @@ void IR::malloc(IRValuePtr x, Type base, IRValuePtr size) {
     IRValuePtr typeSize = this->context.newVar(Type::TYPE_INT, false);
     IntConstant constant(sizeOf(base));
     this->constantToValue(typeSize, constant);
-    this->operation(typeSize, Oper::OP_MUL, typeSize, size);
+    this->operation_int(typeSize, Oper::OP_MUL, typeSize, size);
     this->codeStream << "MALLOC var" << x->id << " var" << typeSize->id << " (bytes)" << std::endl;
 }
 

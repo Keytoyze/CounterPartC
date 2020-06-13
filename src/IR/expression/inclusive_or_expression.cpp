@@ -19,7 +19,7 @@ IRValuePtr InclusiveOrExpression2::GenerateIR(Context& context) {
 
     IRValuePtr p3 = context.newVar(p1->type,false);
    
-    context.ir.operation(p3,OP_OR,p1,p2);
+    context.ir.operation_int(p3,OP_OR,p1,p2);
 
     return p3;
 }
