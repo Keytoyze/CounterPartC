@@ -35,68 +35,52 @@ IRValuePtr AssignmentExpression2::GenerateIR(Context& context) {
         if(dynamic_cast<AssignmentOperator2*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            if(p1->type==TYPE_INT)
-                context.ir.operation_int(p3,OP_MUL,p11,p2);
-            else{
-                context.ir.operation_double(p3,OP_MUL,p11,p2);
-            }
+            context.ir.operation(p3,OP_MUL,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator3*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            if(p1->type==TYPE_INT)
-                context.ir.operation_int(p3,OP_DIV,p11,p2);
-            else{
-                context.ir.operation_double(p3,OP_DIV,p11,p2);
-            }
+            context.ir.operation(p3,OP_DIV,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator4*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            context.ir.operation_int(p3,OP_MOD,p11,p2);
+            context.ir.operation(p3,OP_MOD,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator5*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            if(p1->type==TYPE_INT)
-                context.ir.operation_int(p3,OP_ADD,p11,p2);
-            else{
-                context.ir.operation_double(p3,OP_ADD,p11,p2);
-            }
+            context.ir.operation(p3,OP_ADD,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator6*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            if(p1->type==TYPE_INT)
-                context.ir.operation_int(p3,OP_SUB,p11,p2);
-            else{
-                context.ir.operation_double(p3,OP_SUB,p11,p2);
-            }
+            context.ir.operation(p3,OP_SUB,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator7*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            context.ir.operation_int(p3,OP_LS,p11,p2);
+            context.ir.operation(p3,OP_LS,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator8*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            context.ir.operation_int(p3,OP_RS,p11,p2);
+            context.ir.operation(p3,OP_RS,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator9*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            context.ir.operation_int(p3,OP_AND,p11,p2);
+            context.ir.operation(p3,OP_AND,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator10*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            context.ir.operation_int(p3,OP_XOR,p11,p2);
+            context.ir.operation(p3,OP_XOR,p11,p2);
         }
         else if(dynamic_cast<AssignmentOperator11*>(assignmentOperatorAst2)!=NULL){
             if(p1->type!=p2->type)
                 std::cerr<<"Different type for two variables in AssignmentExpression2"<<std::endl;
-            context.ir.operation_int(p3,OP_OR,p11,p2);
+            context.ir.operation(p3,OP_OR,p11,p2);
         }
 
     }

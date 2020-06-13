@@ -20,7 +20,7 @@ IRValuePtr LogicalAndExpression2::GenerateIR(Context& context) {
     //    std::cerr<< "not bool type in LogicalAndExpression2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(p1->type,false);
-    context.ir.operation_int(p3,LOGICAL_AND,p1,p2);
+    context.ir.operation(p3,LOGICAL_AND,p1,p2);
 
     return p3;
 }

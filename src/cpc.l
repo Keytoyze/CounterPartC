@@ -132,7 +132,7 @@ L?\"(\\.|[^\\"\n])*\"	{ count(); yylval.stringLiteral = new StringLiteral(yytext
 "?"			{ count(); return('?'); }
 
 [ \t\v\n\f]		{ count(); }
-.			{ std::cout << "Unexpected characters: " << yytext << std::endl; }
+.			{  }
 
 %%
 
@@ -168,7 +168,7 @@ void count(void)
 			column += 4 - (column % 4);
 		else
 			column++;
-	ECHO;
+	// ECHO;
 }
 
 

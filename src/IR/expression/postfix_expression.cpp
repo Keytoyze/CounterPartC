@@ -25,9 +25,9 @@ IRValuePtr PostfixExpression2::GenerateIR(Context &context) {
     // calculate offset
     auto offset = expressionAst3->GenerateIR(context);
     auto offsetMul = context.newVar(Type::TYPE_INT, false);
-    context.ir.operation_int(offsetMul, Oper::OP_MUL, offset, size);
+    context.ir.operation(offsetMul, Oper::OP_MUL, offset, size);
     auto addressOffset = context.newVar(pointer->type, true);
-    context.ir.operation_int(addressOffset, Oper::OP_ADD, pointer, offsetMul);
+    context.ir.operation(addressOffset, Oper::OP_ADD, pointer, offsetMul);
 
     if (context.parsingContext == Parsing::PARSING_ASSIGN_LEFT) {
         // return pointer if is in left
@@ -132,7 +132,7 @@ IRValuePtr PostfixExpression7::GenerateIR(Context &context) {
     context.ir.valueToValue(p3, p1);
     context.ir.constantToValue(p2, cons);
 
-    context.ir.operation_int(p1, OP_ADD, p1, p2);
+    context.ir.operation(p1, OP_ADD, p1, p2);
 
 
     return p3;
@@ -148,7 +148,7 @@ IRValuePtr PostfixExpression8::GenerateIR(Context &context) {
     cons.value = 1;
     context.ir.valueToValue(p3, p1);
     context.ir.constantToValue(p2, cons);
-    context.ir.operation_int(p1, OP_SUB, p1, p2);
+    context.ir.operation(p1, OP_SUB, p1, p2);
 
     return p3;
 }

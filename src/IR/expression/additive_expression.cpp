@@ -24,13 +24,7 @@ IRValuePtr AdditiveExpression2::GenerateIR(Context &context) {
     IRValuePtr p3 = context.newVar(p1->type, false);
 
     CodeOptimization::evalAdditiveExpression(p1, p2, p3, false);
-
-    if(p1->type == Type::TYPE_INT){
-        context.ir.operation_int(p3,OP_ADD,p1,p2);
-    }
-    else{
-        context.ir.operation_double(p3,OP_ADD,p1,p2);
-    }
+    context.ir.operation(p3,OP_ADD,p1,p2);
 
     return p3;
     //std::cerr << "AdditiveExpression Not implemented!" << std::endl;
@@ -54,13 +48,7 @@ IRValuePtr AdditiveExpression3::GenerateIR(Context &context) {
 
     CodeOptimization::evalAdditiveExpression(p1, p2, p3, true);
 
-    IRValuePtr p3 = context.newVar(p1->type,false);
-    if(p1->type == Type::TYPE_INT){
-        context.ir.operation_int(p3,OP_SUB,p1,p2);
-    }
-    else{
-        context.ir.operation_double(p3,OP_SUB,p1,p2);
-    }
+    context.ir.operation(p3,OP_SUB,p1,p2);
 
     return p3;
 }

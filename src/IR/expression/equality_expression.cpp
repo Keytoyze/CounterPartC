@@ -24,12 +24,7 @@ IRValuePtr EqualityExpression2::GenerateIR(Context& context) {
         CodeOptimization::evalEqualityExpression(p1, p2, p3);
     }
 
-    if(p1->type==TYPE_INT)
-        context.ir.operation_int(p3,OP_EQ,p1,p2);
-    else
-    {
-        context.ir.operation_double(p3,OP_EQ,p1,p2);
-    }
+    context.ir.operation(p3,OP_EQ,p1,p2);
     return p3;
 }
 
@@ -43,22 +38,11 @@ IRValuePtr EqualityExpression3::GenerateIR(Context& context) {
         std::cerr<<"different type for two variable in EqualityExpression2"<<std::endl;
 
     IRValuePtr p3 = context.newVar(TYPE_BOOL,false);
-<<<<<<< HEAD
-    if(p1->type==TYPE_INT)
-        context.ir.operation_int(p3,OP_NEQ,p1,p2);
-    else
-    {
-        context.ir.operation_double(p3,OP_NEQ,p1,p2);
-    }
-    
-=======
 
     if (p1->isConstant && p2->isConstant) {
-        //
         CodeOptimization::evalEqualityExpression(p1, p2, p3);
     }
 
     context.ir.operation(p3,OP_NEQ,p1,p2);
->>>>>>> de8716e... [ADD] CodeOpt Unreachable code
     return p3;
 }

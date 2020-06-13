@@ -20,7 +20,7 @@ IRValuePtr UnaryExpression2::GenerateIR(Context& context) {
     IRValuePtr p2 = context.newVar(TYPE_INT,false);
 
     context.ir.constantToValue(p2,cons);
-    context.ir.operation_int(p1,OP_ADD,p1,p2);
+    context.ir.operation(p1,OP_ADD,p1,p2);
 
     return p1;
 }
@@ -37,7 +37,7 @@ IRValuePtr UnaryExpression3::GenerateIR(Context& context) {
     IRValuePtr p2 = context.newVar(TYPE_INT,false);
 
     context.ir.constantToValue(p2,cons);
-    context.ir.operation_int(p1,OP_SUB,p1,p2);
+    context.ir.operation(p1,OP_SUB,p1,p2);
 
     return p1;
 }

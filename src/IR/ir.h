@@ -14,14 +14,15 @@ private:
     Context& context;
     std::stringstream codeStream;
     void addCode(std::string &str);
+    void operation_int(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
+    void operation_double(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
 public:
 
     IR(Context& context): context(context) {}
 
     // z = x [op] y
-    void operation_int(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
-    void operation_double(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
-    //void operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
+    void operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y);
+
     // y = [op] x
     void singleOperation(IRValuePtr y, SingleOper op, IRValuePtr x);
 

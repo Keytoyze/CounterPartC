@@ -47,7 +47,7 @@ IRValuePtr FunctionDefinition2::GenerateIR(Context &context) {
         if (func->parameters.size() != parameterList.size()) {
             context.error("Function " + identifier + " parameter count mismatched.");
         }
-        for (int i = 0; i < func->parameters.size(); i++) {
+        for (size_t i = 0; i < func->parameters.size(); i++) {
             if (func->parameters[i].first != parameterList[i].first) {
                 context.error("Function " + identifier + " parameter type mismatched."
                               + " expecting " + TypeToStr(func->parameters[i].first)

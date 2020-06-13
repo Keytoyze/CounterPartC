@@ -55,6 +55,14 @@ void IR::operation_double(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
     this->codeStream << std::endl;
 }
 
+void IR::operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
+    if (x->type == Type::TYPE_INT) {
+        this->operation_int(z, op, x, y);
+    } else {
+        this->operation_double(z, op, x, y);
+    }
+}
+
 
 void IR::label(int labelId) {
     this->codeStream << "LABEL " << labelId << std::endl;

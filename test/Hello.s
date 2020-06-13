@@ -15,11 +15,18 @@ a:
 	.type	k, @object
 	.size	k, 4
 k:
-	.long	3
+	.long	4
+	.globl	k2
+	.bss
+	.align 4
+	.type	k2, @object
+	.size	k2, 4
+k2:
+	.zero	4
 	.text
-	.globl	_Z1fi
-	.type	_Z1fi, @function
-_Z1fi:
+	.globl	_Z4funci
+	.type	_Z4funci, @function
+_Z4funci:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbp
@@ -27,59 +34,54 @@ _Z1fi:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	pushq	%rbx
-	subq	$56, %rsp
-	.cfi_offset 3, -24
+	subq	$64, %rsp
 	movl	%edi, -52(%rbp)
-	movq	%fs:40, %rax
-	movq	%rax, -24(%rbp)
-	xorl	%eax, %eax
-	movq	%rsp, %rax
-	movq	%rax, %rbx
 	movl	-52(%rbp), %eax
-	cltq
-	subq	$1, %rax
-	movq	%rax, -40(%rbp)
-	movq	%rax, %rdx
-	addq	$1, %rdx
-	movq	%rdx, %r10
-	movl	$0, %r11d
-	movq	%rax, %rdx
-	addq	$1, %rdx
-	movq	%rdx, %r8
-	movl	$0, %r9d
-	addq	$1, %rax
-	salq	$2, %rax
-	leaq	3(%rax), %rdx
-	movl	$16, %eax
-	subq	$1, %rax
-	addq	%rdx, %rax
-	movl	$16, %esi
-	movl	$0, %edx
-	divq	%rsi
-	imulq	$16, %rax, %rax
-	subq	%rax, %rsp
-	movq	%rsp, %rax
-	addq	$3, %rax
-	shrq	$2, %rax
-	salq	$2, %rax
-	movq	%rax, -32(%rbp)
-	movl	-52(%rbp), %eax
-	movl	%eax, %edi
-	call	_Z1fi
-	movq	%rbx, %rsp
-	movq	-24(%rbp), %rcx
-	xorq	%fs:40, %rcx
-	je	.L3
-	call	__stack_chk_fail@PLT
-.L3:
-	movq	-8(%rbp), %rbx
+	movl	%eax, -48(%rbp)
+	movl	$1, -44(%rbp)
+	movl	$1, -40(%rbp)
+	movl	$1, -36(%rbp)
+	movl	$1, -32(%rbp)
+	movl	$1, -28(%rbp)
+	movl	$1, -24(%rbp)
+	movl	$1, -20(%rbp)
+	movl	$1, -16(%rbp)
+	movl	$1, -12(%rbp)
+	movl	$1, -8(%rbp)
+	movl	$1, -4(%rbp)
+	movl	$2, %edi
+	call	_Z4funci
+	movl	%eax, %edx
+	movl	-48(%rbp), %eax
+	addl	%eax, %edx
+	movl	-44(%rbp), %eax
+	addl	%eax, %edx
+	movl	-40(%rbp), %eax
+	addl	%eax, %edx
+	movl	-36(%rbp), %eax
+	addl	%eax, %edx
+	movl	-32(%rbp), %eax
+	addl	%eax, %edx
+	movl	-28(%rbp), %eax
+	addl	%eax, %edx
+	movl	-24(%rbp), %eax
+	addl	%eax, %edx
+	movl	-20(%rbp), %eax
+	addl	%eax, %edx
+	movl	-16(%rbp), %eax
+	addl	%eax, %edx
+	movl	-12(%rbp), %eax
+	addl	%eax, %edx
+	movl	-8(%rbp), %eax
+	addl	%eax, %edx
+	movl	-4(%rbp), %eax
+	addl	%edx, %eax
 	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	_Z1fi, .-_Z1fi
+	.size	_Z4funci, .-_Z4funci
 	.globl	main
 	.type	main, @function
 main:
@@ -90,19 +92,62 @@ main:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	movl	16+a(%rip), %eax
-	addl	$77, %eax
-	movl	%eax, 12+a(%rip)
-	movl	$6, -8(%rbp)
-	movl	-8(%rbp), %eax
-	addl	$1, %eax
+	subq	$16, %rsp
+	movl	$33, %edi
+	call	_Z4funci
 	movl	%eax, -4(%rbp)
-	movl	-4(%rbp), %eax
-	popq	%rbp
+	movl	$0, %eax
+	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE1:
 	.size	main, .-main
+	.type	_Z41__static_initialization_and_destruction_0ii, @function
+_Z41__static_initialization_and_destruction_0ii:
+.LFB2:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	movl	%esi, -8(%rbp)
+	cmpl	$1, -4(%rbp)
+	jne	.L7
+	cmpl	$65535, -8(%rbp)
+	jne	.L7
+	movl	k(%rip), %eax
+	movl	%eax, k2(%rip)
+.L7:
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2:
+	.size	_Z41__static_initialization_and_destruction_0ii, .-_Z41__static_initialization_and_destruction_0ii
+	.type	_GLOBAL__sub_I_a, @function
+_GLOBAL__sub_I_a:
+.LFB3:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	$65535, %esi
+	movl	$1, %edi
+	call	_Z41__static_initialization_and_destruction_0ii
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	_GLOBAL__sub_I_a, .-_GLOBAL__sub_I_a
+	.section	.init_array,"aw"
+	.align 8
+	.quad	_GLOBAL__sub_I_a
 	.ident	"GCC: (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0"
 	.section	.note.GNU-stack,"",@progbits
