@@ -101,12 +101,12 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
                         if (irValue->isConstant) {
                             if (irValue->type == Type::TYPE_INT) {
                                 auto intConst = IntConstant(irValue->constVal.intVal);
-                                context.ir.constantToValue(irValue, intConst);
+                                context.ir.constantToValue(var, intConst);
                                 return nullptr;
                             } else if (irValue->type == Type::TYPE_DOUBLE) {
                                 auto doubleConst = DoubleConstant();
                                 doubleConst.value = irValue->constVal.doubleVal;
-                                context.ir.constantToValue(irValue, doubleConst);
+                                context.ir.constantToValue(var, doubleConst);
                                 return nullptr;
                             }
                         }

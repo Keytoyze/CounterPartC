@@ -45,9 +45,10 @@ IRValuePtr JumpStatement3::GenerateIR(Context &context) {
 // (JumpStatement -> Return SimicolonSingle)
 IRValuePtr JumpStatement4::GenerateIR(Context &context) {
     FunctionValuePtr function = nullptr;
+//    context.findFunction()
     for (auto i = context.blockStack.size() - 1; i >= 0; i--) {
         BlockPtr blockPtr = context.blockStack[i];
-        function = std::static_pointer_cast<FunctionValue>(blockPtr);
+        function = std::dynamic_pointer_cast<FunctionValue>(blockPtr);
         if (function != nullptr) {
             break;
         }
@@ -70,7 +71,7 @@ IRValuePtr JumpStatement5::GenerateIR(Context &context) {
     FunctionValuePtr function = nullptr;
     for (auto i = context.blockStack.size() - 1; i >= 0; i--) {
         BlockPtr blockPtr = context.blockStack[i];
-        function = std::static_pointer_cast<FunctionValue>(blockPtr);
+        function = std::dynamic_pointer_cast<FunctionValue>(blockPtr);
         if (function != nullptr) {
             break;
         }

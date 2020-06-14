@@ -115,6 +115,8 @@ public:
     int breakLabel = -1;
     int continueLabel = -1;
     IRValuePtr switchValue = nullptr;
+    // make Block polymorphic
+    virtual void cppIsStupid(){};
     // redundant information, just traverse the stack
 //    std::shared_ptr<Block> parentBlock = nullptr;
     // Please modify Context::newBlock if you append new attribute here
