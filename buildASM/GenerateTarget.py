@@ -36,7 +36,8 @@ template_function = """{function_name}:
 {function_section}
 .{function_name}_end:
 	leave
-	ret"""
+	ret
+"""
 
 ir = open(sys.argv[1]).read().split("\n")
  
@@ -183,13 +184,34 @@ for line in ir:
                 v=elements[1]
                 ))
         elif elements[0] == "ASSIGN":
-            # TODO: pointer
             # var2 = var1
             _, var2, var1 = elements
-            function_body.append("movl\t{offset1}(%rbp), {offset2}(%rbp)   \t# {offset2}(%rbp) = {v2}".format(
-                offset1=stack_map[var1], 
-                offset2=stack_map[var2],
-                v2=var2
+            if var1.startswith("*"):
+                var1 = var1[1:]
+                r1 = var_to_register(var1)
+                source = "(%s)" % r1
+            elif var1.startswith("&"):
+                var1 = var1[1:]
+                function_body.append("leaq\t{offset}(%rbp), %esi".format(offset=stack_map[var1]))
+                source = "%esi"
+            else:
+                source = "{offset}(%rbp)".format(
+                    offset=stack_map[var1]
+                    )
+            
+            if var2.startswith("*"):
+                var2 = var2[1:]
+                r2 = var_to_register(var2)
+                destination = "(%s)" % r2
+            else:
+                destination = "{offset}(%rbp)   \t# {offset}(%rbp) = {v}".format(
+                    offset=stack_map[var2],
+                    v=var2
+                    )
+            
+            function_body.append("movl\t{source}, {destination}".format(
+                source=source,
+                destination=destination
                 ))
         elif elements[0] == "OP_INT":
             v0 = elements[2]
@@ -254,6 +276,8 @@ for line in ir:
                 function_name=function_name,
                 function_section="\n".join(map(lambda x: "\t" + x if not x.startswith(".") else x, function_body))
             )
+            function_name = None
+            function_body = []
         else:
             raise ValueError("Unknown op: " + elements[0])
 

@@ -1,0 +1,18 @@
+FUNCTION main int:
+MALLOC_CONST var0 4 (bytes)
+MALLOC_CONST var1 4 (bytes)
+MALLOC_CONST var2 4 (bytes)
+ASSIGN var2 &var1
+MALLOC_CONST var3 4 (bytes)
+ASSIGN var3 var2
+MALLOC_CONST var4 4 (bytes)
+ASSIGN_CONST_INT var4 222
+MALLOC_CONST var5 4 (bytes)
+ASSIGN var5 *var0
+MALLOC_CONST var6 4 (bytes)
+OP_INT OP_ADD var6 var5 var4
+ASSIGN *var0 var6
+MALLOC_CONST var7 4 (bytes)
+ASSIGN var7 *var0
+ASSIGN var1 var7
+FUNC_END

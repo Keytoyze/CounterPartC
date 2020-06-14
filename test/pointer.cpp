@@ -1,10 +1,12 @@
 
 int main() {
     int *a;
-    // int *p = &b;
+    int b;
     // a = &b;
     // *a = b;
+    int *p = &b;
 
     *a += 222;
+    b = *a;
 
 }
