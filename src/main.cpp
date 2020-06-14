@@ -2,6 +2,7 @@
 #include "IR/context.h"
 #include "ast/basic_ast.h"
 #include "ast/render.h"
+#include "target.h"
 #include <fstream>
 #include <cstring>
 
@@ -38,7 +39,7 @@ bool parseArgs(int argc, char* argv[], CompileParam& param) {
     param.inputFile = argv[1];
     param.astFile = std::string(argv[1]) + ".html";
     param.irFile = std::string(argv[1]) + ".txt";
-    param.outputFile = std::string(argv[1]) + ".out";
+    param.outputFile = std::string(argv[1]) + ".s";
     int i = 2;
     while (i < argc) {
         if (!strcmp(argv[i], "-ast")) {
@@ -87,6 +88,10 @@ int main(int argc,char* argv[]) {
     root->GenerateIR(context);
     std::ofstream irOut(param.irFile.c_str());
     irOut << context.ir.getCode();
+
+    std::stringstream command;
+    command << "python " << COMPILER_PATH << " \"" << param.irFile << "\" \"" << param.outputFile << "\"";
+    system(command.str().c_str());
 
     delete root;
 	fclose(yyin);

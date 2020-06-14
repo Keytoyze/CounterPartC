@@ -30,14 +30,14 @@ include_directories(${CMAKE_SOURCE_DIR}/src/ ${CMAKE_BINARY_DIR})
 
 file(GLOB_RECURSE SOURCE_FILES "src/*.cpp" "src/*.h")
 
+file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/target.h "#define COMPILER_PATH " \"${CMAKE_CURRENT_BINARY_DIR}/GenerateTarget.py\" )
+
 add_executable(
         ${CMAKE_PROJECT_NAME}
         ${SOURCE_FILES}
-        "src/IR/context.cpp"
-        "src/ast/render.cpp"
-        "src/IR/CodeOptimization.cpp"
         ${FLEX_lexer_OUTPUTS}
-        ${BISON_parser_OUTPUTS} )
+        ${BISON_parser_OUTPUTS}
+        ${CMAKE_CURRENT_BINARY_DIR}/target.h )
 
 target_include_directories(${CMAKE_PROJECT_NAME}
         PRIVATE
@@ -45,6 +45,8 @@ target_include_directories(${CMAKE_PROJECT_NAME}
         ${CMAKE_CURRENT_BINARY_DIR})
 set_property(TARGET ${CMAKE_PROJECT_NAME}
         PROPERTY CXX_STANDARD 14)
+
+file(COPY buildASM/GenerateTarget.py DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 # llvm_map_components_to_libnames(llvm_libs support core irreader all)
 # target_link_libraries(yapc ${llvm_libs})

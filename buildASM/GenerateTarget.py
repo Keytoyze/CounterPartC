@@ -1,30 +1,4 @@
 # eax: return
-
-# memory layout:
-#  rsp==>|          :             |
-#            |          .             |
-#             +-------------------------+
-#             |  临时空间               |
-#            +-------------------------+
-#             |  局部变量#2             | [rbp - 8]
-#            +-------------------------+
-#             |  局部变量#1             | [rbp - 4]
-#             +-------------------------+
-#       rbp==>|  调用者的rbp            |
-#            +-------------------------+
-#             |  返回地址               |
-#            +-------------------------+
-#             |  实际参数#1             | [rbp + 8]
-#            +-------------------------+
-#             |  实际参数#2             | [rbp + 12]
-#            +-------------------------+
-#             |  实际参数#3             | [rbp + 16]
-#            +-------------------------+
-#             |  调用者保存的寄存器现场    |
-#             |  EAX，ECX和EDX（根据需要）|
-#            +-------------------------+
-#            |           :            |
-#            |           .            |
 import sys
 
 if len(sys.argv) != 3:
@@ -40,7 +14,8 @@ template_function = """{function_name}:
 """
 
 ir = open(sys.argv[1]).read().split("\n")
- 
+asm = sys.argv[2]
+
 # TODO: global function
 
 function_name = None
@@ -168,7 +143,7 @@ for line in ir:
         elif elements[0] == "CALL":
             function_arg_num = 0
             return_reg = elements[2]
-            function_body.append("call %s" % elements[1])
+            function_body.append("call\t%s" % elements[1])
             function_body.append("movl\t%eax, {r}".format(r=return_reg))
         elif elements[0] == "MALLOC_CONST":
             _, var, size, _ = elements
@@ -270,7 +245,7 @@ for line in ir:
                     v0=stack_map[elements[1]],
                     v=elements[1]
                 ))
-            function_body.append("jmp\t.{function_name}_end")
+            function_body.append("jmp\t.{function_name}_end".format(function_name=function_name))
         elif elements[0] == "FUNC_END":
             out += template_function.format(
                 function_name=function_name,
@@ -281,4 +256,5 @@ for line in ir:
         else:
             raise ValueError("Unknown op: " + elements[0])
 
-print(out)
+with open(asm, "w") as f:
+    f.write(out)
