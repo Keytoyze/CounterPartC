@@ -19,9 +19,9 @@ ASSIGN_CONST_INT var6 1
 MALLOC_CONST var7 4 (bytes)
 OP_INT OP_ADD var7 var1 var6
 ASSIGN var1 var7
+RETURN var1
 GOTO 2
 LABEL 1
-MALLOC_CONST var8 4 (bytes)
-CALL main var8
+RETURN var5
 LABEL 2
 FUNC_END

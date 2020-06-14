@@ -227,10 +227,10 @@ for line in ir:
         elif elements[0] == "OP_DOUBLE":
             pass
         elif elements[0] == "LABEL":
-            function_body.append(".L%s" % elements[1])
+            function_body.append(".L%s:" % elements[1])
         elif elements[0] == "IF":
             _, v0, _, label_id = elements
-            function_body.append("cmpl\t{v0}(%rbp), $0   \t# {v0}(%rbp) = {v}".format(
+            function_body.append("cmpl\t$0, {v0}(%rbp)   \t# {v0}(%rbp) = {v}".format(
                 v0=stack_map[v0],
                 v=v0
             ))
