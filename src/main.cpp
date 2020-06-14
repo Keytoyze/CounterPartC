@@ -95,7 +95,7 @@ int main(int argc,char* argv[]) {
     command << "python " << COMPILER_PATH << " \"" << param.irFile << "\" \"" << param.outputFile << "\"";
     system(command.str().c_str());
 
-    std::cout << "====> output ASM file: " << param.irFile << std::endl;
+    std::cout << "====> output ASM file: " << param.outputFile << std::endl;
 
     delete root;
 	fclose(yyin);
