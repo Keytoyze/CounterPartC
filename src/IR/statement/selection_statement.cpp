@@ -13,7 +13,12 @@ IRValuePtr SelectionStatement1::GenerateIR(Context& context) {
             return nullptr;
         } else {
             // always true
+            // insert the block
+            auto blockPtr = context.newBlock(context.blockStack.back());
+            context.blockStack.push_back(blockPtr);
             this->statementAst5->GenerateIR(context);
+            // pop the block
+            context.blockStack.pop_back();
         }
         return nullptr;
     }
@@ -40,10 +45,20 @@ IRValuePtr SelectionStatement2::GenerateIR(Context& context) {
         && res->type == Type::TYPE_BOOL && res->isConstant) {
         if (res->constVal.intVal == 0) {
             // always false
+            // insert the block
+            auto blockPtr = context.newBlock(context.blockStack.back());
+            context.blockStack.push_back(blockPtr);
             this->statementAst7->GenerateIR(context);
+            // pop the block
+            context.blockStack.pop_back();
         } else {
             // always true
+            // insert the block
+            auto blockPtr = context.newBlock(context.blockStack.back());
+            context.blockStack.push_back(blockPtr);
             this->statementAst5->GenerateIR(context);
+            // pop the block
+            context.blockStack.pop_back();
         }
         return nullptr;
     }

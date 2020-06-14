@@ -36,8 +36,7 @@ void CodeOptimization::evalEqualityExpression(
     res->constVal.intVal = (isEqual == compareEqaul) ? 1 : 0;
 }
 
-void
-CodeOptimization::evalMultiplicativeExpression(
+void CodeOptimization::evalMultiplicativeExpression(
         const IRValuePtr &lval,
         const IRValuePtr &rval,
         const IRValuePtr &res,
