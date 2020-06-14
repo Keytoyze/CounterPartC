@@ -1,0 +1,8 @@
+MALLOC_CONST var0 4 (bytes)
+ASSIGN_CONST_INT var0 1
+MALLOC_CONST var1 4 (bytes)
+ASSIGN var1 var0
+FUNCTION main int:
+MALLOC_CONST var2 4 (bytes)
+ASSIGN var1 var2
+FUNC_END

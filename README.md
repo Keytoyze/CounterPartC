@@ -20,7 +20,7 @@ cpc input.c
     [-Ocf]
     [-Ouc]
     [-ast ast_path.html] 
-    [-ir ir_path.txt] 
+    [-ir ir_path.txt]
     [-o out.asm]
 ```
 

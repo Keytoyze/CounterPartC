@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head><script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script></head><body><div class="AST">
+graph TD
+0[TranslationUnit]
+0 --> 1[TranslationUnit]
+1 --> 2[ExternalDeclaration]
+2 --> 3[Declaration]
+3 --> 4[DeclarationSpecifiers]
+4 --> 5[TypeSpecifier]
+5 --> 6(Int)
+style 6 fill:#f9f
+3 --> 7[InitDeclaratorList]
+7 --> 8[InitDeclarator]
+8 --> 9[Declarator]
+9 --> 10[DirectDeclarator]
+10 --> 11(Identifier: a)
+style 11 fill:#f9f
+8 --> 12(Eq)
+style 12 fill:#f9f
+8 --> 13[Initializer]
+13 --> 14[AssignmentExpression]
+14 --> 15[ConditionalExpression]
+15 --> 16[LogicalOrExpression]
+16 --> 17[LogicalAndExpression]
+17 --> 18[InclusiveOrExpression]
+18 --> 19[ExclusiveOrExpression]
+19 --> 20[AndExpression]
+20 --> 21[EqualityExpression]
+21 --> 22[RelationalExpression]
+22 --> 23[ShiftExpression]
+23 --> 24[AdditiveExpression]
+24 --> 25[MultiplicativeExpression]
+25 --> 26[CastExpression]
+26 --> 27[UnaryExpression]
+27 --> 28[PostfixExpression]
+28 --> 29[PrimaryExpression]
+29 --> 30(int: 1)
+style 30 fill:#f9f
+3 --> 31(SimicolonSingle)
+style 31 fill:#f9f
+0 --> 32[ExternalDeclaration]
+32 --> 33[FunctionDefinition]
+33 --> 34[DeclarationSpecifiers]
+34 --> 35[TypeSpecifier]
+35 --> 36(Int)
+style 36 fill:#f9f
+33 --> 37[Declarator]
+37 --> 38[DirectDeclarator]
+38 --> 39[DirectDeclarator]
+39 --> 40(Identifier: main)
+style 40 fill:#f9f
+38 --> 41(LRound)
+style 41 fill:#f9f
+38 --> 42(RRound)
+style 42 fill:#f9f
+33 --> 43[CompoundStatement]
+43 --> 44(LCurly)
+style 44 fill:#f9f
+43 --> 45[DeclarationList]
+45 --> 46[Declaration]
+46 --> 47[DeclarationSpecifiers]
+47 --> 48[TypeSpecifier]
+48 --> 49(Int)
+style 49 fill:#f9f
+46 --> 50[InitDeclaratorList]
+50 --> 51[InitDeclarator]
+51 --> 52[Declarator]
+52 --> 53[DirectDeclarator]
+53 --> 54(Identifier: b)
+style 54 fill:#f9f
+46 --> 55(SimicolonSingle)
+style 55 fill:#f9f
+43 --> 56[StatementList]
+56 --> 57[Statement]
+57 --> 58[ExpressionStatement]
+58 --> 59[Expression]
+59 --> 60[AssignmentExpression]
+60 --> 61[UnaryExpression]
+61 --> 62[PostfixExpression]
+62 --> 63[PrimaryExpression]
+63 --> 64(Identifier: a)
+style 64 fill:#f9f
+60 --> 65[AssignmentOperator]
+65 --> 66(Eq)
+style 66 fill:#f9f
+60 --> 67[AssignmentExpression]
+67 --> 68[ConditionalExpression]
+68 --> 69[LogicalOrExpression]
+69 --> 70[LogicalAndExpression]
+70 --> 71[InclusiveOrExpression]
+71 --> 72[ExclusiveOrExpression]
+72 --> 73[AndExpression]
+73 --> 74[EqualityExpression]
+74 --> 75[RelationalExpression]
+75 --> 76[ShiftExpression]
+76 --> 77[AdditiveExpression]
+77 --> 78[MultiplicativeExpression]
+78 --> 79[CastExpression]
+79 --> 80[UnaryExpression]
+80 --> 81[PostfixExpression]
+81 --> 82[PrimaryExpression]
+82 --> 83(Identifier: b)
+style 83 fill:#f9f
+58 --> 84(SimicolonSingle)
+style 84 fill:#f9f
+43 --> 85(RCurly)
+style 85 fill:#f9f
+</div><script>mermaid.init({noteMargin: 10}, ".AST");</script></body></html>
