@@ -24,7 +24,7 @@ struct CompileParam {
 
 void errorArgs(std::string errorMsg) {
     std::cout << errorMsg << std::endl;
-    std::cout << "usage: cpc input.c [-ast ast_path.html] [-ir ir_path.txt] [-o a.out]" << std::endl;
+    std::cout << "usage: cpc input.c [-Ocf] [-Ouc] [-ast ast_path.html] [-ir ir_path.txt] [-o a.out]" << std::endl;
 }
 
 bool checkItem(int index, int num, const char *itemName) {
