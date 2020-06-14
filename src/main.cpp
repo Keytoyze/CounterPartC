@@ -3,18 +3,22 @@
 #include "ast/basic_ast.h"
 #include "ast/render.h"
 #include "target.h"
+#include "IR/CodeOptimization.h"
 #include <fstream>
 #include <cstring>
 
 extern FILE *yyin;
+
 extern int yyparse(void);
-extern BasicAST* root;
+
+extern BasicAST *root;
 
 struct CompileParam {
     std::string inputFile;
     std::string outputFile;
     std::string astFile;
     std::string irFile;
+    unsigned long optimizationFlag;
     // TODO: optimize
 };
 
@@ -23,7 +27,7 @@ void errorArgs(std::string errorMsg) {
     std::cout << "usage: cpc input.c [-ast ast_path.html] [-ir ir_path.txt] [-o a.out]" << std::endl;
 }
 
-bool checkItem(int index, int num, const char* itemName) {
+bool checkItem(int index, int num, const char *itemName) {
     if (index == num) {
         errorArgs(std::string("error: missing filename after '") + itemName + "'");
         return false;
@@ -31,7 +35,7 @@ bool checkItem(int index, int num, const char* itemName) {
     return true;
 }
 
-bool parseArgs(int argc, char* argv[], CompileParam& param) {
+bool parseArgs(int argc, char *argv[], CompileParam &param) {
     if (argc == 1) {
         errorArgs("fatal error: no input files");
         return false;
@@ -57,6 +61,10 @@ bool parseArgs(int argc, char* argv[], CompileParam& param) {
                 return false;
             }
             param.outputFile = argv[i];
+        } else if (!strcmp(argv[i], "-Ocf")) {
+            param.optimizationFlag |= CONSTANT_FOLDING_FLAG;
+        } else if (!strcmp(argv[i], "-Ouc")) {
+            param.optimizationFlag |= UNREACHABLE_CODE_FLAG;
         } else {
             errorArgs(std::string("error: unrecognized command line option '") + argv[i] + "'");
             return false;
@@ -66,15 +74,15 @@ bool parseArgs(int argc, char* argv[], CompileParam& param) {
     return true;
 }
 
-int main(int argc,char* argv[]) {
+int main(int argc, char *argv[]) {
 
     CompileParam param;
     if (!parseArgs(argc, argv, param)) {
         return -1;
     }
 
-	yyin = fopen(param.inputFile.c_str(), "r");
-	yyparse();
+    yyin = fopen(param.inputFile.c_str(), "r");
+    yyparse();
 
     TreeRender::init();
     root->Dump(0);
@@ -83,9 +91,8 @@ int main(int argc,char* argv[]) {
     std::cout << "====> output AST file: " << param.astFile << std::endl;
 
     Context context;
-    // TODO
-    // context.setOptimizationFlags(0x1 + (((unsigned long)(0x1)) << 1));
-    context.setOptimizationFlags(0);
+    // set optimization flags
+    context.setOptimizationFlags(param.optimizationFlag);
     root->GenerateIR(context);
     std::ofstream irOut(param.irFile.c_str());
     irOut << context.ir.getCode();
@@ -98,6 +105,6 @@ int main(int argc,char* argv[]) {
     std::cout << "====> output ASM file: " << param.outputFile << std::endl;
 
     delete root;
-	fclose(yyin);
-	return 0;
+    fclose(yyin);
+    return 0;
 }

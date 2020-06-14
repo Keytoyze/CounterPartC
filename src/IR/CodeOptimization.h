@@ -12,8 +12,8 @@
 
 // remove redundant code caused by equality expression
 // in if statement
-#define UNREACHABLE_CODE_FLAG (0x1)
-#define CONSTANT_FOLDING_FLAG (((unsigned long)0x1) << 1)
+#define UNREACHABLE_CODE_FLAG ((unsigned long)0x1)
+#define CONSTANT_FOLDING_FLAG (((unsigned long)0x1) << (unsigned int)1)
 
 
 class CodeOptimization {
