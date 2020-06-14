@@ -1,0 +1,27 @@
+FUNCTION main int:
+MALLOC_CONST var0 4 (bytes)
+ASSIGN_CONST_INT var0 1
+MALLOC_CONST var1 4 (bytes)
+ASSIGN var1 var0
+MALLOC_CONST var2 4 (bytes)
+ASSIGN_CONST_INT var2 2
+MALLOC_CONST var3 4 (bytes)
+ASSIGN var3 var2
+MALLOC_CONST var4 4 (bytes)
+OP_INT OP_EQ var4 var1 var3
+MALLOC_CONST var5 4 (bytes)
+ASSIGN var5 var4
+IF var5 LABEL 0
+GOTO 1
+LABEL 0
+MALLOC_CONST var6 4 (bytes)
+ASSIGN_CONST_INT var6 1
+MALLOC_CONST var7 4 (bytes)
+OP_INT OP_ADD var7 var1 var6
+ASSIGN var1 var7
+GOTO 2
+LABEL 1
+MALLOC_CONST var8 4 (bytes)
+CALL main var8
+LABEL 2
+FUNC_END

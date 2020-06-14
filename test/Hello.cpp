@@ -18,7 +18,23 @@ int func(int ppp) {
     int a9 = 1;
     int a10 = 1;
     int a11 = 1;
-    return func(2) + a + a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11;
+    // return func(2) + a + a1 * a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11;
+    a3 = a1 + a2; // addl
+    a3 = a1 - a2; // subl
+    a3 = a1 * a2; // imull
+    a3 = a1 / a2; // idivl
+    a3 = a1 % a2; // 
+    a3 = a1 & a2;
+    a3 = a1 | a2;
+    a3 = a1 && a2;
+    a3 = a1 || a2;
+    a3 = a1 ^ a2;
+    a3 = a1 << a2;
+    a3 = a1 >> a2;
+    a3 = a1 <= a2;
+    a3 = a1 >= a2;
+    a3 = a1 != a2;
+    a3 = a1 == a2;
     // int a[ppp];
     // return func(ppp);
 }

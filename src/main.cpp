@@ -82,7 +82,8 @@ int main(int argc,char* argv[]) {
 
     Context context;
     // TODO
-    context.setOptimizationFlags(0x1 + (((unsigned long)(0x1)) << 1));
+    // context.setOptimizationFlags(0x1 + (((unsigned long)(0x1)) << 1));
+    context.setOptimizationFlags(0);
     root->GenerateIR(context);
     std::ofstream irOut(param.irFile.c_str());
     irOut << context.ir.getCode();

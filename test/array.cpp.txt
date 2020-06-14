@@ -1,0 +1,35 @@
+MALLOC_CONST var0 0 (bytes)
+FUNCTION main int:
+PARAMETER var0
+MALLOC_CONST var1 4 (bytes)
+ASSIGN_CONST_INT var1 1
+MALLOC_CONST var2 4 (bytes)
+ASSIGN var2 var1
+MALLOC_CONST var3 4 (bytes)
+ASSIGN_CONST_INT var3 1
+MALLOC_CONST var4 4 (bytes)
+OP_INT OP_ADD var4 var2 var3
+MALLOC_CONST var5 4 (bytes)
+ASSIGN var5 var4
+MALLOC_CONST var6 4 (bytes)
+ASSIGN_CONST_INT var6 2
+MALLOC_CONST var7 4 (bytes)
+OP_INT OP_MUL var7 var5 var6
+MALLOC_CONST var8 4 (bytes)
+ASSIGN var8 var7
+MALLOC_CONST var9 4 (bytes)
+ASSIGN_CONST_INT var9 2
+MALLOC_CONST var10 4 (bytes)
+OP_INT OP_SUB var10 var2 var9
+ASSIGN var8 var10
+MALLOC_CONST var11 4 (bytes)
+ASSIGN_CONST_INT var11 2
+MALLOC_CONST var12 4 (bytes)
+OP_INT OP_LS var12 var8 var11
+ASSIGN var2 var12
+MALLOC_CONST var13 4 (bytes)
+ASSIGN_CONST_INT var13 2
+MALLOC_CONST var14 4 (bytes)
+OP_INT LOGICAL_AND var14 var5 var13
+ASSIGN var5 var14
+FUNC_END

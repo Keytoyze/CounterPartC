@@ -16,7 +16,10 @@ make
 
 ## Usage
 ```
-cpc [file]
+cpc input.c 
+    [-ast ast_path.html] 
+    [-ir ir_path.txt] 
+    [-o a.out]
 ```
 
 ## TODO
@@ -52,4 +55,4 @@ cpc [file]
 
 ### Others
 - [X] AST visualization
-- [ ] Command line argument
+- [X] Command line argument
