@@ -19,7 +19,7 @@ make
 cpc input.c 
     [-ast ast_path.html] 
     [-ir ir_path.txt] 
-    [-o a.out]
+    [-o out.asm]
 ```
 
 ## TODO
@@ -51,7 +51,7 @@ cpc input.c
     - [ ] const expression in if statement
     - [ ] temp variable in pointer assignment
     - [ ] ...
-- [ ] Target code
+- [X] Target code
 
 ### Others
 - [X] AST visualization

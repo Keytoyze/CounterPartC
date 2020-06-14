@@ -79,11 +79,9 @@ def var_to_register(var):
     result = None
     free_register = set()
     other_register = set()
-    print(register_var)
     for register, var_bind in register_var.items():
         if var_bind == var:
             result = register
-            print("hit " + var + " " + register)
         elif var_bind is not None:
             other_register.add(register)
         else:
@@ -92,8 +90,7 @@ def var_to_register(var):
         if len(free_register) == 0:
             result = other_register.pop()
         else:
-            result = free_register.pop()
-        print("miss " + var + " " + result)        
+            result = free_register.pop()   
         # fetch value
         offset = stack_map[var]
         function_body.append("movl\t{offset}(%rbp), {register}   \t# {offset}(%rbp) = {v}".format(
@@ -133,7 +130,6 @@ for line in ir:
             reg = param_registers[function_arg_num]
             function_arg_num += 1
             if reg in register_var:
-                print("clear register: " + reg)
                 register_var[reg] = None
             function_body.append("movl\t{v0}(%rbp), {r}   \t# argu: {v0}(%rbp) = {v}".format(
                 v0=stack_map[elements[1]],

@@ -80,6 +80,7 @@ int main(int argc,char* argv[]) {
     root->Dump(0);
     std::ofstream astOut(param.astFile.c_str());
     astOut << TreeRender::render();
+    std::cout << "====> output AST file: " << param.astFile << std::endl;
 
     Context context;
     // TODO
@@ -88,10 +89,13 @@ int main(int argc,char* argv[]) {
     root->GenerateIR(context);
     std::ofstream irOut(param.irFile.c_str());
     irOut << context.ir.getCode();
+    std::cout << "====> output IR file: " << param.irFile << std::endl;
 
     std::stringstream command;
     command << "python " << COMPILER_PATH << " \"" << param.irFile << "\" \"" << param.outputFile << "\"";
     system(command.str().c_str());
+
+    std::cout << "====> output ASM file: " << param.irFile << std::endl;
 
     delete root;
 	fclose(yyin);

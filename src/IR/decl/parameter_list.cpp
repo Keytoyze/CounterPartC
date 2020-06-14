@@ -6,7 +6,6 @@
 IRValuePtr ParameterList1::GenerateIR(Context &context) {
     this->parameterDeclarationAst1->GenerateIR(context);
     this->parameterList.push_back(parameterDeclarationAst1->parameter);
-    std::cout << "ParameterList size: " << parameterList.size() << std::endl;
     return nullptr;
 }
 
@@ -24,7 +23,6 @@ IRValuePtr ParameterList2::GenerateIR(Context &context) {
     );
     // a new parameter is parsed
     this->parameterList.push_back(parameterDeclarationAst3->parameter);
-    std::cout << "ParameterList size: " << parameterList.size() << std::endl;
     return nullptr;
 }
 

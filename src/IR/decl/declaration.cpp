@@ -35,7 +35,6 @@ IRValuePtr Declaration2::GenerateIR(Context &context) {
         auto &funcName = directDeclarator->identifier;
         auto type = this->specifierType;
         auto &parameterList = directDeclarator->parameterList;
-        std::cout << "Function declaration" << std::endl;
         auto &pool = context.functionPool;
         if (pool.find(funcName) != pool.end()) {
             if (pool[funcName]->hasDefined) {

@@ -12,7 +12,6 @@ IRValuePtr ParameterDeclaration1::GenerateIR(Context &context) {
     // assign to the parameter
     this->parameter.first = specifierType;
     this->parameter.second = identifier;
-    std::cout << "ParameterDeclaration Type: " << specifierType << " identifier: " << identifier << std::endl;
     return nullptr;
 }
 
