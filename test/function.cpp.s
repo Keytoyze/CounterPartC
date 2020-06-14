@@ -1,3 +1,5 @@
+	.globl	f1
+	.type	f1, @function
 f1:
 	pushq	%rbp
 	movq	%rsp, %rbp
@@ -15,6 +17,8 @@ f1:
 .f1_end:
 	leave
 	ret
+	.globl	f2
+	.type	f2, @function
 f2:
 	pushq	%rbp
 	movq	%rsp, %rbp
@@ -32,19 +36,21 @@ f2:
 	movl	-24(%rbp), %r8d   	# argu: -24(%rbp) = var12
 	movl	-28(%rbp), %r9d   	# argu: -28(%rbp) = var13
 	call	f1
-	movl	%eax, var14
+	movl	%eax, -32(%rbp)   	# argu: -32(%rbp) = var14
 	movl	-32(%rbp), %eax   	# -32(%rbp) = var14
 	jmp	.f2_end
 .f2_end:
 	leave
 	ret
+	.globl	main
+	.type	main, @function
 main:
 	pushq	%rbp
 	movq	%rsp, %rbp
 	movl	$5, -4(%rbp)   	# -4(%rbp) = var16
 	movl	-4(%rbp), %edi   	# argu: -4(%rbp) = var16
 	call	f2
-	movl	%eax, var17
+	movl	%eax, -8(%rbp)   	# argu: -8(%rbp) = var17
 .main_end:
 	leave
 	ret
