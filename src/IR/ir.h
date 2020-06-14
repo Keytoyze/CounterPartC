@@ -35,6 +35,9 @@ public:
             FunctionValuePtr function
     );
 
+    // end of function
+    void functionEnd();
+
     // x = y
     void valueToValue(IRValuePtr x, IRValuePtr y);
 

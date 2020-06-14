@@ -31,8 +31,7 @@ int Context::newLabelId() {
 }
 
 void Context::error(std::string err) const {
-    // TODO: print line number
-    std::cerr << err << std::endl;
+    throw std::runtime_error(err);
 }
 
 BlockPtr Context::newBlock(BlockPtr parent) {

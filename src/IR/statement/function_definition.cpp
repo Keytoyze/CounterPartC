@@ -81,6 +81,9 @@ IRValuePtr FunctionDefinition2::GenerateIR(Context &context) {
     this->compoundStatementAst3->GenerateIR(context);
     // pop the block from stack
     context.blockStack.pop_back();
+
+    // function end
+    context.ir.functionEnd();
     return nullptr;
 }
 

@@ -63,6 +63,9 @@ void IR::operation(IRValuePtr z, Oper op, IRValuePtr x, IRValuePtr y) {
     }
 }
 
+void IR::functionEnd() {
+    this->codeStream << "FUNC_END" << std::endl;
+}
 
 void IR::label(int labelId) {
     this->codeStream << "LABEL " << labelId << std::endl;
@@ -113,7 +116,7 @@ void IR::jump(int labelId) {
 }
 
 void IR::conditionJump(IRValuePtr condition, int labelId) {
-    this->codeStream << "BEQ_1 var" << condition->id << " LABEL" << labelId << std::endl;
+    this->codeStream << "IF var" << condition->id << " LABEL " << labelId << std::endl;
 }
 
 void IR::notEqualJump(IRValuePtr x1, IRValuePtr x2, int labelId) {
@@ -121,15 +124,26 @@ void IR::notEqualJump(IRValuePtr x1, IRValuePtr x2, int labelId) {
 }
 
 void IR::returnValue(IRValuePtr x) {
-    this->codeStream << "RETURN var" << x->id << std::endl;
+    if (x != nullptr && x->type != Type::TYPE_VOID) {
+        this->codeStream << "RETURN var" << x->id << std::endl;
+    } else {
+        this->codeStream << "RETURN" << std::endl;
+    }
 }
 
 void IR::malloc(IRValuePtr x, Type base, IRValuePtr size) {
-    IRValuePtr typeSize = this->context.newVar(Type::TYPE_INT, false);
-    IntConstant constant(sizeOf(base));
-    this->constantToValue(typeSize, constant);
-    this->operation_int(typeSize, Oper::OP_MUL, typeSize, size);
-    this->codeStream << "MALLOC var" << x->id << " var" << typeSize->id << " (bytes)" << std::endl;
+    if (size->isConstant) {
+        if (size->type != Type::TYPE_INT) {
+            context.error("Array size must be an integer!");
+        }
+        mallocConst(x, base, size->constVal.intVal);
+    } else {
+        IRValuePtr typeSize = this->context.newVar(Type::TYPE_INT, false);
+        IntConstant constant(sizeOf(base));
+        this->constantToValue(typeSize, constant);
+        this->operation_int(typeSize, Oper::OP_MUL, typeSize, size);
+        this->codeStream << "MALLOC var" << x->id << " var" << typeSize->id << " (bytes)" << std::endl;
+    }
 }
 
 void IR::mallocConst(IRValuePtr x, Type base, int size) {
@@ -142,7 +156,10 @@ void IR::argument(IRValuePtr node) {
 }
 
 void IR::parameter(IRValuePtr node) {
-    this->codeStream << "PARAMETER var" << node->id << std::endl;
+    int size = sizeOf(node->type);
+    if (size != 0) {
+        this->codeStream << "PARAMETER var" << node->id << " " << size << " (bytes)" << std::endl;
+    }
 }
 
 std::string IR::getCode() {
