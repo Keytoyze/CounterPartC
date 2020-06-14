@@ -23,21 +23,20 @@ f2:
 	pushq	%rbp
 	movq	%rsp, %rbp
 	movl	%edi, -4(%rbp)   	# param: -4(%rbp) = var7
-	movl	$1, -8(%rbp)   	# -8(%rbp) = var8
-	movl	$2, -12(%rbp)   	# -12(%rbp) = var9
-	movl	$3, -16(%rbp)   	# -16(%rbp) = var10
-	movl	$4, -20(%rbp)   	# -20(%rbp) = var11
-	movl	$5, -24(%rbp)   	# -24(%rbp) = var12
-	movl	$6, -28(%rbp)   	# -28(%rbp) = var13
-	movl	-8(%rbp), %edi   	# argu: -8(%rbp) = var8
-	movl	-12(%rbp), %esi   	# argu: -12(%rbp) = var9
-	movl	-16(%rbp), %edx   	# argu: -16(%rbp) = var10
-	movl	-20(%rbp), %ecx   	# argu: -20(%rbp) = var11
-	movl	-24(%rbp), %r8d   	# argu: -24(%rbp) = var12
-	movl	-28(%rbp), %r9d   	# argu: -28(%rbp) = var13
+	movl	$2, -8(%rbp)   	# -8(%rbp) = var8
+	movl	$3, -12(%rbp)   	# -12(%rbp) = var9
+	movl	$4, -16(%rbp)   	# -16(%rbp) = var10
+	movl	$5, -20(%rbp)   	# -20(%rbp) = var11
+	movl	$6, -24(%rbp)   	# -24(%rbp) = var12
+	movl	-4(%rbp), %edi   	# argu: -4(%rbp) = var7
+	movl	-8(%rbp), %esi   	# argu: -8(%rbp) = var8
+	movl	-12(%rbp), %edx   	# argu: -12(%rbp) = var9
+	movl	-16(%rbp), %ecx   	# argu: -16(%rbp) = var10
+	movl	-20(%rbp), %r8d   	# argu: -20(%rbp) = var11
+	movl	-24(%rbp), %r9d   	# argu: -24(%rbp) = var12
 	call	f1
-	movl	%eax, -32(%rbp)   	# argu: -32(%rbp) = var14
-	movl	-32(%rbp), %eax   	# -32(%rbp) = var14
+	movl	%eax, -28(%rbp)   	# argu: -28(%rbp) = var13
+	movl	-28(%rbp), %eax   	# -28(%rbp) = var13
 	jmp	.f2_end
 .f2_end:
 	leave
@@ -47,10 +46,12 @@ f2:
 main:
 	pushq	%rbp
 	movq	%rsp, %rbp
-	movl	$5, -4(%rbp)   	# -4(%rbp) = var16
-	movl	-4(%rbp), %edi   	# argu: -4(%rbp) = var16
+	movl	$5, -4(%rbp)   	# -4(%rbp) = var15
+	movl	-4(%rbp), %edi   	# argu: -4(%rbp) = var15
 	call	f2
-	movl	%eax, -8(%rbp)   	# argu: -8(%rbp) = var17
+	movl	%eax, -8(%rbp)   	# argu: -8(%rbp) = var16
+	movl	-8(%rbp), %eax   	# -8(%rbp) = var16
+	jmp	.main_end
 .main_end:
 	leave
 	ret

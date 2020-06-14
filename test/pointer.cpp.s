@@ -16,15 +16,23 @@ main:
 	xorl	%eax, %eax
 	leaq	-28(%rbp), %rax
 	movq	%rax, -24(%rbp)
+	leaq	-28(%rbp), %rax
+	movq	%rax, -16(%rbp)
+	movq	-16(%rbp), %rax
+	movl	$2, (%rax)
+	movq	-24(%rbp), %rax
+	movl	$4, (%rax)
+	movq	-24(%rbp), %rax
+	movl	(%rax), %edx
 	movq	-16(%rbp), %rax
 	movl	(%rax), %eax
-	leal	222(%rax), %edx
-	movq	-16(%rbp), %rax
+	addl	%eax, %edx
+	movq	-24(%rbp), %rax
 	movl	%edx, (%rax)
-	movq	-16(%rbp), %rax
+	movq	-24(%rbp), %rax
 	movl	(%rax), %eax
 	movl	%eax, -28(%rbp)
-	movl	$0, %eax
+	movl	-28(%rbp), %eax
 	movq	-8(%rbp), %rcx
 	xorq	%fs:40, %rcx
 	je	.L3

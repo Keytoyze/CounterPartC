@@ -168,17 +168,23 @@ for line in ir:
                 source = "(%s)" % r1
             elif var1.startswith("&"):
                 var1 = var1[1:]
-                function_body.append("leaq\t{offset}(%rbp), %esi".format(offset=stack_map[var1]))
+                function_body.append("lea\t{offset}(%rbp), %esi".format(offset=stack_map[var1]))
                 source = "%esi"
             else:
                 source = "{offset}(%rbp)".format(
                     offset=stack_map[var1]
                     )
             
+            if not source.startswith("%"):
+                # avoid "too many memory references for `mov`"
+                function_body.append("movl\t{source}, %esi".format(source=source))
+                source = "%esi"
+            
             if var2.startswith("*"):
                 var2 = var2[1:]
                 r2 = var_to_register(var2)
                 destination = "(%s)" % r2
+
             else:
                 destination = "{offset}(%rbp)   \t# {offset}(%rbp) = {v}".format(
                     offset=stack_map[var2],
