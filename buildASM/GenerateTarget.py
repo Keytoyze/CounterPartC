@@ -4,13 +4,15 @@ import sys
 if len(sys.argv) != 3:
     print("usage: python [IR path] [asm path]")
 
-template_function = """{function_name}:
-	pushq	%rbp
-	movq	%rsp, %rbp
+template_function = """\t.globl	{function_name}
+\t.type	{function_name}, @function
+{function_name}:
+\tpushq\t%rbp
+\tmovq\t%rsp, %rbp
 {function_section}
 .{function_name}_end:
-	leave
-	ret
+\tleave
+\tret
 """
 
 ir = open(sys.argv[1]).read().split("\n")
@@ -138,9 +140,12 @@ for line in ir:
             ))
         elif elements[0] == "CALL":
             function_arg_num = 0
-            return_reg = elements[2]
+            return_var = elements[2]
             function_body.append("call\t%s" % elements[1])
-            function_body.append("movl\t%eax, {r}".format(r=return_reg))
+            function_body.append("movl\t%eax, {v0}(%rbp)   \t# argu: {v0}(%rbp) = {v}".format(
+                v0=stack_map[return_var],
+                v=return_var
+                ))
         elif elements[0] == "MALLOC_CONST":
             _, var, size, _ = elements
             stack_map[var] = -stack_size
