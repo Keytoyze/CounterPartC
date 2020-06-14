@@ -16,7 +16,9 @@ make
 
 ## Usage
 ```
-cpc input.c 
+cpc input.c
+    [-Ocf]
+    [-Ouc]
     [-ast ast_path.html] 
     [-ir ir_path.txt] 
     [-o out.asm]
@@ -48,7 +50,8 @@ cpc input.c
 ### Code generation
 - [X] IR
 - [ ] Code optimization
-    - [ ] const expression in if statement
+    - [X] const expression in if statement
+    - [X] remove unused variables
     - [ ] temp variable in pointer assignment
     - [ ] ...
 - [X] Target code
